@@ -115,6 +115,24 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 -------
 **Abstraction** hides the internal implementation details of your object. In essence, through the process of abstraction the programmer can hida all but the relevant data about an object in order to reduce complexity and increase efficientcy. In other words, abstraction makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
 
+In the example below, when you execute ```sportsCar.engine```, ```vrooom``` will print to the console. However, you do NOT have access to this ```engine``` variable outside the object. This is **closure** in JavaScript and it is how we implement encapsulation and abstraction. In effect, we are bding the ```engine ``` method and it's data (i.e. ```carSound```) and this is NOT available outside the constuctor function.
+```JavaScript
+  "use strict";
+
+  const Car = function(carName, carSound) {
+    const engine = function() {
+      console.log(carSound);
+    }
+    return {
+      carName, engine
+    };
+  }
+
+  const sportsCar = Car('Ferrari', 'vrooom');      // { carName: 'Ferrari', engine: [Function: engine] }
+
+  console.log(sportsCar.engine());                 // vrooom
+
+```
 
 
 <br>
