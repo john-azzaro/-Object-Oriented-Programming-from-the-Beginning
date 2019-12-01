@@ -11,8 +11,8 @@
 <dl>
 <dd>
 
-Simply put, **object oriented programming** is a programming paradigm that centers around objects rather than functions. The word "paradigm" is important 
-here because object oriented programming is not a language or tool, but
+Simply put, **object oriented programming** is a programming paradigm that centers around objects rather than functions. It is important 
+to remember that object oriented programming is not a language or tool but a 
 
 </dd>
 </dl>
