@@ -11,8 +11,9 @@
 <dl>
 <dd>
 
-Simply put, **object oriented programming** is a programming paradigm that centers around objects rather than functions. It is important 
-to remember that object oriented programming is not a language or tool but a 
+**Object oriented programming is is not a language or tool but a programming paradigm that centers around objects rather than functions.** Object oriented programming is used in languages such as C#, Java, Ruby, Python, JavaScript, etc. as well frameworks like Anugular as well. 
+
+Object oriented programming problems can be modelled as a collection of collaborating objects that send messages to each other.
 
 </dd>
 </dl>
