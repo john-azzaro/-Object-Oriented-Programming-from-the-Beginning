@@ -30,7 +30,7 @@ Before object oriented programming there was something called "procedural progra
 <dl>
 <dd>
 
-**Objects are complex data types that bring together properties and elements into a single entity.** In the example below, we have an object literal "car" with a number of key values pairs about that car, including its name, options, etc. 
+**Objects are complex data types that bring together properties and elements into a single entity.** But before that, lets take a look at a basic object literal.
 
 An **object literal** is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example of an object literal:
 ```JavaScript
@@ -38,7 +38,7 @@ An **object literal** is a comma-seperated list of name value pairs wrapped in c
     key: "value"                   // Colon seperates key and value within quotes.
   }
   ```
-**Inside the object, you can include values** such as: *strings, numbers, booleans, functions, other objects, or arrays.*
+**Inside the object, you can include values** such as: *strings, numbers, booleans, functions, other objects, or arrays.* In the example below, we have an object literal "car" with a number of key values pairs about that car, including its name, options, etc. 
 ```JavaScript
   const car = {
     make: "honda",                               // string
@@ -113,7 +113,9 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 
 ### Abstraction
 -------
-**Abstraction** helps make the interface with object simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). A good way to think of abstraction in practice is a car. If you think of a car as an object, it has an engine, accessories, axels, etc. However, when you turn the ignition the complexity of the engine is hidden from you.
+**Abstraction** hides the internal implementation details of your object. In essence, through the process of abstraction the programmer can hida all but the relevant data about an object in order to reduce complexity and increase efficientcy. In other words, abstraction makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
+
+
 
 <br>
 
