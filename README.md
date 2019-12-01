@@ -20,7 +20,19 @@
 <dl>
 <dd>
 
-Objects are complex data types that bring together properties and elements into a single entity.
+**Objects are complex data types that bring together properties and elements into a single entity.** An **object literal** is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example of an object literal:
+```JavaScript
+  const objName = {          // Defined variable with a name and assignment operator with curly braces
+    key: "value"             // Colon seperates key and value within quotes.
+  }
+Inside the object
+
+```JavaScript
+  const car = {
+    make: 
+  }
+
+```
 
 </dd>
 </dl>
