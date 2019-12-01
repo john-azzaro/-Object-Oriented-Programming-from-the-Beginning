@@ -26,15 +26,59 @@ Before object oriented programming there was something called "procedural progra
 
 <br>
 
-## What are the four core concepts of Object Oriented Programming?
+## What is an object?
 <dl>
 <dd>
 
+**Objects are complex data types that bring together properties and elements into a single entity.** In the example below, we have an object literal "car" with a number of key values pairs about that car, including its name, options, etc. 
+
+An **object literal** is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example of an object literal:
+```JavaScript
+  const objName = {                // Defined variable with a name and assignment operator with curly braces.
+    key: "value"                   // Colon seperates key and value within quotes.
+  }
+  ```
+**Inside the object, you can include values** such as: *strings, numbers, booleans, functions, other objects, or arrays.*
+```JavaScript
+  const car = {
+    make: "honda",                               // string
+    wheels: 4,                                   // number
+    isWorking: true,                             // boolean
+    startIgnition: function() {                  // "method" or function
+      console.log("vroom")
+    },
+    options: {                                   // object
+      airCon: true,
+      sportExhaust: true,
+      spareTire: false,
+    },
+    seats: ["driver", "passenger", "rear"]       // array
+  };
+```
+**To access the members of an object, use dot-notation,** which simply means you chain the property to the object name.
+```JavaScript
+  car.make                                       // honda
+  car.wheels                                     // 4
+  car.isWorking                                  // true
+  car.startIgnition()                            // vroom
+  car.options                                    // { airCon: true, sportExhaust: true, spareTire: false }
+  car.seats;                                     // [ 'driver', 'passenger', 'rear' ]
+```
+
+</dd>
+</dl>
+
+<br>
+
+## What are the four core concepts of Object Oriented Programming?
 The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inheritance**, and **Polymorphism**.
+
+<dl>
+<dd>
 
 ### Encapsulation
 ------
-The firsty core concept of object oriented programming is **Encapsulation**, which essentially means *grouping variables and function into objects*.
+**Encapsulation** is essentially the *grouping of variables and functions into objects*.
 
 For example, take a look at the following example as a *procedural* implementation. 
 ```JavaScript
@@ -65,55 +109,25 @@ The OOP way to solve this problem would look something like this:
 
 Note that in the case of the ```getCarInfo``` procedural example requires parameters passed into the function whereas the OOP ```getCarInfo``` example does NOT need parameters because the parameters are modeled as properties of the object. So because the properties of the object are part of one unit, it is much more efficient.
 
+<br>
 
-</dd>
-</dl>
-
-
-
-
+### Abstraction
+-------
+**Abstraction** helps make the interface with object simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). A good way to think of abstraction in practice is a car. If you think of a car as an object, it has an engine, accessories, axels, etc. However, when you turn the ignition the complexity of the engine is hidden from you.
 
 <br>
 
-## What is an object?
-<dl>
-<dd>
+### Inheritance
+--------
+**Inheritance** helps eliminate redundant code. For example, if you have a variety of buttons (i.e. click-buttons, drop-downs, checkboxes, etc) that all have a few properties in common (i.e. click, focus, hidden, etc.). Instead of redefining all the properties and methods for each button, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
 
-**Objects are complex data types that bring together properties and elements into a single entity.** In the example below, we have an object literal "car" with a number of key values pairs about that car, including its name, options, etc. 
+<br>
 
-An **object literal** is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example of an object literal:
-```JavaScript
-  const objName = {                // Defined variable with a name and assignment operator with curly braces.
-    key: "value"                   // Colon seperates key and value within quotes.
-  }
-  ```
-**Inside the object, you can include values** such as: *strings, numbers, booleans, functions, other objects, or arrays.*
-```JavaScript
-  const car = {
-    make: "honda",                                     // string
-    wheels: 4,                                         // number
-    isWorking: true,                                   // boolean
-    startIgnition: function() {                        // "method" or function
-      console.log("vroom")
-    },
-    options: {                                         // object
-      airCon: true,
-      sportExhaust: true,
-      spareTire: false,
-    },
-    seats: ["driver", "passenger", "rear"]             // array
-  };
-```
-***To access the members of an object, use dot notation.**
-```JavaScript
-  car.make                                    // honda
-  car.wheels                                  // 4
-  car.isWorking                               // true
-  car.startIgnition()                         // vroom
-  car.options                                 // { airCon: true, sportExhaust: true, spareTire: false }
-  car.seats;                                  // [ 'driver', 'passenger', 'rear' ]
-```
+### Polymorphism
+--------
+**Polymorphism** is the ability of an object to perform a single action in different forms where you can call the same method of different JavaScript objects.
+
+
 
 </dd>
 </dl>
-

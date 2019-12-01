@@ -5,3 +5,8 @@ Resources
 =========
 https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/    --  Overview of Object oriented programming.
 https://medium.com/learn-how-to-program/chapter-3-what-is-object-oriented-programming-d0a6ec0a7615    --  OOP overview
+https://stackify.com/oop-concept-polymorphism/   -- polymorphism
+https://medium.com/@shanikae/polymorphism-explained-simply-7294c8deeef7   --- polymorphism
+https://beginnersbook.com/2013/03/oops-in-java-encapsulation-inheritance-polymorphism-abstraction/
+https://www.javatpoint.com/javascript-oops-polymorphism
+https://www.codeproject.com/Articles/315169/Polymorphism-in-JavaScript   -- good explaination of polymorphism in JavaScript
