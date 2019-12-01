@@ -32,7 +32,8 @@ Before object oriented programming there was something called "procedural progra
 
 The four key concepts of Object oriented programming are: **Encapsulation**, **Abstraction**, **Inheritance**, and **Polymorphism**.
 
-### Excapsulation
+### Encapsulation
+------
 The firsty core concept of object oriented programming is **Encapsulation**, which essentially means *grouping variables and function into objects*.
 
 For example, take a look at the following example as a *procedural* implementation. 
@@ -50,7 +51,16 @@ For example, take a look at the following example as a *procedural* implementati
 
 The OOP way to solve this problem would look something like this:
 ```JavaScript
-  
+  const car = {
+    carName: 'Honda',
+    carMake: 'Civic',
+    carMilage: 23000,
+    getCarInfo: function() {
+      return `My ${this.carName} ${this.carMake} has ${this.carMilage} miles`;
+    }
+  }
+
+  console.log(car.getCarInfo());            // // My Honda Civic has 23000 miles.
 ```
 
 
