@@ -53,7 +53,15 @@ An **object literal** is a comma-seperated list of name value pairs wrapped in c
     seats: ["driver", "passenger", "rear"]        // array
   };
 ```
-
+***To access the members of an object, use dot notation.*
+```JavaScript
+  car.make                        //=> honda
+  car.wheels                      //=> 4
+  car.isWorking                   //=> true
+  car.startIgnition()             //=> vroom
+  car.options                     //=> { airCon: true, sportExhaust: true, spareTire: false }
+  car.seats;                      //=> [ 'driver', 'passenger', 'rear' ]
+```
 
 </dd>
 </dl>
