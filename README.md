@@ -2,10 +2,16 @@
 
 <br>
 
+* [What is the Object Oriented Programming Study](#What-is-the-Object-Oriented-Programming-Study)
+* [What is Object Oriented Programming?](#What-is-Object-Oriented-Programming)
+* [What is an object?](#What-is-an-object)
+
+<br>
+
 ## What is the Object Oriented Programming Study?
 
 
-
+<br>
 
 ## What is Object Oriented Programming?
 <dl>
@@ -16,17 +22,21 @@
 </dd>
 </dl>
 
+<br>
+
 ## What is an object?
 <dl>
 <dd>
 
-**Objects are complex data types that bring together properties and elements into a single entity.** An **object literal** is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example of an object literal:
+**Objects are complex data types that bring together properties and elements into a single entity.** 
+
+An **object literal** is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example of an object literal:
 ```JavaScript
-  const objName = {          // Defined variable with a name and assignment operator with curly braces
-    key: "value"             // Colon seperates key and value within quotes.
+  const objName = {             // Defined variable with a name and assignment operator with curly braces
+    key: "value"                // Colon seperates key and value within quotes.
   }
   ```
-Inside the object, you can include values such as strings, numbers, booleans, functions, other objects, or arrays.
+**Inside the object, you can include values** such as strings, numbers, booleans, functions, other objects, or arrays.
 ```JavaScript
   const car = {
     make: "honda",                                // string
