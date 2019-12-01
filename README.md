@@ -34,35 +34,35 @@ Before object oriented programming there was something called "procedural progra
 
 An **object literal** is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example of an object literal:
 ```JavaScript
-  const objName = {             // Defined variable with a name and assignment operator with curly braces
-    key: "value"                // Colon seperates key and value within quotes.
+  const objName = {                // Defined variable with a name and assignment operator with curly braces.
+    key: "value"                   // Colon seperates key and value within quotes.
   }
   ```
 **Inside the object, you can include values** such as: *strings, numbers, booleans, functions, other objects, or arrays.*
 ```JavaScript
   const car = {
-    make: "honda",                                                // string
-    wheels: 4,                                                    // number
-    isWorking: true,                                              // boolean
-    startIgnition: function() {                                   // "method" or function
+    make: "honda",                                     // string
+    wheels: 4,                                         // number
+    isWorking: true,                                   // boolean
+    startIgnition: function() {                        // "method" or function
       console.log("vroom")
     },
-    options: {                                                    // object
+    options: {                                         // object
       airCon: true,
       sportExhaust: true,
       spareTire: false,
     },
-    seats: ["driver", "passenger", "rear"]                        // array
+    seats: ["driver", "passenger", "rear"]             // array
   };
 ```
 ***To access the members of an object, use dot notation.**
 ```JavaScript
-  car.make                                //=> honda
-  car.wheels                              //=> 4
-  car.isWorking                           //=> true
-  car.startIgnition()                     //=> vroom
-  car.options                             //=> { airCon: true, sportExhaust: true, spareTire: false }
-  car.seats;                              //=> [ 'driver', 'passenger', 'rear' ]
+  car.make                                    // honda
+  car.wheels                                  // 4
+  car.isWorking                               // true
+  car.startIgnition()                         // vroom
+  car.options                                 // { airCon: true, sportExhaust: true, spareTire: false }
+  car.seats;                                  // [ 'driver', 'passenger', 'rear' ]
 ```
 
 </dd>
