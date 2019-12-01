@@ -30,7 +30,7 @@ Before object oriented programming there was something called "procedural progra
 <dl>
 <dd>
 
-The four key concepts of Object oriented programming are: **Encapsulation**, **Abstraction**, **Inheritance**, and **Polymorphism**.
+The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inheritance**, and **Polymorphism**.
 
 ### Encapsulation
 ------
@@ -63,6 +63,7 @@ The OOP way to solve this problem would look something like this:
   console.log(car.getCarInfo());            // // My Honda Civic has 23000 miles.
 ```
 
+Note that in the case of the ```getCarInfo``` procedural example requires parameters passed into the function whereas the OOP ```getCarInfo``` example does NOT need parameters because the parameters are modeled as properties of the object. So because the properties of the object are part of one unit, it is much more efficient.
 
 
 </dd>
