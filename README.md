@@ -25,14 +25,25 @@
   const objName = {          // Defined variable with a name and assignment operator with curly braces
     key: "value"             // Colon seperates key and value within quotes.
   }
-Inside the object
-
+  ```
+Inside the object, you can include values such as strings, numbers, booleans, functions, other objects, or arrays.
 ```JavaScript
   const car = {
-    make: 
-  }
-
+    make: "honda",                                // string
+    wheels: 4,                                    // number
+    isWorking: true,                              // boolean
+    startIgnition: function() {                   // "method" or function
+      console.log("vroom")
+    },
+    options: {                                    // object
+      airCon: true,
+      sportExhaust: true,
+      spareTire: false,
+    },
+    seats: ["driver", "passenger", "rear"]        // array
+  };
 ```
+
 
 </dd>
 </dl>
