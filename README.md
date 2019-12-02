@@ -121,7 +121,7 @@ Take a look at how abstraction (and encapsulation) work in the following practic
   "use strict";
 
   const Car = function(carName, carSound) {
-    const engine = function() {                  // Note engine INSIDE the object
+    const engine = function() {                    // Note the engine method is INSIDE the object.
       console.log(carSound);
     }
     return {
@@ -142,13 +142,15 @@ Take a look at how abstraction (and encapsulation) work in the following practic
 --------
 **Inheritance enables an object to take on the properties and methods of another object.** This in turn makes it easier to reuse code  in different parts of an application and thus eliminate redundant code. For example, if you have a variety of buttons (i.e. click-buttons, drop-downs, checkboxes, etc) that all have a few properties in common (i.e. click, focus, hidden, etc.). Instead of redefining all the properties and methods for each button, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
 
-So suppose you have two objects, car and motorcycle. However, both need a method called ```engineStart```. Since ```startEngine``` has the exact same implementation for both objects, you dont need to do it twice. Also, if there is a big in the application, you would have to fix or improve the exact same method twice (or as many times as you use it in as many different objects you make). With inheritance, you could create an object called "vehicle", put ```engineStart``` inside this "vehicle" object, and then have "car" and "motorcycle" inherit this method. The "vehicle" object that we created is called the *base/super/parent* object.  The "car" and "motorcycle" are reffered to as the *derived/sub/child* object. The inheritance relationship between the "vehicle" base object and the "car/motorcycle" derived class is referred to as the *is-a*, so "car" is-a "vehicle".
+So suppose you have two objects, car and motorcycle. However, both need a method called ```engineStart```. Since ```startEngine``` has the exact same implementation for both objects, you dont need to do it twice. Also, if there is a big in the application, you would have to fix or improve the exact same method twice (or as many times as you use it in as many different objects you make). 
+
+With inheritance, you could create an object called "vehicle", put ```engineStart``` inside this "vehicle" object, and then have "car" and "motorcycle" inherit this method. The "vehicle" object that we created is called the *base/super/parent* object.  The "car" and "motorcycle" are reffered to as the *derived/sub/child* object. The inheritance relationship between the "vehicle" base object and the "car/motorcycle" derived class is referred to as the *is-a*, so "car" is-a "vehicle".
 
 <br>
 
 ### Polymorphism
 --------
-**Polymorphism** is the ability of an object to perform a single action in different forms where you can call the same method of different JavaScript objects.
+**Polymorphism** (meaning "many forms") is the ability of an object to perform a single action in different forms where you can call the same method of different JavaScript objects.
 
 
 
