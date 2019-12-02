@@ -78,7 +78,7 @@ The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inherita
 
 ### Encapsulation
 ------
-**Encapsulation** is essentially the *grouping of variables and functions into objects*.
+**Encapsulation groups variables and functions into objects.**
 
 For example, take a look at the following example as a *procedural* implementation. 
 ```JavaScript
@@ -113,14 +113,15 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 
 ### Abstraction
 -------
-**Abstraction** hides the internal implementation details of your object. In essence, through the process of abstraction the programmer can hida all but the relevant data about an object in order to reduce complexity and increase efficientcy. In other words, abstraction makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
+**Abstraction hides the internal implementation details of your object.** In essence, through the process of abstraction the programmer can hida all but the relevant data about an object in order to reduce complexity and increase efficientcy. In other words, abstraction makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
 
-In the example below, when you execute ```sportsCar.engine```, ```vrooom``` will print to the console. However, you do NOT have access to this ```engine``` variable outside the object. This is **closure** in JavaScript and it is how we implement encapsulation and abstraction. In effect, we are bding the ```engine ``` method and it's data (i.e. ```carSound```) and this is NOT available outside the constuctor function.
+Take a look at how abstraction (and encapsulation) work in the following practical example. When we execute ```sportsCar.engine```, ```vrooom``` will print to the console. However, you do NOT have access to this ```engine``` variable outside the object. This is **closure** in JavaScript and it is how we implement encapsulation and abstraction. In effect, we are binding the ```engine ``` method and it's data (i.e. ```carSound```) and this is NOT available outside the constuctor function.
+
 ```JavaScript
   "use strict";
 
   const Car = function(carName, carSound) {
-    const engine = function() {
+    const engine = function() {                  // Note engine INSIDE the object
       console.log(carSound);
     }
     return {
