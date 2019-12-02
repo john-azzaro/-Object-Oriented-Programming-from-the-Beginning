@@ -140,7 +140,9 @@ Take a look at how abstraction (and encapsulation) work in the following practic
 
 ### Inheritance
 --------
-**Inheritance** helps eliminate redundant code. For example, if you have a variety of buttons (i.e. click-buttons, drop-downs, checkboxes, etc) that all have a few properties in common (i.e. click, focus, hidden, etc.). Instead of redefining all the properties and methods for each button, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
+**Inheritance enables an object to take on the properties and methods of another object.** This in turn makes it easier to reuse code  in different parts of an application and thus eliminate redundant code. For example, if you have a variety of buttons (i.e. click-buttons, drop-downs, checkboxes, etc) that all have a few properties in common (i.e. click, focus, hidden, etc.). Instead of redefining all the properties and methods for each button, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
+
+So suppose you have two objects, car and motorcycle. However, both need a method called ```engineStart```. Since ```startEngine``` has the exact same implementation for both objects, you dont need to do it twice. Also, if there is a big in the application, you would have to fix the exact same method twice (or as many times as you use it in as many different objects you make).
 
 <br>
 

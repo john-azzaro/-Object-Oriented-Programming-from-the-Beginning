@@ -12,3 +12,5 @@ https://www.javatpoint.com/javascript-oops-polymorphism
 https://www.codeproject.com/Articles/315169/Polymorphism-in-JavaScript   -- good explaination of polymorphism in JavaScript
 https://stackify.com/oop-concept-abstraction/  -- abstraction (with java but principles the same)
 https://www.sohamkamani.com/blog/2016/04/30/oops-in-js/  -- very good overview of abstraction and other key concepts
+https://codeburst.io/javascript-inheritance-25fe61ab9f85   -- inheritance
+https://www.tutorialsteacher.com/javascript/inheritance-in-javascript  -- inheritance
