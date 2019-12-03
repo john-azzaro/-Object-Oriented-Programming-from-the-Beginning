@@ -152,6 +152,19 @@ With inheritance, you could create an object called "vehicle", put ```engineStar
 --------
 **Polymorphism** (meaning "many forms") is the ability of an object to perform a single action in different forms where you can call the same method of different JavaScript objects.
 
+</dd>
+</dl>
+
+
+<br>
+
+
+## What is a factory object?
+<dl>
+<dd>
+
+**A factory functions create an individual instance of some model.** The reason we use factory functions is because if we are duplicating an object with one or more methods (has a "behavior"), it can be problematic if there become more duplicate of the same object. To avoid that issue, we use a function to create an object and return the object.
+
 
 
 </dd>
