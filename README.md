@@ -178,6 +178,10 @@ With inheritance, you could create an object called "vehicle", put ```engineStar
     };
   }
 ```
+Once you have a factory function, you can create a new car with the parameters you wish:
+``` JavaScript
+  const makeFerrari = createCar('Ferrari', '458 spider', 2015);
+```
 
 </dd>
 </dl>
