@@ -109,9 +109,7 @@ console.log(superCar);                  // { make: 'Lamborghini', model: 'Revent
 <dl>
 <dd>
 
-**To iterate over the properties of an object, the best way is to use either a "for-in" loop or a "for-each" loop.**
-
-In the case of the "for-in" loopL
+**To iterate over the properties of an object, the best way is to use either a "for-in" loop or a "for-each" loop.** In the case of the "for-in" loop, you simply need to specif the object in your loop and either the key (e.g. ```key```) or the value (e.g ```objectName[]```). For example:
 
 ```JavaScript
   const superCar = {
@@ -121,18 +119,18 @@ In the case of the "for-in" loopL
   };
 
   for (let key in superCar) {
-                                      // To get the keys of the object:
+                                       // To get the keys of the object:
     console.log(key);                  // entry middle luxry
     
-                                      // To get the values of the object:
+                                       // To get the values of the object:
     console.log(superCar[key]);        // Mercedes luxury Rolls Royce
     
-                                      // To get the key and values of the object:
+                                       // To get the key and values of the object:
     console.log(key, superCar[key]);   // entry Honda middle Mercedes luxury Rolls Royce
   }
 
 ```
-If you would like to omit certain properties from your iteration, you can use an if-statement:
+Remember you can use IF statements to filter your iteration. For example, if you would like to omit certain properties from your iteration, you can use an if-statement to print out only that which you want to print:
 ```JavaScript
   const superCar = {
     entry: 'Honda',
@@ -141,11 +139,19 @@ If you would like to omit certain properties from your iteration, you can use an
   };
     
   for (let key in superCar) {
-    if (key === 'luxury') {
-      console.log(superCar[key]);     // Rolls Royce
+    if (key === 'luxury') {            // To get all keys that match "luxury" and print the values:
+      console.log(superCar[key]);      // Rolls Royce
     }
   }
+
+  for (let key in superCar) {
+    if (key !== 'luxury') {            // To get all keys are NOT luxury
+    console.log(key)                   // entry middle
+  } 
+}
+
 ```
+
 
 
 
