@@ -100,15 +100,57 @@ console.log(superCar);                  // { make: 'Lamborghini', model: 'Revent
   delete superCar[coupe] ;              // { make: 'Lamborghini', year: { year: 2012 } }
 ```
 
+</dd>
+</dl>
+
+<br>
+
+## How do you iterate over the properties of an object?
+<dl>
+<dd>
+
+**To iterate over the properties of an object, the best way is to use either a "for-in" loop or a "for-each" loop.**
+
+In the case of the "for-in" loopL
+
+```JavaScript
+  const superCar = {
+    entry: 'Honda',
+    middle: 'Mercedes',
+    luxury: 'Rolls Royce'
+  };
+
+  for (let key in superCar) {
+                                      // To get the keys of the object:
+    console.log(key);                  // entry middle luxry
+    
+                                      // To get the values of the object:
+    console.log(superCar[key]);        // Mercedes luxury Rolls Royce
+    
+                                      // To get the key and values of the object:
+    console.log(key, superCar[key]);   // entry Honda middle Mercedes luxury Rolls Royce
+  }
+
+```
+If you would like to omit certain properties from your iteration, you can use an if-statement:
+```JavaScript
+  const superCar = {
+    entry: 'Honda',
+    middle: 'Mercedes',
+    luxury: 'Rolls Royce'
+  };
+    
+  for (let key in superCar) {
+    if (key === 'luxury') {
+      console.log(superCar[key]);     // Rolls Royce
+    }
+  }
+```
+
 
 
 </dd>
 </dl>
-
-
-
-
-
 
 
 <br>
