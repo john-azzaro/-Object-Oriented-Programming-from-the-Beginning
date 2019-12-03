@@ -164,8 +164,20 @@ With inheritance, you could create an object called "vehicle", put ```engineStar
 <dd>
 
 **A factory functions create an individual instance of some model.** The reason we use factory functions is because if we are duplicating an object with one or more methods (has a "behavior"), it can be problematic if there become more duplicate of the same object. To avoid that issue, we use a function to create an object and return the object.
+```JavaScript
 
-
+  function createCar(make, model, year) {
+    return {
+      make: make,
+      model: model,
+      year: year,
+      isWorking: true,
+      startIgnition: function() {
+        console.log('vrooom vrooom');
+      }
+    };
+  }
+```
 
 </dd>
 </dl>
