@@ -15,3 +15,10 @@ function createCar(make, model, year) {
 const makeFerrari = createCar('Ferrari', '458 spider', 2015);
 const makePorsche = createCar('Porsche', '718 GT4', 2019);
 
+
+
+
+console.log(makeFerrari);
+
+
+console.log(makeFerrari.startIgnition());

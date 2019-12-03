@@ -182,6 +182,17 @@ Once you have a factory function, you can create a new car with the parameters y
 ``` JavaScript
   const makeFerrari = createCar('Ferrari', '458 spider', 2015);
 ```
+Then you can call your factory function using the assigned variable:
+```JavaScript
+  console.log(makeFerrari);  // { make: 'Ferrari',
+                             //   model: '458 spider',
+                             //   year: 2015,
+                             //   isWorking: true,
+                             //   startIgnition: [Function: startIgnition] 
+                             //  }
+
+  console.log(makeFerrari.startIgnition());    // vrooom vrooom
+```
 
 </dd>
 </dl>
