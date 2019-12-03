@@ -217,6 +217,18 @@ Then you can call your factory function using the assigned variable:
   }
 ```
 To create a car using a constructor function, it is also much the same as a factory function *except* for the inclusion of the "new" operator. When you use "new", a few things happen. First, it will create an empty object (i.e. {}). Second, it will set ```this``` to point to the new object (i.e. this.make ==> createCar). Third, it will return the object from the function.
+```JavaScript
+  const makePorsche = new createCar('Porsche', '718 GT4', 2019);
+```
+Then when you call the constructor function, you will get the following. 
+```JavaScript
+  console.log(makePorsche);   // createCar {
+                              //   make: 'Porsche',
+                              //   model: '718 GT4',
+                              //   year: 2019,
+                              //   startIgnition: [Function] 
+                              // }
+```
 
 </dd>
 </dl>
