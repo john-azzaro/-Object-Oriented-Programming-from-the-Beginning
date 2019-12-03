@@ -196,3 +196,27 @@ Then you can call your factory function using the assigned variable:
 
 </dd>
 </dl>
+
+
+<br>
+
+
+## What is a constructor function?
+<dl>
+<dd>
+
+**A constructor function operates much like a factory function and creates an individual instance of some model.** However, when using the contructor function method if you forget to use 'new', it will define the 'this' property on the GLOBAL object (i.e. the window object). By convention, *the first letter of a constructor function name should be upper case*. Additionally, *we use 'this' to reference the object executing a particular peice of code.*
+```JavaScript
+  function createCar(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.startIgnition = function() {
+      console.log('vrooom vrooom');
+    }
+  }
+```
+To create a car using a constructor function, it is also much the same as a factory function *except* for the inclusion of the "new" operator. When you use "new", a few things happen. First, it will create an empty object (i.e. {}). Second, it will set ```this``` to point to the new object (i.e. this.make ==> createCar). Third, it will return the object from the function.
+
+</dd>
+</dl>
