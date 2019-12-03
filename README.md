@@ -70,6 +70,49 @@ An **object literal** is a comma-seperated list of name value pairs wrapped in c
 
 <br>
 
+## How do you add or remove properties to an object?
+<dl>
+<dd>
+
+In real world applications, a client might add additional information to thier account or something like that.  We need the ability to add or even remove properties from that account object. 
+**To add or subtract properties to an object, you can use either dot-notation or bracket notation.** Since objects in JavaScript are dynamic, you can freely add or remove properties from them. 
+
+**To add properties to an object, you can use dot-notation or bracket notation.** Dot-notation is better to use but bracket notation is good to use in certain circumstances, such as when you have improper identifiers like dashes 
+```JavaScript
+const superCar = {
+  make: "Lamborghini",
+  model: "Reventon"
+};
+                                        // Original object:
+console.log(superCar);                  // { make: 'Lamborghini', model: 'Reventon' }
+
+superCar.year = { year: 2015 };         // Add property using dot-notation:
+console.log(superCar);                  // { make: 'Lamborghini', model: 'Reventon', year: { year: 2015 } }
+
+
+superCar['year'] = { year: 2012 };      // Add property using bracket notation:
+console.log(superCar);                  // { make: 'Lamborghini', model: 'Reventon', year: { year: 2012 } }
+
+```
+**To delete properties from an object, you use the "delete" operator**.
+```JavaScript
+  delete superCar.coupe;                // { make: 'Lamborghini', year: { year: 2012 } }
+  delete superCar[coupe] ;              // { make: 'Lamborghini', year: { year: 2012 } }
+```
+
+
+
+</dd>
+</dl>
+
+
+
+
+
+
+
+<br>
+
 ## What are the four core concepts of Object Oriented Programming?
 The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inheritance**, and **Polymorphism**.
 
@@ -232,3 +275,4 @@ Then when you call the constructor function, you will get the following.
 
 </dd>
 </dl>
+
