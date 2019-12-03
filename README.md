@@ -130,7 +130,7 @@ console.log(superCar);                  // { make: 'Lamborghini', model: 'Revent
   }
 
 ```
-Remember you can use IF statements to filter your iteration. For example, if you would like to omit certain properties from your iteration, you can use an if-statement to print out only that which you want to print:
+As an reminder you can use IF statements to filter your iteration. For example, if you would like to omit certain properties from your iteration, you can use an if-statement to print out only that which you want to print:
 ```JavaScript
   const superCar = {
     entry: 'Honda',
@@ -149,7 +149,25 @@ Remember you can use IF statements to filter your iteration. For example, if you
     console.log(key)                   // entry middle
   } 
 }
+```
+You can also use **Object.keys** where the method "keys" will return all the keys in the object we pass to it:
+```JavaScript
+  const superCar = {
+    entry: 'Honda',
+    middle: 'Mercedes',
+    luxury: 'Rolls Royce'
+  };
 
+  function iterate(obj) {
+    const keys = Object.keys(superCar).forEach(function(key) {
+      console.log(`the key is ${key} and the value is ${obj[key]}`);
+    });
+    console.log(keys);
+  }
+
+  iterate2(superCar);                 // the key is entry and the value is Honda
+                                      // the key is middle and the value is Mercedes
+                                      // the key is luxury and the value is Rolls Royce
 ```
 
 

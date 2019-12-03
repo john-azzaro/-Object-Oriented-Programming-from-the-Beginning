@@ -52,3 +52,26 @@ for (let key in superCar) {
     console.log(key, superCar[key]);                  // entry Honda  middle Mercedes  luxury Rolls Royce
   }
 }
+
+
+
+function iterateKeysOnly(obj) {
+  const keys = Object.keys(obj);                 // If you want to use object.keys, you can iterate the keys of the object into an array.
+  console.log(keys);
+}
+iterateKeysOnly(superCar);                                            // [ 'entry', 'middle', 'luxury' ]
+
+
+
+
+
+function iterate(obj) {
+  const keys = Object.keys(superCar).forEach(function(key) {
+    console.log(`the key is ${key} and the value is ${obj[key]}`);
+  });
+  console.log(keys);
+}
+
+iterate2(superCar);                 // the key is entry and the value is Honda
+                                    // the key is middle and the value is Mercedes
+                                    // the key is luxury and the value is Rolls Royce
