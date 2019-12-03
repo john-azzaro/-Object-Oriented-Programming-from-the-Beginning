@@ -105,11 +105,11 @@ console.log(superCar);                  // { make: 'Lamborghini', model: 'Revent
 
 <br>
 
-## How do you iterate over the properties of an object?
+## How do you enumerate over the properties of an object?
 <dl>
 <dd>
 
-**To iterate over the properties of an object, the best way is to use either a "for-in" loop or a "for-each" loop.** In the case of the "for-in" loop, you simply need to specif the object in your loop and either the key (e.g. ```key```) or the value (e.g ```objectName[]```). For example:
+**To enumerate over the properties of an object, the best way is to use either a "for-in" loop or a "for-each" loop.** In the case of the "for-in" loop, you simply need to specif the object in your loop and either the key (e.g. ```key```) or the value (e.g. ```objectName[]```). For example:
 
 ```JavaScript
   const superCar = {
@@ -130,7 +130,7 @@ console.log(superCar);                  // { make: 'Lamborghini', model: 'Revent
   }
 
 ```
-As an reminder you can use IF statements to filter your iteration. For example, if you would like to omit certain properties from your iteration, you can use an if-statement to print out only that which you want to print:
+**As an reminder you can use IF statements to filter your iteration.** For example, if you would like to omit certain properties from your iteration, you can use an if-statement to print out only that which you want to print:
 ```JavaScript
   const superCar = {
     entry: 'Honda',
@@ -158,20 +158,17 @@ You can also use **Object.keys** where the method "keys" will return all the key
     luxury: 'Rolls Royce'
   };
 
-  function iterate(obj) {
-    const keys = Object.keys(superCar).forEach(function(key) {
+  function findKeysAndValues(obj) {
+    const keys = Object.keys(obj).forEach(function(key) {
       console.log(`the key is ${key} and the value is ${obj[key]}`);
     });
     console.log(keys);
   }
 
-  iterate2(superCar);                 // the key is entry and the value is Honda
+  findKeysAndValues(superCar);        // the key is entry and the value is Honda
                                       // the key is middle and the value is Mercedes
                                       // the key is luxury and the value is Rolls Royce
 ```
-
-
-
 
 </dd>
 </dl>
@@ -222,15 +219,17 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 
 ### Abstraction
 -------
-**Abstraction hides the internal implementation details of your object.** In essence, through the process of abstraction the programmer can hida all but the relevant data about an object in order to reduce complexity and increase efficientcy. In other words, abstraction makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
+**The goal of abstraction is to hide details (i.e. certain members such as local variables) from the outside.** Abstraction hides all but the relevant data about an object and makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
 
-Take a look at how abstraction (and encapsulation) work in the following practical example. When we execute ```sportsCar.engine```, ```vrooom``` will print to the console. However, you do NOT have access to this ```engine``` variable outside the object. This is **closure** in JavaScript and it is how we implement encapsulation and abstraction. In effect, we are binding the ```engine ``` method and it's data (i.e. ```carSound```) and this is NOT available outside the constuctor function.
+So if you are creating **private properties and methods**, you are creating local variables which are defined *inside* the object. From an object-oriented point of view, these private properties and methods are refered to **private members** of the object they are situated in.
+
+To see how abstraction (and encapsulation) work, take a look at the following practical example. When we execute ```sportsCar.engine```, ```vrooom``` will print to the console. However, you do NOT have access to this ```engine``` variable outside the object. This is **closure** in JavaScript and it is how we implement encapsulation and abstraction. In effect, we are binding the ```engine ``` method and it's data (i.e. ```carSound```) and this is NOT available outside the constuctor function.
 
 ```JavaScript
   "use strict";
 
   const Car = function(carName, carSound) {
-    const engine = function() {                    // Note the engine method is INSIDE the object.
+    const engine = function() {                    // the "engine" the local variable is a private member.
       console.log(carSound);
     }
     return {
@@ -242,6 +241,10 @@ Take a look at how abstraction (and encapsulation) work in the following practic
 
   console.log(sportsCar.engine());                 // vrooom
 
+```
+However, the key part of abstraction is that *private members* such as the local variable ```engine``` are not accessible outside the object.
+```JavaScript
+  console.log (engine())                           // error -- cannot acces because it is outside the scope of the object.
 ```
 
 

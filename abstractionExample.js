@@ -12,3 +12,6 @@ const Car = function(carName, carSound) {
 const sportsCar = Car('Ferrari', 'vrooom');      // { carName: 'Ferrari', engine: [Function: engine] }
 
 console.log(sportsCar.engine());                 // vrooom
+
+console.log(engine());                          // error -- Cannot access outside the limits of the object which is the correct implementation
+                                                //          of abstraction.
