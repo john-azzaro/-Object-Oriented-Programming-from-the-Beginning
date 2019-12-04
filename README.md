@@ -40,10 +40,10 @@ Before object oriented programming there was something called "procedural progra
 
 **Objects are complex data types that bring together properties and elements into a single entity** In addition to allowing us to represent instances of a given model, objects provide an excellent way of organizing code that belongs together as well as avoiding global variables.
 
-#### Objects are persitent
+### Objects are persitent
 When an object is created, memory is automatically allocated to memory in JavaScript (and we do not need to deallocate memory) as opposed to low level languages like C++ or C, in JavaScript you do not need to allocate or de-allocate memory because the language has something called a *garbage collector* which finds variables or constants that are no longer used and deallocates memory automatically.
 
-#### Objects are collections of key/value pairs
+### Objects are collections of key/value pairs
 First, lets take a look at a basic **object literal**, which is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example:
 ```JavaScript
   const objName = {                // Defined variable with a name and assignment operator with curly braces.
@@ -51,7 +51,7 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
   }
   ```
 
-#### Objects properties can contain a number of value types
+### Objects properties can contain a number of value types
 **Inside the object, you can include values** such as: *strings, numbers, booleans, functions, other objects, or arrays.* In the example below, we have an object literal "car" with a number of key values pairs about that car, including its name, options, etc. 
 ```JavaScript
   const car = {
@@ -70,7 +70,7 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
   };
 ```
 
-#### Use dot-notation to access members of an object
+### Dot-notation is used to access members of an object
 **To access the members of an object, use dot-notation,** which simply means you chain the property to the object name.
 ```JavaScript
   car.make                                       // honda
@@ -93,7 +93,8 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
 In real world applications, a client might add additional information to thier account or something like that.  We need the ability to add or even remove properties from that account object. 
 **To add or subtract properties to an object, you can use either dot-notation or bracket notation.** Since objects in JavaScript are dynamic, you can freely add or remove properties from them. 
 
-**To add properties to an object, you can use dot-notation or bracket notation.** Dot-notation is better to use but bracket notation is good to use in certain circumstances, such as when you have improper identifiers like dashes 
+### Use dot-notation or bracket notation to add a new property
+**To add properties to an object, you can use dot-notation (or bracket notation) and chain the new name of your property and then assign a value.** Dot-notation is better to use but bracket notation is good to use in certain circumstances, such as when you have improper identifiers like dashes 
 ```JavaScript
 const superCar = {
   make: "Lamborghini",
@@ -110,6 +111,7 @@ superCar['year'] = { year: 2012 };      // Add property using bracket notation:
 console.log(superCar);                  // { make: 'Lamborghini', model: 'Reventon', year: { year: 2012 } }
 
 ```
+### Use the delete prefix and the object/key name to delete a property
 **To delete properties from an object, you use the "delete" operator**.
 ```JavaScript
   delete superCar.coupe;                // { make: 'Lamborghini', year: { year: 2012 } }
