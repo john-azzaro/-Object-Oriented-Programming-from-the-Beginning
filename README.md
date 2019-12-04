@@ -221,9 +221,14 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 -------
 **The goal of abstraction is to hide details (i.e. certain members such as local variables) from the outside.** Abstraction hides all but the relevant data about an object and makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
 
-So if you are creating **private properties and methods**, you are creating local variables which are defined *inside* the object. From an object-oriented point of view, these private properties and methods are refered to **private members** of the object they are situated in.
+### Scope and Closure
+Scope and closure play important parts in abstraction. For example, when we create **private properties and methods** (i.e. ```engine```), you are creating local variables which are defined *inside* the object. From an object-oriented point of view, these private properties and methods are refered to as **private members** of an object. 
 
-To see how abstraction (and encapsulation) work, take a look at the following practical example. When we execute ```sportsCar.engine```, ```vrooom``` will print to the console. However, you do NOT have access to this ```engine``` variable outside the object. This is **closure** in JavaScript and it is how we implement encapsulation and abstraction. In effect, we are binding the ```engine ``` method and it's data (i.e. ```carSound```) and this is NOT available outside the constuctor function.
+The **scope** of those private members are limited to the containing function, object, etc. So in the example below, if there were any variables in the ```engine``` method below and the function finished executing, those variables will go out of scope (i.e. die). Then when the method is called again, it will reinitialize, be of use, then die again. The scope of these variables is *temporary*.
+
+In contrast to scope, **closure** determines what variables will be accessible to an inner function AND the variables defined in its parent function. For example, in the example below you have the variable ```engine```. If there were other variables inside the parent function ```Car```, they will be sustained in memory because they are part of the *closure* of the ```Car``` function.
+
+To see how abstraction (and encapsulation) work, take a look at the following practical example. 
 
 ```JavaScript
   "use strict";
@@ -242,9 +247,11 @@ To see how abstraction (and encapsulation) work, take a look at the following pr
   console.log(sportsCar.engine());                 // vrooom
 
 ```
+When we execute ```sportsCar.engine```, ```vrooom``` will print to the console. However, you do NOT have access to this ```engine``` variable outside the object. This is **closure** in JavaScript and it is how we implement encapsulation and abstraction. In effect, we are binding the ```engine ``` method and it's data (i.e. ```carSound```) and this is NOT available outside the constuctor function.
+
 However, the key part of abstraction is that *private members* such as the local variable ```engine``` are not accessible outside the object.
 ```JavaScript
-  console.log (engine())                           // error -- cannot acces because it is outside the scope of the object.
+  console.log (engine())             // error -- cannot acces because it is outside the scope of the object.
 ```
 
 
