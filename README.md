@@ -38,16 +38,20 @@ Before object oriented programming there was something called "procedural progra
 <dl>
 <dd>
 
-**Objects are complex data types that bring together properties and elements into a single entity, allowing us to represent insatnces of a given model.** Ojects provide an excellent way of organizing code that belongs together and helps you avoid global variables as you will see in *object oriented programming*.
+**Objects are complex data types that bring together properties and elements into a single entity** In addition to allowing us to represent instances of a given model, objects provide an excellent way of organizing code that belongs together as well as avoiding global variables.
 
-Objects are useful in that ehen you create an object, memory is automatically allocated to memory in JavaScript (and we do not need to deallocate memory) as opposed to low level languages like C++ or C, in JavaScript you do not need to allocate or de-allocate memory because the language has something called a *garbage collector* which finds variables or constants that are no longer used and deallocates memory automatically.
+#### Objects are persitent
+When an object is created, memory is automatically allocated to memory in JavaScript (and we do not need to deallocate memory) as opposed to low level languages like C++ or C, in JavaScript you do not need to allocate or de-allocate memory because the language has something called a *garbage collector* which finds variables or constants that are no longer used and deallocates memory automatically.
 
+#### Objects are collections of key/value pairs
 First, lets take a look at a basic **object literal**, which is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example:
 ```JavaScript
   const objName = {                // Defined variable with a name and assignment operator with curly braces.
     key: "value"                   // Colon seperates key and value within quotes.
   }
   ```
+
+#### Objects properties can contain a number of value types
 **Inside the object, you can include values** such as: *strings, numbers, booleans, functions, other objects, or arrays.* In the example below, we have an object literal "car" with a number of key values pairs about that car, including its name, options, etc. 
 ```JavaScript
   const car = {
@@ -65,6 +69,8 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
     seats: ["driver", "passenger", "rear"]       // array
   };
 ```
+
+#### Use dot-notation to access members of an object
 **To access the members of an object, use dot-notation,** which simply means you chain the property to the object name.
 ```JavaScript
   car.make                                       // honda
