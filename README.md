@@ -38,9 +38,11 @@ Before object oriented programming there was something called "procedural progra
 <dl>
 <dd>
 
-**Objects are complex data types that bring together properties and elements into a single entity.** But before that, lets take a look at a basic object literal.
+**Objects are complex data types that bring together properties and elements into a single entity, allowing us to represent insatnces of a given model.** Ojects provide an excellent way of organizing code that belongs together and helps you avoid global variables as you will see in *object oriented programming*.
 
-An **object literal** is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example of an object literal:
+Objects are useful in that ehen you create an object, memory is automatically allocated to memory in JavaScript (and we do not need to deallocate memory) as opposed to low level languages like C++ or C, in JavaScript you do not need to allocate or de-allocate memory because the language has something called a *garbage collector* which finds variables or constants that are no longer used and deallocates memory automatically.
+
+First, lets take a look at a basic **object literal**, which is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example:
 ```JavaScript
   const objName = {                // Defined variable with a name and assignment operator with curly braces.
     key: "value"                   // Colon seperates key and value within quotes.
