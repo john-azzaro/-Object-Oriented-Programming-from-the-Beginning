@@ -8,6 +8,7 @@
 * [How do you add or remove properties to an object?](#How-do-you-add-or-remove-properties-to-an-object)
 * [How do you enumerate over the properties of an object?](#How-do-you-enumerate-over-the-properties-of-an-object)
 * [What are the four core concepts of Object Oriented Programming?](#What-are-the-four-core-concepts-of-Object-Oriented-Programming)
+* [What are prototypes and prototypical inheritance?](#What-are-prototypes-and-prototypical-inheritance)
 * [What is a factory object?](#What-is-a-factory-object)
 * [What is a constructor function?](#What-is-a-constructor-function)
 * [](#)
