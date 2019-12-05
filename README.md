@@ -228,7 +228,7 @@ The OOP way to solve this problem would look something like this:
     }
   }
 
-  console.log(car.getCarInfo());            // // My Honda Civic has 23000 miles.
+  console.log(car.getCarInfo());             // My Honda Civic has 23000 miles.
 ```
 
 Note that in the case of the ```getCarInfo``` procedural example requires parameters passed into the function whereas the OOP ```getCarInfo``` example does NOT need parameters because the parameters are modeled as properties of the object. So because the properties of the object are part of one unit, it is much more efficient.
@@ -324,13 +324,6 @@ It is important to note that all objects in JavaScript have a parent that inheri
 </dl>
 
 
-
-
-
-
-
-
-
 <br>
 
 
@@ -407,4 +400,10 @@ Then when you call the constructor function, you will get the following.
 
 </dd>
 </dl>
+
+
+<br>
+
+
+
 
