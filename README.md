@@ -289,7 +289,16 @@ For example, if you have a variety of buttons (i.e. click-buttons, drop-downs, c
 
 So suppose you have two objects, car and motorcycle. However, both need a method called ```engineStart```. Since ```startEngine``` has the exact same implementation for both objects, you dont need to do it twice. Also, if there is a big in the application, you would have to fix or improve the exact same method twice (or as many times as you use it in as many different objects you make). 
 
-With inheritance, you could create an object called "vehicle", put ```engineStart``` inside this "vehicle" object, and then have "car" and "motorcycle" inherit this method. The "vehicle" object that we created is called the *base/super/parent*.  The "car" and "motorcycle" are reffered to as the *derived/sub/child*. The inheritance relationship between the "vehicle" base object and the "car/motorcycle" derived class is referred to as the *is-a*, so "car" *is-a* "vehicle".
+<dl>
+<dd>
+
+## Prototypes and Prototypical Inheritance
+With inheritance, you could create an object called "vehicle", put ```engineStart``` inside this "vehicle" object, and then have "car" and "motorcycle" inherit this method. The "vehicle" object that we created is called the *base/super/parent*.  The "car" and "motorcycle" are reffered to as the *derived/sub/child*. The inheritance relationship between the "vehicle" base object and the "car/motorcycle" derived class is referred to as the *is-a*, so "car" *is-a* "vehicle". 
+
+To implement inheritance using objects (since JavaScript only has objects rather than classes), we need to *link* the **base** to the **child**. When you do this, the base becomes the **prototype**. The prototype is the parent of another object (i.e. the object "vehicle" is the prototype of the child "car").
+
+</dd>
+</dl>
 
 <br>
 
@@ -299,6 +308,15 @@ With inheritance, you could create an object called "vehicle", put ```engineStar
 
 </dd>
 </dl>
+
+
+
+
+
+
+
+
+
 
 
 <br>
