@@ -221,6 +221,7 @@ The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inherita
 <dl>
 <dd>
 
+------
 ### Encapsulation.
 ------
 **Encapsulation groups variables and functions into objects.**
@@ -256,6 +257,7 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 
 <br>
 
+------
 ### Abstraction.
 ------
 **The goal of abstraction is to hide details (i.e. certain members such as local variables) from the outside.** Abstraction hides all but the relevant data about an object and makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
@@ -308,6 +310,7 @@ However, the key part of abstraction is that *private members* such as the local
 
 <br>
 
+------
 ### Inheritance.
 ------
 **Inheritance enables an object to take on the properties and methods of another object.** This in turn makes it easier to reuse code in different parts of an application and thus eliminate redundant code. 
@@ -319,6 +322,7 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 
 <br>
 
+------
 ### Polymorphism.
 ------
 **Polymorphism** (meaning "many forms") is the ability of an object to perform a single action in different forms where you can call the same method of different JavaScript objects.
@@ -334,19 +338,19 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 
 With inheritance, you could create an object called "vehicle", put ```engineStart``` inside this "vehicle" object, and then have "car" and "motorcycle" inherit this method. The "vehicle" object that we created is called the *base/super/parent*.  The "car" and "motorcycle" are reffered to as the *derived/sub/child*. The inheritance relationship between the "vehicle" base object and the "car/motorcycle" derived class is referred to as the *is-a*, so "car" *is-a* "vehicle". 
 
-
+------
 ### Prototypes are the parents of an object.
 ------
 Think of prototypes as the parents of a given object. When implementing inheritance using objects (since JavaScript only has objects rather than classes), we need to *link* the **base** to the **child**. When you do this, the base becomes the **prototype**. **The prototype is the parent of another object (i.e. the object "vehicle" is the prototype of the child "car").** Every object in JavaScript (with some exceptions) has a prototype (i.e. parent). Those objects will inherit all the members from the prototype. 
 
 It is important to note that all objects in JavaScript have a parent that inherits it's parents members EXCEPT for the root object. This root object doesnt have a parent of its own. This will be important to know for prototypical inheritance.
 
-
+------
 ### Prototypical inheritance looks up the scope chain for parent members.
 ------
 **With prototypical inheritance, when you look for a property or a method in a method, the JavaScript engine will first try to look that property or method in the object first.** If it does not exist there, it will look up the scope chain to the prototype of that object. And if it is not there, it will continue looking up and up the chain until it gets to the root object.
 
-
+------
 ### Objects ceated by a given constructor will have the same prototype members.
 ------
 **Multi-level inheritance essentially means that there is a continued inheritance of members that goes on and on until you get to the root object.** So if you create an object using a custom constructor (i.e. ``` const sportsCar = Car('Ferrari', 'vrooom'); ```), if you inspect the object you will see the prototype of the parent and so on until you get to the root object.
@@ -373,6 +377,7 @@ There may be some instances where you want to *get* something like a local varia
 
   console.log(sedan.isAutomobile());     // undefined
 ```
+------
 ### Define a method and return a private member to use it elsewhere in your code. 
 ------
 However, if you do want a way to display a private member elsewhere in your code, there are a few ways to do this. The first is to define a method and return the private member.  
@@ -394,6 +399,7 @@ However, if you do want a way to display a private member elsewhere in your code
 ```
 Note that the closure of the function of ```this.isAutomobile``` includes all the variables inside the code block (i.e. isAutomobile)as well as all the variables in the parent functions. However, this is a read-only way of doing this. A better way to do this is to use a *getter*.
 
+------
 ### Use Object.defineProperty to define getters and/or setters.
 ------
 This method takes three arguments:
@@ -401,6 +407,7 @@ This method takes three arguments:
 2. The name of the property.
 3. An object with a key/value pair. 
 
+------
 ### Getters allow you to read a private property.
 ------
 **A getter is a function that is used to read a private property inside an object.** So we first need to use the ```get``` key and set the value as a function. Since any variables are part of the closure of the function, you will be able to access it.
@@ -438,7 +445,7 @@ And if you were to see this in action with the running example of the Car object
   console.log(coupe.isAutomobile);                      // true
 
 ```
-
+------
 ### A setter will allow you to define a property from outside the object.
 ------
 **A setter allows you to set the value of the private member from OUTSIDE the object.** To do this, you simply need to add another key/value pair, this time with the key ```set``` and pass the parameter "value" to the function. Then, inside the function you 
@@ -535,6 +542,10 @@ Then you can call your factory function using the assigned variable:
     }
   }
 ```
+
+------
+### To create a new constructor, use the "new" operator
+------
 To create a car using a constructor function, it is also much the same as a factory function *except* for the inclusion of the "new" operator. When you use "new", a few things happen. First, it will create an empty object (i.e. {}). Second, it will set ```this``` to point to the new object (i.e. this.make ==> createCar). Third, it will return the object from the function.
 ```JavaScript
   const makePorsche = new createCar('Porsche', '718 GT4', 2019);
