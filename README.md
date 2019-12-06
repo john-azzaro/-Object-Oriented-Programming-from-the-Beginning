@@ -319,16 +319,19 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 
 With inheritance, you could create an object called "vehicle", put ```engineStart``` inside this "vehicle" object, and then have "car" and "motorcycle" inherit this method. The "vehicle" object that we created is called the *base/super/parent*.  The "car" and "motorcycle" are reffered to as the *derived/sub/child*. The inheritance relationship between the "vehicle" base object and the "car/motorcycle" derived class is referred to as the *is-a*, so "car" *is-a* "vehicle". 
 
-### Prototypes are the linked parents of an object.
+------
+### Prototypes are the parents of an object.
 ------
 To implement inheritance using objects (since JavaScript only has objects rather than classes), we need to *link* the **base** to the **child**. When you do this, the base becomes the **prototype**. **The prototype is the parent of another object (i.e. the object "vehicle" is the prototype of the child "car").** Every object in JavaScript (with some exceptions) has a prototype (i.e. parent). Those objects will inherit all the members from the prototype. 
 
 It is important to note that all objects in JavaScript have a parent that inherits it's parents members EXCEPT for the root object. This root object doesnt have a parent of its own. This will be important to know for prototypical inheritance.
 
+------
 ### Prototypical inheritance looks up the scope chain for parent members.
 ------
 **With prototypical inheritance, when you look for a property or a method in a method, the JavaScript engine will first try to look that property or method in the object first.** If it does not exist there, it will look up the scope chain to the prototype of that object. And if it is not there, it will continue looking up and up the chain until it gets to the root object.
 
+------
 ### Objects ceated by a given constructor will have the same prototype members.
 ------
 **Multi-level inheritance essentially means that there is a continued inheritance of members that goes on and on until you get to the root object.** So if you create an object using a custom constructor (i.e. ``` const sportsCar = Car('Ferrari', 'vrooom'); ```), if you inspect the object you will see the prototype of the parent and so on until you get to the root object.
