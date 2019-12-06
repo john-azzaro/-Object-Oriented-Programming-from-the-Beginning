@@ -260,7 +260,7 @@ To see how abstraction (and encapsulation) work, take a look at the following pr
 ```JavaScript
   "use strict";
 
-  function Car(carName, carSound) {
+  const Car = function(carName, carSound) {
     const engine = function() {                    // the "engine" the local variable is a private member.
       console.log(carSound);
     }
