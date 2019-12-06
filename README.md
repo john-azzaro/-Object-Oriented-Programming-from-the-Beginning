@@ -260,7 +260,7 @@ To see how abstraction (and encapsulation) work, take a look at the following pr
 ```JavaScript
   "use strict";
 
-  const Car = function(carName, carSound) {
+  function Car(carName, carSound) {
     const engine = function() {                    // the "engine" the local variable is a private member.
       console.log(carSound);
     }
@@ -324,6 +324,18 @@ It is important to note that all objects in JavaScript have a parent that inheri
 </dd>
 </dl>
 
+
+<br>
+
+## What are getters and setters?
+<dl>
+<dd>
+**A getter is a function that is used to read a property.** There may be some instance when you want something to be visible 
+
+
+
+</dd>
+</dl>
 
 <br>
 
