@@ -330,7 +330,7 @@ It is important to note that all objects in JavaScript have a parent that inheri
 ## What are getters and setters?
 <dl>
 <dd>
-There may be some instances where you want to *get* something like a local variable inside an object or even *set* a variable to another value. This is where *getters and setters* come in. In the example below, we have the private property ```isAutomobile``` which cannot be accessed from the outside (i.e. console.log(isAutomobile) will be unsuccessful). 
+There may be some instances where you want to *get* something like a local variable inside an object or even *set* a variable to another value. This is where *getters and setters* come in. In the example below, we have the private property ```isAutomobile``` which cannot be accessed from the outside. In other words, when you run ```console.log(isAutomobile)```, the response will be unsuccessful. 
 
 ```JavaScript
   function Car(make, model) {
@@ -343,7 +343,8 @@ There may be some instances where you want to *get* something like a local varia
 
   console.log(sedan.isAutomobile());     // undefined
 ```
-However, if you do want a way to display a private member elsewhere in your code, there are a few ways. The first is to define a method and return the private member as *read-only*.  
+### Define a method and return a private member to use it elsewhere in your code. 
+However, if you do want a way to display a private member elsewhere in your code, there are a few ways to do this. The first is to define a method and return the private member.  
 ```JavaScript
   function Car(make, model) {
     let isAutomobile = true;
@@ -360,18 +361,33 @@ However, if you do want a way to display a private member elsewhere in your code
 
   console.log(sedan.isAutomobile());     // true
 ```
-Note that the closure of the function of ```this.isAutomobile``` includes all the variables inside the code block (i.e. isAutomobile)as well as all the variables in the parent functions.
+Note that the closure of the function of ```this.isAutomobile``` includes all the variables inside the code block (i.e. isAutomobile)as well as all the variables in the parent functions. However, this is a read-only way of doing this. A better way to do this is to use a *getter*.
+
+### A getter reads a private property 
+**A getter is a function that is used to read a private property inside an object.** To do this, you need to the ```Object.defineProperty``` method. This method takes three arguments:
+1. The object you want to add the new property to. In this case, its the current object, so ```this```.
+2. The name of the property.
+3. An object with a key/value pair: ```get``` is the key and the value is a function. Since any variables are part of the closure of the function, you will be able to access it.
+```JavaScript
+  let privateMember = "I ama private member"
+  
+  Object.defineProperty(this, 'propertyName', {
+    get: function() {
+      return privateMember;
+    }
+  });
+```
 
 
 
 
-Note that with ```this.isAutomobile```, the closure of this function includes all variables inside that function (i.e. isAutomobile).
 
 
 
-To do this, you need to use a **getter**.
 
-**A getter is a function that is used to read a private property inside an object.** 
+
+
+
 
 
 This is NOT to modify the private propety, but rather the *read* the property.
