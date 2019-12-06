@@ -5,15 +5,15 @@ function Car(make, model) {
 
   this.make = make;
   this.model = model;
-  this.isAutomobile = function() {
-    return isAutomobile
-  } 
-                                                 // Object.defineProperty is used to define getters or setters
-  Object.defineProperty(this, 'isAutomobile', {      // first argument in the method is the object you want a new property to (i.e. this), second is the name of the READ-ONLY property, third is an object with the key of "get" and the value iss a function.
-    get: function() {                               // and when you call the coupe.isAutomobile, it will return whatever is in this function... in this case, it returns isAutomobile.
-      return isAutomobile;                          // "isAutomobile" is part of the closure of the function
+  // this.isAutomobile = function() {                  // method that returns a private member.
+  //   return isAutomobile
+  // } 
+   
+  Object.defineProperty(this, 'isAutomobile', {  
+    get: function() {                                  // getter
+      return isAutomobile;  
     },
-    set: function(value) {                          // if you want to set the value of this function from outside the object, 
+    set: function(value) {                             // setter
       isAutomobile = value;
     }
   });            
