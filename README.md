@@ -330,9 +330,14 @@ It is important to note that all objects in JavaScript have a parent that inheri
 ## What are getters and setters?
 <dl>
 <dd>
-There may be some instances where you want to *get* something like a local variable inside an object or even *set* a variable to another value. This is where *getters and setters* come in. 
+There may be some instances where you want to *get* something like a local variable inside an object or even *set* a variable to another value. This is where *getters and setters* come in. In the example below, we have the private property ```isAutomobile``` which cannot be accessed from the outside (i.e. console.log(isAutomobile) will result in an error). But suppose you want to display this property somewhere else in your code? To do this, you need to use a **getter**.
 
-**A getter is a function that is used to read a private property inside an object.** In the example, below
+**A getter is a function that is used to read a private property inside an object.** 
+
+
+This is NOT to modify the private propety, but rather the *read* the property.
+
+
 ```JavaScript
   function Car(make, model) {
     let isAutomobile = true;
