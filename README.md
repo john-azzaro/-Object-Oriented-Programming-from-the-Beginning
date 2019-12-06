@@ -26,14 +26,11 @@
 <dl>
 <dd>
 
-
-### Procedural programming uses a top-down approach.
-------
 Before object oriented programming, lets put it in conext with something called *procedural programming*. **Procedural programming** is where data was stored in a bunch of variables and functions that operate on the data, which can be very simple and straight forward. In other words, when building an application with procedural programming, the entire process would be coded directly to the application with the main goal in mind (i.e. top-down approach). The benefit of procedural programming is that you can focus with the main goal in mind and then indetify and solve the smaller components that solve the main goal. 
 
 Although this make it easier to start coding the application since you would essentially plan your application in a story-board way, if changes or modifications need to be made, these functions will eventually break and functions may have duplicate lines of codes (i.e. spaghetti code). To avoid this, you need to make code efficiently resuable, which is where OOP comes in.
 
-
+------
 ### Object oriented programming is a paradigm.
 ------
 **Object oriented programming is a programming paradigm that centers around objects rather than functions.** Unlike procedural programming which requires a storyboard-like plan, with object oriented programming there is a clear advantage in reliability and sustainability. With object-oriented programming (OOP), you combine a group of related variables and functions into a unit. That unit is called an "Object", variables are called "properties", and functions are called "methods". Thus, object oriented programming problems are modelled as a collection of collaborating objects that send messages to each other. Object oriented programming is used in languages such as C#, Java, Ruby, Python, JavaScript, etc. as well frameworks like Anugular as well. 
@@ -51,11 +48,12 @@ There are many benefits to using object oriented programming methods. For one, O
 
 **Objects are complex data types that bring together properties and elements into a single entity** In addition to allowing us to represent instances of a given model, objects provide an excellent way of organizing code that belongs together as well as avoiding global variables.
 
-
+------
 ### Objects are persitent.
 ------
 When an object is created, memory is automatically allocated to memory in JavaScript (and we do not need to deallocate memory) as opposed to low level languages like C++ or C, in JavaScript you do not need to allocate or de-allocate memory because the language has something called a *garbage collector* which finds variables or constants that are no longer used and deallocates memory automatically.
 
+------
 ### Objects are collections of key/value pairs.
 ------
 First, lets take a look at a basic **object literal**, which is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example:
@@ -65,6 +63,7 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
   }
   ```
 
+------
 ### Objects properties can contain a number of value types.
 ------
 **Inside the object, you can include values** such as: *strings, numbers, booleans, functions, other objects, or arrays.* In the example below, we have an object literal "car" with a number of key values pairs about that car, including its name, options, etc. 
@@ -85,6 +84,7 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
   };
 ```
 
+------
 ### Dot-notation is used to access members of an object.
 ------
 **To access the members of an object, use dot-notation,** which simply means you chain the property to the object name.
@@ -109,6 +109,7 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
 In real world applications, a client might add additional information to thier account or something like that.  We need the ability to add or even remove properties from that account object. 
 **To add or subtract properties to an object, you can use either dot-notation or bracket notation.** Since objects in JavaScript are dynamic, you can freely add or remove properties from them. 
 
+------
 ### Use dot-notation or bracket notation to add a new property.
 ------
 **To add properties to an object, you can use dot-notation (or bracket notation) and chain the new name of your property and then assign a value.** Dot-notation is better to use but bracket notation is good to use in certain circumstances, such as when you have improper identifiers like dashes 
@@ -129,6 +130,7 @@ console.log(superCar);                  // { make: 'Lamborghini', model: 'Revent
 
 ```
 
+------
 ### Use the delete prefix and the object/key name to delete a property.
 ------
 **To delete properties from an object, you use the "delete" operator**.
@@ -335,7 +337,7 @@ With inheritance, you could create an object called "vehicle", put ```engineStar
 
 ### Prototypes are the parents of an object.
 ------
-To implement inheritance using objects (since JavaScript only has objects rather than classes), we need to *link* the **base** to the **child**. When you do this, the base becomes the **prototype**. **The prototype is the parent of another object (i.e. the object "vehicle" is the prototype of the child "car").** Every object in JavaScript (with some exceptions) has a prototype (i.e. parent). Those objects will inherit all the members from the prototype. 
+Think of prototypes as the parents of a given object. When implementing inheritance using objects (since JavaScript only has objects rather than classes), we need to *link* the **base** to the **child**. When you do this, the base becomes the **prototype**. **The prototype is the parent of another object (i.e. the object "vehicle" is the prototype of the child "car").** Every object in JavaScript (with some exceptions) has a prototype (i.e. parent). Those objects will inherit all the members from the prototype. 
 
 It is important to note that all objects in JavaScript have a parent that inherits it's parents members EXCEPT for the root object. This root object doesnt have a parent of its own. This will be important to know for prototypical inheritance.
 
