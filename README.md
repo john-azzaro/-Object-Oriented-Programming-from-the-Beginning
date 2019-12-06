@@ -390,7 +390,7 @@ So in the running example of the Car object, when you try to access the ```isAut
     } 
  
     Object.defineProperty(this, 'isAutomobile', {  
-      get: function() { 
+      get: function() {                                 // getter
         return isAutomobile; 
       }
     }); 
@@ -398,40 +398,41 @@ So in the running example of the Car object, when you try to access the ```isAut
 
   const coupe = new Car("porsche", 911);
 
-  console.log(coupe.isAutomobile);            // true
+  console.log(coupe.isAutomobile);                      // true
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-This is NOT to modify the private propety, but rather the *read* the property.
-
-
+### A setter will allow you to define a property from outside the object
+**A setter allows you to set the value of the private member from OUTSIDE the object.** To do this, you simply need to add another key/value pair, this time with the key ```set``` and pass the parameter "value" to the function. Then, inside the function you 
 ```JavaScript
+  function Car(make, model) {
+    let isAutomobile = true;
+
+    this.make = make;
+    this.model = model;
+    this.isAutomobile = function() {
+      return isAutomobile
+    } 
+ 
+    Object.defineProperty(this, 'isAutomobile', {  
+      get: function() { 
+        return isAutomobile; 
+      },
+      set: function(value) {                             // setter
+      isAutomobile = value;
+      }
+    }); 
+  }
+
+  const coupe = new Car("porsche", 911);
+
+console.log(coupe.isAutomobile);                       // true (original boolean value)
+
+coupe.isAutomobile = false;                            // set the private member to "false"
+
+console.log(coupe.isAutomobile);                       // flase (updated boolean value)
 
 ```
-
-
-
-
-
-
-
-
-
-
 
 </dd>
 </dl>
