@@ -321,11 +321,11 @@ With inheritance, you could create an object called "vehicle", put ```engineStar
 
 ------
 ### Prototypes are the parents of an object.
-
+<dd>
 To implement inheritance using objects (since JavaScript only has objects rather than classes), we need to *link* the **base** to the **child**. When you do this, the base becomes the **prototype**. **The prototype is the parent of another object (i.e. the object "vehicle" is the prototype of the child "car").** Every object in JavaScript (with some exceptions) has a prototype (i.e. parent). Those objects will inherit all the members from the prototype. 
 
 It is important to note that all objects in JavaScript have a parent that inherits it's parents members EXCEPT for the root object. This root object doesnt have a parent of its own. This will be important to know for prototypical inheritance.
-
+</dd>
 ------
 ### Prototypical inheritance looks up the scope chain for parent members.
 
