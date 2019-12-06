@@ -363,11 +363,15 @@ However, if you do want a way to display a private member elsewhere in your code
 ```
 Note that the closure of the function of ```this.isAutomobile``` includes all the variables inside the code block (i.e. isAutomobile)as well as all the variables in the parent functions. However, this is a read-only way of doing this. A better way to do this is to use a *getter*.
 
-### A getter reads a private property 
-**A getter is a function that is used to read a private property inside an object.** To do this, you need to the ```Object.defineProperty``` method. This method takes three arguments:
+### Use Object.defineProperty to define getters and/or setters.
+This method takes three arguments:
 1. The object you want to add the new property to. In this case, its the current object, so ```this```.
 2. The name of the property.
-3. An object with a key/value pair: ```get``` is the key and the value is a function. Since any variables are part of the closure of the function, you will be able to access it.
+3. An object with a key/value pair. 
+
+###
+**A getter is a function that is used to read a private property inside an object.** So we first need to use the ```get``` key and set the value as a function. Since any variables are part of the closure of the function, you will be able to access it.
+
 ```JavaScript
   let privateMember = "I ama private member"
   
@@ -378,7 +382,7 @@ Note that the closure of the function of ```this.isAutomobile``` includes all th
   });
 ```
 
-So in the running example of the Car object, when you try to access the ```isAutomobile``` property, you will be successful.
+And if you were to see this in action with the running example of the Car object, when you try to access the ```isAutomobile``` property, you will be successful because you are getting the private member specified within the function
 ```JavaScript
   function Car(make, model) {
     let isAutomobile = true;
