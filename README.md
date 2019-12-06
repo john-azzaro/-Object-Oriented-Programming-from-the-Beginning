@@ -26,9 +26,17 @@
 <dl>
 <dd>
 
-**Object oriented programming is is not a language or tool but a programming paradigm that centers around objects rather than functions.** With object-oriented programming (OOP), you combine a group of related variables and functions into a unit. That unit is called an "Object", variables are called "properties", and functions are called "methods". Object oriented programming problems are modelled as a collection of collaborating objects that send messages to each other. Object oriented programming is used in languages such as C#, Java, Ruby, Python, JavaScript, etc. as well frameworks like Anugular as well. 
+------
+### Procedural programming uses a top-down approach
+Before object oriented programming, lets put it in conext with something called *procedural programming*. **Procedural programming** is where data was stored in a bunch of variables and functions that operate on the data, which can be very simple and straight forward. In other words, when building an application with procedural programming, the entire process would be coded directly to the application with the main goal in mind (i.e. top-down approach). The benefit of procedural programming is that you can focus with the main goal in mind and then indetify and solve the smaller components that solve the main goal. 
 
-Before object oriented programming there was something called "procedural programming" where data was stored in a bunch of variables and function that operate on the data, which was very simple and straight forward. But eventually these functions will break and function will have duplicate lines of codes (i.e. spaghetti code). With object-oriented programming (OOP), you combine a group of related variables and functions into a unit... an object.
+Although this make it easier to start coding the application since you would essentially plan your application in a story-board way, if changes or modifications need to be made, these functions will eventually break and functions may have duplicate lines of codes (i.e. spaghetti code). To avoid this, you need to make code efficiently resuable, which is where OOP comes in.
+
+------
+### Object oriented programming is a paradigm
+**Object oriented programming is a programming paradigm that centers around objects rather than functions.** Unlike procedural programming which requires a storyboard-like plan, with object oriented programming there is a clear advantage in reliability and sustainability. With object-oriented programming (OOP), you combine a group of related variables and functions into a unit. That unit is called an "Object", variables are called "properties", and functions are called "methods". Thus, object oriented programming problems are modelled as a collection of collaborating objects that send messages to each other. Object oriented programming is used in languages such as C#, Java, Ruby, Python, JavaScript, etc. as well frameworks like Anugular as well. 
+
+There are many benefits to using object oriented programming methods. For one, OOP code is resuable and maintainable and can be modified without having to modify anything else. Debugging is also a benefit in OOP as it can be tracked to a single point of origin and save a lot of time in development. And lastly, the logical structure of OOP allows you to diagram out a lot of your code before you code whereas procedural programming will require you to go back and tweak parts of your code.
  
 </dd>
 </dl>
@@ -41,12 +49,12 @@ Before object oriented programming there was something called "procedural progra
 
 **Objects are complex data types that bring together properties and elements into a single entity** In addition to allowing us to represent instances of a given model, objects provide an excellent way of organizing code that belongs together as well as avoiding global variables.
 
-### Objects are persitent.
 ------
+### Objects are persitent.
 When an object is created, memory is automatically allocated to memory in JavaScript (and we do not need to deallocate memory) as opposed to low level languages like C++ or C, in JavaScript you do not need to allocate or de-allocate memory because the language has something called a *garbage collector* which finds variables or constants that are no longer used and deallocates memory automatically.
 
-### Objects are collections of key/value pairs.
 ------
+### Objects are collections of key/value pairs.
 First, lets take a look at a basic **object literal**, which is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example:
 ```JavaScript
   const objName = {                // Defined variable with a name and assignment operator with curly braces.
@@ -54,8 +62,8 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
   }
   ```
 
-### Objects properties can contain a number of value types.
 ------
+### Objects properties can contain a number of value types.
 **Inside the object, you can include values** such as: *strings, numbers, booleans, functions, other objects, or arrays.* In the example below, we have an object literal "car" with a number of key values pairs about that car, including its name, options, etc. 
 ```JavaScript
   const car = {
@@ -74,8 +82,8 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
   };
 ```
 
-### Dot-notation is used to access members of an object.
 ------
+### Dot-notation is used to access members of an object.
 **To access the members of an object, use dot-notation,** which simply means you chain the property to the object name.
 ```JavaScript
   car.make                                       // honda
@@ -98,8 +106,8 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
 In real world applications, a client might add additional information to thier account or something like that.  We need the ability to add or even remove properties from that account object. 
 **To add or subtract properties to an object, you can use either dot-notation or bracket notation.** Since objects in JavaScript are dynamic, you can freely add or remove properties from them. 
 
-### Use dot-notation or bracket notation to add a new property.
 ------
+### Use dot-notation or bracket notation to add a new property.
 **To add properties to an object, you can use dot-notation (or bracket notation) and chain the new name of your property and then assign a value.** Dot-notation is better to use but bracket notation is good to use in certain circumstances, such as when you have improper identifiers like dashes 
 ```JavaScript
 const superCar = {
@@ -117,8 +125,9 @@ superCar['year'] = { year: 2012 };      // Add property using bracket notation:
 console.log(superCar);                  // { make: 'Lamborghini', model: 'Reventon', year: { year: 2012 } }
 
 ```
-### Use the delete prefix and the object/key name to delete a property.
+
 ------
+### Use the delete prefix and the object/key name to delete a property.
 **To delete properties from an object, you use the "delete" operator**.
 ```JavaScript
   delete superCar.coupe;                // { make: 'Lamborghini', year: { year: 2012 } }
@@ -207,8 +216,9 @@ The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inherita
 <dl>
 <dd>
 
-### Encapsulation.
 ------
+### Encapsulation.
+
 **Encapsulation groups variables and functions into objects.**
 
 For example, take a look at the following example as a *procedural* implementation. 
@@ -242,23 +252,24 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 
 <br>
 
-### Abstraction.
 -------
+### Abstraction.
 **The goal of abstraction is to hide details (i.e. certain members such as local variables) from the outside.** Abstraction hides all but the relevant data about an object and makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
 
 <dl>
 <dd>
 
-### Scope and closure play important parts in abstraction.
 ------
+### Scope and closure play important parts in abstraction.
+
 For example, when we create **private properties and methods** (i.e. ```engine```), you are creating local variables which are defined *inside* the object. From an object-oriented point of view, these private properties and methods are refered to as **private members** of an object. 
 
-### Scope limits the availability of members.
 ------
+### Scope limits the availability of members.
 The **scope** of those private members are limited to the containing function, object, etc. So in the example below, if there were any variables in the ```engine``` method below and the function finished executing, those variables will go out of scope (i.e. die). Then when the method is called again, it will reinitialize, be of use, then die again. The scope of these variables is *temporary*.
 
-### Closure has access to parent functions and variables.
 ------
+### Closure has access to parent functions and variables.
 In contrast to scope, **closure** determines what variables will be accessible to an inner function AND the variables defined in its parent function. For example, in the example below you have the variable ```engine```. If there were other variables inside the parent function ```Car```, they will be sustained in memory because they are part of the *closure* of the ```Car``` function.
 
 </dd>
@@ -293,8 +304,8 @@ However, the key part of abstraction is that *private members* such as the local
 
 <br>
 
-### Inheritance.
 --------
+### Inheritance.
 **Inheritance enables an object to take on the properties and methods of another object.** This in turn makes it easier to reuse code in different parts of an application and thus eliminate redundant code. 
 
 For example, if you have a variety of buttons (i.e. click-buttons, drop-downs, checkboxes, etc) that all have a few properties in common (i.e. click, focus, hidden, etc.). Instead of redefining all the properties and methods for each button, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
@@ -304,8 +315,8 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 
 <br>
 
-### Polymorphism.
 --------
+### Polymorphism.
 **Polymorphism** (meaning "many forms") is the ability of an object to perform a single action in different forms where you can call the same method of different JavaScript objects.
 
 </dd>
@@ -321,11 +332,11 @@ With inheritance, you could create an object called "vehicle", put ```engineStar
 
 ------
 ### Prototypes are the parents of an object.
-<dd>
+
 To implement inheritance using objects (since JavaScript only has objects rather than classes), we need to *link* the **base** to the **child**. When you do this, the base becomes the **prototype**. **The prototype is the parent of another object (i.e. the object "vehicle" is the prototype of the child "car").** Every object in JavaScript (with some exceptions) has a prototype (i.e. parent). Those objects will inherit all the members from the prototype. 
 
 It is important to note that all objects in JavaScript have a parent that inherits it's parents members EXCEPT for the root object. This root object doesnt have a parent of its own. This will be important to know for prototypical inheritance.
-</dd>
+
 ------
 ### Prototypical inheritance looks up the scope chain for parent members.
 

@@ -4,6 +4,7 @@ Object Oriented Programming Process Notes
 Resources
 =========
 https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/    --  Overview of Object oriented programming.
+https://neonbrand.com/website-design/procedural-programming-vs-object-oriented-programming-a-review/
 https://medium.com/learn-how-to-program/chapter-3-what-is-object-oriented-programming-d0a6ec0a7615    --  OOP overview
 https://stackify.com/oop-concept-polymorphism/   -- polymorphism
 https://medium.com/@shanikae/polymorphism-explained-simply-7294c8deeef7   --- polymorphism
@@ -14,3 +15,4 @@ https://stackify.com/oop-concept-abstraction/  -- abstraction (with java but pri
 https://www.sohamkamani.com/blog/2016/04/30/oops-in-js/  -- very good overview of abstraction and other key concepts
 https://codeburst.io/javascript-inheritance-25fe61ab9f85   -- inheritance
 https://www.tutorialsteacher.com/javascript/inheritance-in-javascript  -- inheritance
+https://www.geeksforgeeks.org/differences-between-procedural-and-object-oriented-programming/  -- procedural vs object programming
