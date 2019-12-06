@@ -419,7 +419,7 @@ So in the running example of the Car object, when you try to access the ```isAut
         return isAutomobile; 
       },
       set: function(value) {                             // setter
-      isAutomobile = value;
+        isAutomobile = value;
       }
     }); 
   }
