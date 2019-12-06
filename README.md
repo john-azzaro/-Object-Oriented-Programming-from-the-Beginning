@@ -117,7 +117,7 @@ superCar['year'] = { year: 2012 };      // Add property using bracket notation:
 console.log(superCar);                  // { make: 'Lamborghini', model: 'Reventon', year: { year: 2012 } }
 
 ```
-### Use the delete prefix and the object/key name to delete a property
+### Use the delete prefix and the object/key name to delete a property.
 ------
 **To delete properties from an object, you use the "delete" operator**.
 ```JavaScript
@@ -207,7 +207,7 @@ The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inherita
 <dl>
 <dd>
 
-### Encapsulation
+### Encapsulation.
 ------
 **Encapsulation groups variables and functions into objects.**
 
@@ -242,7 +242,7 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 
 <br>
 
-### Abstraction
+### Abstraction.
 -------
 **The goal of abstraction is to hide details (i.e. certain members such as local variables) from the outside.** Abstraction hides all but the relevant data about an object and makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
 
@@ -257,7 +257,7 @@ For example, when we create **private properties and methods** (i.e. ```engine``
 ------
 The **scope** of those private members are limited to the containing function, object, etc. So in the example below, if there were any variables in the ```engine``` method below and the function finished executing, those variables will go out of scope (i.e. die). Then when the method is called again, it will reinitialize, be of use, then die again. The scope of these variables is *temporary*.
 
-### Closure has access tp puter function variables.
+### Closure has access to parent functions and variables.
 ------
 In contrast to scope, **closure** determines what variables will be accessible to an inner function AND the variables defined in its parent function. For example, in the example below you have the variable ```engine```. If there were other variables inside the parent function ```Car```, they will be sustained in memory because they are part of the *closure* of the ```Car``` function.
 
@@ -293,7 +293,7 @@ However, the key part of abstraction is that *private members* such as the local
 
 <br>
 
-### Inheritance
+### Inheritance.
 --------
 **Inheritance enables an object to take on the properties and methods of another object.** This in turn makes it easier to reuse code in different parts of an application and thus eliminate redundant code. 
 
@@ -304,7 +304,7 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 
 <br>
 
-### Polymorphism
+### Polymorphism.
 --------
 **Polymorphism** (meaning "many forms") is the ability of an object to perform a single action in different forms where you can call the same method of different JavaScript objects.
 
@@ -383,7 +383,7 @@ This method takes three arguments:
 2. The name of the property.
 3. An object with a key/value pair. 
 
-### Getters allow you to read a private property
+### Getters allow you to read a private property.
 ------
 **A getter is a function that is used to read a private property inside an object.** So we first need to use the ```get``` key and set the value as a function. Since any variables are part of the closure of the function, you will be able to access it.
 
@@ -421,7 +421,7 @@ And if you were to see this in action with the running example of the Car object
 
 ```
 
-### A setter will allow you to define a property from outside the object
+### A setter will allow you to define a property from outside the object.
 ------
 **A setter allows you to set the value of the private member from OUTSIDE the object.** To do this, you simply need to add another key/value pair, this time with the key ```set``` and pass the parameter "value" to the function. Then, inside the function you 
 ```JavaScript
