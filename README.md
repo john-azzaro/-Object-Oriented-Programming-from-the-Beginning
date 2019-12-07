@@ -488,16 +488,32 @@ console.log(coupe.isAutomobile);                       // flase (updated boolean
 <br>
 
 ## How do you assign property descriptors?
-In JavaScript, there are times when the properties in objects have attributes attached to them. Sometimes the properties have attributes that previent a property from being enumerated. For example:
-```JavaScript
-  let car = { make: 'Honda' };
+<dd>
+<dl>
 
-  for (let key in car) {
-    console.log(key)
-  }
+In JavaScript, there are times when the properties in objects have attributes attached to them. Most of the attributes by default are true (i.e. writable, enumerable, and configurable). There are also sometimes the properties have attributes that previent a property from being enumerated. For example:
+
+------
+#### Use Object.defineProperty to set attributes for your properties
+------
+To set the attributes for your object properties, you use ```Object.defineProperty```, which is much like the method we used for getters and setters. As parameters, you first pass in the property (i.e. variable, etc.), then the name of the target property (i.e. what you want to set the property decriptor to), and then an object with any property descriptors in it which will be where the attributes of the property are.
+
+So in the example below, we can change the ability of the property to be overwritten. We can also specifify whether or not the object is enumerable.
+```JavaScript
+let car = {make: 'Porsche'};
+
+Object.defineProperty(car, 'make', {
+  writable: false                     // property descriptor will not allow overwrite.
+}) 
+
+car.make = 'Ferrari';
+
+console.log(car);                     // { make: 'Porsche' }
 ```
 
 
+</dd>
+</dl>
 
 
 
