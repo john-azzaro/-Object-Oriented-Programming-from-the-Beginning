@@ -96,118 +96,6 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
   car.seats;                                     // [ 'driver', 'passenger', 'rear' ]
 ```
 
-<br>
-
-## How do you create objects?
-There are a few ways to create objects. One of the easiest wats it to create an empty object and then add members to them. For example, you would simply need to declare a variable with empty object brackets and then assign memebrs to them.
-```JavaScript
-  const car = {};                        // create an empty object.
-
-  car.name = 'Mercedes';                 // add a member with a string value.
-  car.startIgnition = function() {       // add a member which is a method.
-    console.log('vrooooom') 
-  };
-```
-
-You can also use ```Object.create``` to create a new object.
-```JavaScript
-  const car Object.create(null);         // create an object
-
-  car.name = 'Mercedes';                 // add a member with a string value.
-  car.startIgnition = function() {       // add a member which is a method.
-    console.log('vrooooom') 
-  };
-```
-You can also create objects using using *factory functions* and *constructor functions*, which will be examined more thoroughly below.
-
-</dd>
-</dl>
-
-<br>
-
-
-## What is a factory object?
-<dl>
-<dd>
-
-**A factory functions create an individual instance of some model.** The reason we use factory functions is because if we are duplicating an object with one or more methods (has a "behavior"), it can be problematic if there become more duplicate of the same object. To avoid that issue, we use a function to create an object and return the object.
-```JavaScript
-
-  function createCar(make, model, year) {
-    return {
-      make: make,
-      model: model,
-      year: year,
-      isWorking: true,
-      startIgnition: function() {
-        console.log('vrooom vrooom');
-      }
-    };
-  }
-```
-Once you have a factory function, you can create a new car with the parameters you wish:
-``` JavaScript
-  const makeFerrari = createCar('Ferrari', '458 spider', 2015);
-```
-Then you can call your factory function using the assigned variable:
-```JavaScript
-  console.log(makeFerrari);  // { make: 'Ferrari',
-                             //   model: '458 spider',
-                             //   year: 2015,
-                             //   isWorking: true,
-                             //   startIgnition: [Function: startIgnition] 
-                             //  }
-
-  console.log(makeFerrari.startIgnition());    // vrooom vrooom
-```
-
-</dd>
-</dl>
-
-
-<br>
-
-
-## What is a constructor function?
-<dl>
-<dd>
-
-**A constructor function operates much like a factory function and creates an individual instance of some model.** However, when using the contructor function method if you forget to use 'new', it will define the 'this' property on the GLOBAL object (i.e. the window object). By convention, *the first letter of a constructor function name should be upper case*. Additionally, *we use 'this' to reference the object executing a particular peice of code.*
-```JavaScript
-  function createCar(make, model, year) {
-    this.make = make;
-    this.model = model;
-    this.year = year;
-    this.startIgnition = function() {
-      console.log('vrooom vrooom');
-    }
-  }
-```
-
-------
-#### To create a new constructor, use the "new" operator
-------
-To create a car using a constructor function, it is also much the same as a factory function *except* for the inclusion of the "new" operator. When you use "new", a few things happen. First, it will create an empty object (i.e. {}). Second, it will set ```this``` to point to the new object (i.e. this.make ==> createCar). Third, it will return the object from the function.
-```JavaScript
-  const makePorsche = new createCar('Porsche', '718 GT4', 2019);
-
-  console.log(makePorsche);   // createCar {
-                              //   make: 'Porsche',
-                              //   model: '718 GT4',
-                              //   year: 2019,
-                              //   startIgnition: [Function] 
-                              // }
-```
-
-------
-#### New constructors will inherit the attributes of the parent prototype.
-------
-It is important to note that when you create an object using a given constructor like the one above, this will have the same prototype as the parent and all the way to the root object.
-
-
-</dd>
-</dl>
-
 
 <br>
 
@@ -317,6 +205,118 @@ You can also use **Object.keys** where the method "keys" will return all the key
                                       // the key is middle and the value is Mercedes
                                       // the key is luxury and the value is Rolls Royce
 ```
+
+</dd>
+</dl>
+
+<br>
+
+## How do you create objects?
+There are a few ways to create objects. One of the easiest wats it to create an empty object and then add members to them. For example, you would simply need to declare a variable with empty object brackets and then assign memebrs to them.
+```JavaScript
+  const car = {};                        // create an empty object.
+
+  car.name = 'Mercedes';                 // add a member with a string value.
+  car.startIgnition = function() {       // add a member which is a method.
+    console.log('vrooooom') 
+  };
+```
+
+You can also use ```Object.create``` to create a new object.
+```JavaScript
+  const car Object.create(null);         // create an object
+
+  car.name = 'Mercedes';                 // add a member with a string value.
+  car.startIgnition = function() {       // add a member which is a method.
+    console.log('vrooooom') 
+  };
+```
+You can also create objects using using *factory functions* and *constructor functions*, which will be examined more thoroughly below.
+
+</dd>
+</dl>
+
+<br>
+
+
+## What is a factory object?
+<dl>
+<dd>
+
+**A factory functions create an individual instance of some model.** The reason we use factory functions is because if we are duplicating an object with one or more methods (has a "behavior"), it can be problematic if there become more duplicate of the same object. To avoid that issue, we use a function to create an object and return the object.
+```JavaScript
+
+  function createCar(make, model, year) {
+    return {
+      make: make,
+      model: model,
+      year: year,
+      isWorking: true,
+      startIgnition: function() {
+        console.log('vrooom vrooom');
+      }
+    };
+  }
+```
+Once you have a factory function, you can create a new car with the parameters you wish:
+``` JavaScript
+  const makeFerrari = createCar('Ferrari', '458 spider', 2015);
+```
+Then you can call your factory function using the assigned variable:
+```JavaScript
+  console.log(makeFerrari);  // { make: 'Ferrari',
+                             //   model: '458 spider',
+                             //   year: 2015,
+                             //   isWorking: true,
+                             //   startIgnition: [Function: startIgnition] 
+                             //  }
+
+  console.log(makeFerrari.startIgnition());    // vrooom vrooom
+```
+
+</dd>
+</dl>
+
+
+<br>
+
+
+## What is a constructor function?
+<dl>
+<dd>
+
+**A constructor function operates much like a factory function and creates an individual instance of some model.** However, when using the contructor function method if you forget to use 'new', it will define the 'this' property on the GLOBAL object (i.e. the window object). By convention, *the first letter of a constructor function name should be upper case*. Additionally, *we use 'this' to reference the object executing a particular peice of code.*
+```JavaScript
+  function createCar(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.startIgnition = function() {
+      console.log('vrooom vrooom');
+    }
+  }
+```
+
+------
+#### To create a new constructor, use the "new" operator
+------
+To create a car using a constructor function, it is also much the same as a factory function *except* for the inclusion of the "new" operator. When you use "new", a few things happen. First, it will create an empty object (i.e. {}). Second, it will set ```this``` to point to the new object (i.e. this.make ==> createCar). Third, it will return the object from the function.
+```JavaScript
+  const makePorsche = new createCar('Porsche', '718 GT4', 2019);
+
+  console.log(makePorsche);   // createCar {
+                              //   make: 'Porsche',
+                              //   model: '718 GT4',
+                              //   year: 2019,
+                              //   startIgnition: [Function] 
+                              // }
+```
+
+------
+#### New constructors will inherit the attributes of the parent prototype.
+------
+It is important to note that when you create an object using a given constructor like the one above, this will have the same prototype as the parent and all the way to the root object.
+
 
 </dd>
 </dl>
