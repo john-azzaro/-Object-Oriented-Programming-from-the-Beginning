@@ -1,21 +1,4 @@
-// "use strict";
-// let car = { make: 'Honda' };
-
-// // for (let key in car) {
-// //   console.log(key)
-// // }
-
-
-
-// // car.make = 'acura';
-
-// console.log(car);
-
-
-
-// Object.defineProperty(car, 'make', {
-//   writable: false
-// })
+"use strict";
 
 let car = {make: 'Porsche'};
 
@@ -25,4 +8,4 @@ Object.defineProperty(car, 'make', {
 
 car.make = 'Ferrari';
 
-console.log(car);
+console.log(car);                         // { make: 'Porsche' }
