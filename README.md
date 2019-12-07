@@ -26,44 +26,18 @@
 <dl>
 <dd>
 
-Think of writing code as saving data and applying functionality to that data. For example, you have a quiz (saved data) with a user score (functionality to the data) which would .
+When you are writing out many lines of code that procedurally follow one from the the other, it can quickly become difficult and unorganized. In this case, it would be useful to have a means of organizing your code. One way to do this is with *procedural programming*. 
 
+**Procedural programming** is where data was stored in a bunch of variables and functions that operate on the data, which can be very simple and straight forward. In other words, when building an application with procedural programming, the entire process would be coded directly to the application with the main goal in mind (i.e. top-down approach). The benefit of procedural programming is that you can focus with the main goal in mind and then indetify and solve the smaller components that solve the main goal. 
 
+However, although this makes it easier to start coding the application since you would essentially plan your application in a story-board way, if changes or modifications need to be made, these functions will eventually break and functions may have duplicate lines of codes (i.e. spaghetti code). To avoid this, you need to make code efficiently resuable, which is where OOP comes in.
 
-
-Before object oriented programming, lets put it in conext with something called 
-
-
-
-
-When you are writing out many lines of code that procedurally follow one from the the other, it can quickly become difficult and unorganized. In this case, it would be useful to have a means of organizing your code. One way to do this is with *procedural programming*. **Procedural programming** is where data was stored in a bunch of variables and functions that operate on the data, which can be very simple and straight forward. In other words, when building an application with procedural programming, the entire process would be coded directly to the application with the main goal in mind (i.e. top-down approach). The benefit of procedural programming is that you can focus with the main goal in mind and then indetify and solve the smaller components that solve the main goal. 
-
-However, although this make it easier to start coding the application since you would essentially plan your application in a story-board way, if changes or modifications need to be made, these functions will eventually break and functions may have duplicate lines of codes (i.e. spaghetti code). To avoid this, you need to make code efficiently resuable, which is where OOP comes in.
 ------
 #### Object oriented programming is a paradigm that helps orgainze code.
 ------
-**Object oriented programming (OOP) is a programming paradigm that centers around objects rather than functions organize code.** OOP helps organize, add/remove/render/etc. features and functionality, make it easier for other developers to figure out the code, and be preformant (i.e. efficient in terms of memory). 
+**Object oriented programming (OOP) is a programming paradigm that centers around objects rather than functions organize code.** OOP helps organize, add/remove/render/etc. features and functionality, reliability, makes code reusable and maintainable as well as makes it easier for other developers to figure out the code, and be preformant (i.e. efficient in terms of memory). Additionally, debugging is also a benefit in OOP as it can be tracked to a single point of origin and save a lot of time in development. And lastly, the logical structure of OOP allows you to diagram out a lot of your code before you code whereas procedural programming will require you to go back and tweak parts of your code.
 
-Think of writing code as saving data and applying functionality to that data. For example, in a quiz application you have saved data (questions, answers, etc.) and have applied functionality to that data (chnage user score, render score, etc.). With OOP, you have the ability to bundle the approprate data (i.e. "Joe Smith" and "Score: 5") with all the functionality you could have applied to that data. When you do this, all the performance is in one convienent spot rather than spread out over the entire space of your app.js file.
-
-
-
-
-
-There are a few advantages to implementing the OOP paradigm in your application. First, you can easily add features and functionality to your applications. For example, 
-
-Unlike procedural programming which requires a storyboard-like plan, with object oriented programming there is a clear advantages.  
-
-
- in reliability and sustainability. With object-oriented programming (OOP), you combine a group of related variables and functions into a unit. That unit is called an "Object", variables are called "properties", and functions are called "methods". Thus, object oriented programming problems are modelled as a collection of collaborating objects that send messages to each other. Object oriented programming is used in languages such as C#, Java, Ruby, Python, JavaScript, etc. as well frameworks like Anugular as well. 
-
-There are many benefits to using object oriented programming methods. For one, OOP code is resuable and maintainable and can be modified without having to modify anything else. Debugging is also a benefit in OOP as it can be tracked to a single point of origin and save a lot of time in development. And lastly, the logical structure of OOP allows you to diagram out a lot of your code before you code whereas procedural programming will require you to go back and tweak parts of your code.
- 
-
-
-
-
-
+Think of writing code as saving data and applying functionality to that data. For example, in a quiz application you have saved data (questions, answers, etc.) and have applied functionality to that data (change user score, render score, etc.). With OOP, you have the ability to bundle the approprate data (i.e. "Joe Smith" and "Score: 5") with all the functionality you could have applied to that data. When you do this, all the performance is in one convienent spot rather than spread out over the entire space of your app.js file. 
 
 </dd>
 </dl>
