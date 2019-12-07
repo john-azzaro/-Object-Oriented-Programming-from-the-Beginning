@@ -7,10 +7,13 @@
 * [What is an object?](#What-is-an-object)
 * [How do you add or remove properties to an object?](#How-do-you-add-or-remove-properties-to-an-object)
 * [How do you enumerate over the properties of an object?](#How-do-you-enumerate-over-the-properties-of-an-object)
-* [What are the four core concepts of Object Oriented Programming?](#What-are-the-four-core-concepts-of-Object-Oriented-Programming)
-* [What are prototypes and prototypical inheritance?](#What-are-prototypes-and-prototypical-inheritance)
+* [How do you create an object?](#How-do-you-create-an-object)
 * [What is a factory object?](#What-is-a-factory-object)
 * [What is a constructor function?](#What-is-a-constructor-function)
+* [What are the four core concepts of Object Oriented Programming?](#What-are-the-four-core-concepts-of-Object-Oriented-Programming)
+* [What are prototypes and prototypical inheritance?](#What-are-prototypes-and-prototypical-inheritance)
+* [What are getters and setters?](#What-are-getters-and-setters)
+* [How do you assign property descriptors?](#How-do-you-assign-property-descriptors)
 * [](#)
 * [](#)
 
@@ -28,15 +31,21 @@
 
 When you are writing out many lines of code that procedurally follow one from the the other, it can quickly become difficult and unorganized. In this case, it would be useful to have a means of organizing your code. One way to do this is with *procedural programming*. 
 
+------
+#### Procedural programming is straightforward, but easily confusing in complex applications
+------
 **Procedural programming is where data was stored in a bunch of variables and functions that operate on the data.** This means procedural programming can be very simple and straight forward. In other words, when building an application with procedural programming, the entire process would be coded directly to the application with the main goal in mind (i.e. top-down approach). The benefit of procedural programming is that you can focus with the main goal in mind and then indetify and solve the smaller components that solve the main goal. 
 
-**However, procedural programming can get messy very quickly** although this makes it easier to start coding the application since you would essentially plan your application in a story-board way, if changes or modifications need to be made, these functions will eventually break and functions may have duplicate lines of codes (i.e. spaghetti code). To avoid this, you need to make code efficiently resuable, which is where OOP comes in.
+**However, procedural programming can get messy very quickly.** Although procedural programming makes it easier to start coding the application since you would essentially plan your application in a story-board way, if changes or modifications need to be made, these functions will eventually break and functions may have duplicate lines of codes (i.e. spaghetti code). To avoid this, you need to make code efficiently resuable, which is where OOP comes in.
 
 ------
 #### Object oriented programming is a paradigm that helps orgainze code.
 ------
 **Object oriented programming (OOP) is a programming paradigm** OOP helps organize, add/remove/render/etc. features and functionality, reliability, makes code reusable and maintainable as well as makes it easier for other developers to figure out the code, and be preformant (i.e. efficient in terms of memory). Additionally, debugging is also a benefit in OOP as it can be tracked to a single point of origin and save a lot of time in development. And lastly, the logical structure of OOP allows you to diagram out a lot of your code before you code whereas procedural programming will require you to go back and tweak parts of your code.
 
+------
+#### The goal of OOP is to bundle relevant functionality with relevant data
+------
 **Think of writing code for OOP as saving data and applying functionality to that data.** For example, in a quiz application you have saved data (questions, answers, etc.) and have applied functionality to that data (change user score, render score, etc.). With OOP, you have the ability to bundle the approprate data (i.e. "Joe Smith" and "Score: 5") with all the functionality you could have applied to that data. When you do this, all the performance is in one convienent spot rather than spread out over the entire space of your app.js file. 
 
 </dd>
@@ -51,6 +60,8 @@ When you are writing out many lines of code that procedurally follow one from th
 **An object stores properties and functions with thier associated data.** In other words, objects are complex data types that bring together properties and elements into a single entity that helps organize code that belongs together as well as avoiding global variables. 
 
 **A key benefit of objects is that they stay in memory.** When an object is created, memory is automatically allocated to memory in JavaScript (and we do not need to deallocate memory) as opposed to low level languages like C++ or C, in JavaScript you do not need to allocate or de-allocate memory because the language has something called a *garbage collector* which finds variables or constants that are no longer used and deallocates memory automatically.
+
+So what are some of the key features of objects?
 
 ------
 #### Objects are collections of key/value pairs.
@@ -115,15 +126,15 @@ const superCar = {
   make: "Lamborghini",
   model: "Reventon"
 };
-                                        // Original object:
-console.log(superCar);                  // { make: 'Lamborghini', model: 'Reventon' }
+                                    // Original object:
+console.log(superCar);              // { make: 'Lamborghini', model: 'Reventon' }
 
-superCar.year = { year: 2015 };         // Add property using dot-notation:
-console.log(superCar);                  // { make: 'Lamborghini', model: 'Reventon', year: { year: 2015 } }
+superCar.year = { year: 2015 };     // Add property using dot-notation:
+console.log(superCar);              // { make: 'Lamborghini', model: 'Reventon', year: { year: 2015 } }
 
 
-superCar['year'] = { year: 2012 };      // Add property using bracket notation:
-console.log(superCar);                  // { make: 'Lamborghini', model: 'Reventon', year: { year: 2012 } }
+superCar['year'] = { year: 2012 };  // Add property using bracket notation:
+console.log(superCar);              // { make: 'Lamborghini', model: 'Reventon', year: { year: 2012 } }
 
 ```
 
@@ -211,8 +222,8 @@ You can also use **Object.keys** where the method "keys" will return all the key
 
 <br>
 
-## How do you create objects?
-There are a few ways to create objects. One of the easiest wats it to create an empty object and then add members to them. For example, you would simply need to declare a variable with empty object brackets and then assign memebrs to them.
+## How do you create an object?
+**One of the easiest wats it to create an empty object and then add members to them.** For example, you would simply need to declare a variable with empty object brackets and then assign memebrs to them.
 ```JavaScript
   const car = {};                        // create an empty object.
 
@@ -222,7 +233,7 @@ There are a few ways to create objects. One of the easiest wats it to create an 
   };
 ```
 
-You can also use ```Object.create``` to create a new object.
+**You can also use ```Object.create``` to create a new object.**
 ```JavaScript
   const car Object.create(null);         // create an object
 
@@ -231,7 +242,7 @@ You can also use ```Object.create``` to create a new object.
     console.log('vrooooom') 
   };
 ```
-You can also create objects using using *factory functions* and *constructor functions*, which will be examined more thoroughly below.
+You can also create objects using using *factory functions* and *constructor functions*, which will be examined more thoroughly in the next question section.
 
 </dd>
 </dl>
