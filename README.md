@@ -484,6 +484,24 @@ console.log(coupe.isAutomobile);                       // flase (updated boolean
 </dd>
 </dl>
 
+
+<br>
+
+## How do you assign property descriptors?
+In JavaScript, there are times when the properties in objects have attributes attached to them. Sometimes the properties have attributes that previent a property from being enumerated. For example:
+```JavaScript
+  let car = { make: 'Honda' };
+
+  for (let key in car) {
+    console.log(key)
+  }
+```
+
+
+
+
+
+
 <br>
 
 
@@ -551,6 +569,7 @@ Then you can call your factory function using the assigned variable:
 To create a car using a constructor function, it is also much the same as a factory function *except* for the inclusion of the "new" operator. When you use "new", a few things happen. First, it will create an empty object (i.e. {}). Second, it will set ```this``` to point to the new object (i.e. this.make ==> createCar). Third, it will return the object from the function.
 ```JavaScript
   const makePorsche = new createCar('Porsche', '718 GT4', 2019);
+
   console.log(makePorsche);   // createCar {
                               //   make: 'Porsche',
                               //   model: '718 GT4',
