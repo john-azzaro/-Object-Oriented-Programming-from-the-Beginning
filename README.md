@@ -265,15 +265,17 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 <dl>
 <dd>
 
-
+------
 #### Scope and closure play important parts in abstraction.
 ------
 For example, when we create **private properties and methods** (i.e. ```engine```), you are creating local variables which are defined *inside* the object. From an object-oriented point of view, these private properties and methods are refered to as **private members** of an object. 
 
+------
 #### Scope limits the availability of members.
 ------
 The **scope** of those private members are limited to the containing function, object, etc. So in the example below, if there were any variables in the ```engine``` method below and the function finished executing, those variables will go out of scope (i.e. die). Then when the method is called again, it will reinitialize, be of use, then die again. The scope of these variables is *temporary*.
 
+------
 #### Closure has access to parent functions and variables.
 ------
 In contrast to scope, **closure** determines what variables will be accessible to an inner function AND the variables defined in its parent function. For example, in the example below you have the variable ```engine```. If there were other variables inside the parent function ```Car```, they will be sustained in memory because they are part of the *closure* of the ```Car``` function.
@@ -549,9 +551,6 @@ Then you can call your factory function using the assigned variable:
 To create a car using a constructor function, it is also much the same as a factory function *except* for the inclusion of the "new" operator. When you use "new", a few things happen. First, it will create an empty object (i.e. {}). Second, it will set ```this``` to point to the new object (i.e. this.make ==> createCar). Third, it will return the object from the function.
 ```JavaScript
   const makePorsche = new createCar('Porsche', '718 GT4', 2019);
-```
-Then when you call the constructor function, you will get the following. 
-```JavaScript
   console.log(makePorsche);   // createCar {
                               //   make: 'Porsche',
                               //   model: '718 GT4',
@@ -559,6 +558,12 @@ Then when you call the constructor function, you will get the following.
                               //   startIgnition: [Function] 
                               // }
 ```
+
+------
+#### New constructors will inherit the attributes of the parent prototype.
+------
+It is important to note that when you create an object using a given constructor like the one above, this will have the same prototype as the parent and all the way to the root object.
+
 
 </dd>
 </dl>
