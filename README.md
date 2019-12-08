@@ -32,7 +32,7 @@
 When you are writing out many lines of code that procedurally follow one from the the other, it can quickly become difficult and unorganized. In this case, it would be useful to have a means of organizing your code. One way to do this is with *procedural programming*. 
 
 ------
-### Procedural programming is straightforward, but easily confusing in complex applications
+### Procedural programming is initially intuitive, but easily confusing in complex applications.
 ------
 **Procedural programming is where data was stored in a bunch of variables and functions that operate on the data.** This means procedural programming can be very simple and straight forward. In other words, when building an application with procedural programming, the entire process would be coded directly to the application with the main goal in mind (i.e. top-down approach). The benefit of procedural programming is that you can focus with the main goal in mind and then indetify and solve the smaller components that solve the main goal. 
 
@@ -458,12 +458,9 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 <dl>
 <dd>
 
-With inheritance, you could create an object called "vehicle", put ```engineStart``` inside this "vehicle" object, and then have "car" and "motorcycle" inherit this method. The "vehicle" object that we created is called the *base/super/parent*.  The "car" and "motorcycle" are reffered to as the *derived/sub/child*. The inheritance relationship between the "vehicle" base object and the "car/motorcycle" derived class is referred to as the *is-a*, so "car" *is-a* "vehicle". 
+**Every object in JavaScript has a prototype (i.e. parent).** Think of prototypes as the parents of a given object. When implementing inheritance using objects (since JavaScript only has objects rather than classes), we need to *link* the **base** to the **child**. When you do this, the base becomes the **prototype**. **The prototype is the parent of another object (i.e. the object "vehicle" is the prototype of the child "car").** Every object in JavaScript (with some exceptions) has a prototype (i.e. parent). Those objects will inherit all the members from the prototype. 
 
-------
-#### Prototypes are the parents of an object.
-------
-Think of prototypes as the parents of a given object. When implementing inheritance using objects (since JavaScript only has objects rather than classes), we need to *link* the **base** to the **child**. When you do this, the base becomes the **prototype**. **The prototype is the parent of another object (i.e. the object "vehicle" is the prototype of the child "car").** Every object in JavaScript (with some exceptions) has a prototype (i.e. parent). Those objects will inherit all the members from the prototype. 
+For example, you could create an object called "vehicle", put ```engineStart``` inside this "vehicle" object, and then have "car" and "motorcycle" inherit this method. The "vehicle" object that we created is called the *base/super/parent*.  The "car" and "motorcycle" are reffered to as the *derived/sub/child*. The inheritance relationship between the "vehicle" base object and the "car/motorcycle" derived class is referred to as the *is-a*, so "car" *is-a* "vehicle". 
 
 It is important to note that all objects in JavaScript have a parent that inherits it's parents members EXCEPT for the root object. This root object doesnt have a parent of its own. This will be important to know for prototypical inheritance.
 
@@ -480,6 +477,31 @@ It is important to note that all objects in JavaScript have a parent that inheri
 </dd>
 </dl>
 
+<br>
+
+## What are instance members and prototype members?
+<dl>
+<dd>
+
+
+
+
+```JavaScript
+  function Car(make, model) {
+    this.make = make;
+    this.model = model;
+    this.ignition = function() {
+      console.log('vrooom');
+    }
+  }
+
+  const germanCar = new Car('Porsche', '911 Carrera');
+  const italianCar = new Car('Ferrari', '458 italia');
+```
+
+
+</dd>
+</dl>
 
 <br>
 
