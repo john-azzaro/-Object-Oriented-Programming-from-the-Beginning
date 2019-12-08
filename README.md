@@ -335,7 +335,7 @@ It is important to note that when you create an object using a given constructor
 
 <br>
 
-# What are the four core concepts of Object Oriented Programming?
+# What are the four core concepts of OOP?
 The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inheritance**, and **Polymorphism**.
 
 <dl>
@@ -483,6 +483,8 @@ It is important to note that all objects in JavaScript have a parent that inheri
 <dl>
 <dd>
 
+**An instance member is one a property or method inside the the object** whereas **a prototype member is one that is **
+
 In some cases, you may be using your constructor function to create hundreds or even thousands of objects. For each of those object, you will have the same information copied over and over again. For example, in the Car constructor function below, you could have potentially thousands of copies of the ```ignition``` method. This will waste a LOT of memory.
 ```JavaScript
   function Car(make, model) {
@@ -498,14 +500,28 @@ In some cases, you may be using your constructor function to create hundreds or 
   ...
   ...
   ...
+
+  console.log(germanCar);       // Car { make: 'Porsche', model: '911 Carrera', ignition: [Function] }
 ```
 However, with prototypical inheritance, when you try to access a propety or method the JavaScript engine first looks at the object itself. If that property or method is not there, it will look at the prototype (i.e. parent) of that object on and on until you get to the root object. Understanding this, you have the ability to take a property or method OUT of the constructor function and create a SINGLE instance of something like the ignition method. This way, you have a single instance of the Car constructor and the function.
 
 ------
 ### Use .prototype to create a single instance of a property or method 
 ------
-To create a single instance of a property or method and coserver valuable memory, you use the ```.prototype``` method. To do this, you would of course need to have your constructor function and the property or method you want to convert into a single method
+To create a single instance of a property or method and coserver valuable memory, you use the ```.prototype``` method. To do this, you would of course need to have your constructor function and the property or method you want to convert into a single method. Then, you create a prototype method and add the the property or method to that! You can even reference other members.
+```JavaScript
+  function Car(make, model) {
+    this.make = make;
+    this.model = model;
+    }
+  }
 
+  Car.prototype.ignition = function() {
+    console.log('vrooom');
+  }
+
+  console.log(germanCar.ignition());       // vrooom
+```
 
 
 
