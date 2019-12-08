@@ -483,9 +483,7 @@ It is important to note that all objects in JavaScript have a parent that inheri
 <dl>
 <dd>
 
-
-
-
+In some cases, you may be using your constructor function to create hundreds or even thousands of objects. For each of those object, you will have the same information copied over and over again. For example, in the Car constructor function below, you could have potentially thousands of copies of the ```ignition``` method. This will waste a LOT of memory.
 ```JavaScript
   function Car(make, model) {
     this.make = make;
@@ -497,7 +495,18 @@ It is important to note that all objects in JavaScript have a parent that inheri
 
   const germanCar = new Car('Porsche', '911 Carrera');
   const italianCar = new Car('Ferrari', '458 italia');
+  ...
+  ...
+  ...
 ```
+However, with prototypical inheritance, when you try to access a propety or method the JavaScript engine first looks at the object itself. If that property or method is not there, it will look at the prototype (i.e. parent) of that object on and on until you get to the root object. Understanding this, you have the ability to take a property or method OUT of the constructor function and create a SINGLE instance of something like the ignition method. This way, you have a single instance of the Car constructor and the function.
+
+------
+#### Use .prototype to create a single instance of a property or method 
+------
+To create a single instance of a property or method and coserver valuable memory, you use the ```.prototype``` method. To do this, you would of course need to have your constructor function and the property or method you want to convert into a single method
+
+
 
 
 </dd>
