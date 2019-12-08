@@ -20,12 +20,12 @@
 
 <br>
 
-## What is the Object Oriented Programming Study?
+# What is the Object Oriented Programming Study?
 
 
 <br>
 
-## What is Object Oriented Programming?
+# What is Object Oriented Programming?
 <dl>
 <dd>
 
@@ -53,7 +53,7 @@ When you are writing out many lines of code that procedurally follow one from th
 
 <br>
 
-## What is an object?
+# What is an object?
 <dl>
 <dd>
 
@@ -64,7 +64,7 @@ When you are writing out many lines of code that procedurally follow one from th
 So what are some of the key features of objects?
 
 ------
-#### Objects are collections of key/value pairs.
+### Objects are collections of key/value pairs.
 ------
 First, lets take a look at a basic **object literal**, which is a comma-seperated list of name value pairs wrapped in curly braces. Here's an example:
 ```JavaScript
@@ -74,7 +74,7 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
   ```
 
 ------
-#### Objects properties can contain a number of value types.
+### Objects properties can contain a number of value types.
 ------
 **Inside the object, you can include values** such as: *strings, numbers, booleans, functions, other objects, or arrays.* In the example below, we have an object literal "car" with a number of key values pairs about that car, including its name, options, etc. 
 ```JavaScript
@@ -95,7 +95,7 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
 ```
 
 ------
-#### Dot-notation is used to access members of an object.
+### Dot-notation is used to access members of an object.
 ------
 **To access the members of an object, use dot-notation,** which simply means you chain the property to the object name. This is extremely powerful and much simpler that using procedural methods.
 ```JavaScript
@@ -110,7 +110,7 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
 
 <br>
 
-## How do you add or remove properties to an object?
+# How do you add or remove properties to an object?
 <dl>
 <dd>
 
@@ -118,7 +118,7 @@ In real world applications, a client might add additional information to thier a
 **To add or subtract properties to an object, you can use either dot-notation or bracket notation.** Since objects in JavaScript are dynamic, you can freely add or remove properties from them. 
 
 ------
-#### Use dot-notation or bracket notation to add a new property.
+### Use dot-notation or bracket notation to add a new property.
 ------
 **To add properties to an object, you can use dot-notation (or bracket notation) and chain the new name of your property and then assign a value.** Dot-notation is better to use but bracket notation is good to use in certain circumstances, such as when you have improper identifiers like dashes 
 ```JavaScript
@@ -139,7 +139,7 @@ console.log(superCar);              // { make: 'Lamborghini', model: 'Reventon',
 ```
 
 ------
-#### Use the delete prefix and the object/key name to delete a property.
+### Use the delete prefix and the object/key name to delete a property.
 ------
 **To delete properties from an object, you use the "delete" operator**.
 ```JavaScript
@@ -152,7 +152,7 @@ console.log(superCar);              // { make: 'Lamborghini', model: 'Reventon',
 
 <br>
 
-## How do you enumerate over the properties of an object?
+# How do you enumerate over the properties of an object?
 <dl>
 <dd>
 
@@ -222,7 +222,7 @@ You can also use **Object.keys** where the method "keys" will return all the key
 
 <br>
 
-## How do you create an object?
+# How do you create an object?
 **One of the easiest wats it to create an empty object and then add members to them.** For example, you would simply need to declare a variable with empty object brackets and then assign memebrs to them.
 ```JavaScript
   const car = {};                        // create an empty object.
@@ -250,7 +250,7 @@ You can also create objects using using *factory functions* and *constructor fun
 <br>
 
 
-## What is a factory object?
+# What is a factory object?
 <dl>
 <dd>
 
@@ -292,7 +292,7 @@ Then you can call your factory function using the assigned variable:
 <br>
 
 
-## What is a constructor function?
+# What is a constructor function?
 <dl>
 <dd>
 
@@ -309,7 +309,7 @@ Then you can call your factory function using the assigned variable:
 ```
 
 ------
-#### To create a new constructor, use the "new" operator
+### To create a new constructor, use the "new" operator
 ------
 To create a car using a constructor function, it is also much the same as a factory function *except* for the inclusion of the "new" operator. When you use "new", a few things happen. First, it will create an empty object (i.e. {}). Second, it will set ```this``` to point to the new object (i.e. this.make ==> createCar). Third, it will return the object from the function.
 ```JavaScript
@@ -324,7 +324,7 @@ To create a car using a constructor function, it is also much the same as a fact
 ```
 
 ------
-#### New constructors will inherit the attributes of the parent prototype.
+### New constructors will inherit the attributes of the parent prototype.
 ------
 It is important to note that when you create an object using a given constructor like the one above, this will have the same prototype as the parent and all the way to the root object.
 
@@ -335,14 +335,14 @@ It is important to note that when you create an object using a given constructor
 
 <br>
 
-## What are the four core concepts of Object Oriented Programming?
+# What are the four core concepts of Object Oriented Programming?
 The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inheritance**, and **Polymorphism**.
 
 <dl>
 <dd>
 
 ------
-#### Encapsulation.
+### Encapsulation.
 ------
 **Encapsulation groups variables and functions into objects.**
 
@@ -378,7 +378,7 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 <br>
 
 ------
-#### Abstraction.
+### Abstraction.
 ------
 **The goal of abstraction is to hide details (i.e. certain members such as local variables) from the outside.** Abstraction hides all but the relevant data about an object and makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
 
@@ -386,17 +386,17 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 <dd>
 
 ------
-#### Scope and closure play important parts in abstraction.
+### Scope and closure play important parts in abstraction.
 ------
 For example, when we create **private properties and methods** (i.e. ```engine```), you are creating local variables which are defined *inside* the object. From an object-oriented point of view, these private properties and methods are refered to as **private members** of an object. 
 
 ------
-#### Scope limits the availability of members.
+### Scope limits the availability of members.
 ------
 The **scope** of those private members are limited to the containing function, object, etc. So in the example below, if there were any variables in the ```engine``` method below and the function finished executing, those variables will go out of scope (i.e. die). Then when the method is called again, it will reinitialize, be of use, then die again. The scope of these variables is *temporary*.
 
 ------
-#### Closure has access to parent functions and variables.
+### Closure has access to parent functions and variables.
 ------
 In contrast to scope, **closure** determines what variables will be accessible to an inner function AND the variables defined in its parent function. For example, in the example below you have the variable ```engine```. If there were other variables inside the parent function ```Car```, they will be sustained in memory because they are part of the *closure* of the ```Car``` function.
 
@@ -433,7 +433,7 @@ However, the key part of abstraction is that *private members* such as the local
 <br>
 
 ------
-#### Inheritance.
+### Inheritance.
 ------
 **Inheritance enables an object to take on the properties and methods of another object.** This in turn makes it easier to reuse code in different parts of an application and thus eliminate redundant code. 
 
@@ -445,7 +445,7 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 <br>
 
 ------
-#### Polymorphism.
+### Polymorphism.
 ------
 **Polymorphism** (meaning "many forms") is the ability of an object to perform a single action in different forms where you can call the same method of different JavaScript objects.
 
@@ -454,7 +454,7 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 
 <br>
 
-## What are prototypes and prototypical inheritance?
+# What are prototypes and prototypical inheritance?
 <dl>
 <dd>
 
@@ -465,12 +465,12 @@ For example, you could create an object called "vehicle", put ```engineStart``` 
 It is important to note that all objects in JavaScript have a parent that inherits it's parents members EXCEPT for the root object. This root object doesnt have a parent of its own. This will be important to know for prototypical inheritance.
 
 ------
-#### Prototypical inheritance looks up the scope chain for parent members.
+### Prototypical inheritance looks up the scope chain for parent members.
 ------
 **With prototypical inheritance, when you look for a property or a method in a method, the JavaScript engine will first try to look that property or method in the object first.** If it does not exist there, it will look up the scope chain to the prototype of that object. And if it is not there, it will continue looking up and up the chain until it gets to the root object.
 
 ------
-#### Objects ceated by a given constructor will have the same prototype members.
+### Objects ceated by a given constructor will have the same prototype members.
 ------
 **Multi-level inheritance essentially means that there is a continued inheritance of members that goes on and on until you get to the root object.** So if you create an object using a custom constructor (i.e. ``` const sportsCar = Car('Ferrari', 'vrooom'); ```), if you inspect the object you will see the prototype of the parent and so on until you get to the root object.
 
@@ -479,7 +479,7 @@ It is important to note that all objects in JavaScript have a parent that inheri
 
 <br>
 
-## What are instance members and prototype members?
+# What are instance members and prototype members?
 <dl>
 <dd>
 
@@ -502,7 +502,7 @@ In some cases, you may be using your constructor function to create hundreds or 
 However, with prototypical inheritance, when you try to access a propety or method the JavaScript engine first looks at the object itself. If that property or method is not there, it will look at the prototype (i.e. parent) of that object on and on until you get to the root object. Understanding this, you have the ability to take a property or method OUT of the constructor function and create a SINGLE instance of something like the ignition method. This way, you have a single instance of the Car constructor and the function.
 
 ------
-#### Use .prototype to create a single instance of a property or method 
+### Use .prototype to create a single instance of a property or method 
 ------
 To create a single instance of a property or method and coserver valuable memory, you use the ```.prototype``` method. To do this, you would of course need to have your constructor function and the property or method you want to convert into a single method
 
@@ -514,7 +514,7 @@ To create a single instance of a property or method and coserver valuable memory
 
 <br>
 
-## What are getters and setters?
+# What are getters and setters?
 <dl>
 <dd>
 There may be some instances where you want to *get* something like a local variable inside an object or even *set* a variable to another value. This is where *getters and setters* come in. In the example below, we have the private property ```isAutomobile``` which cannot be accessed from the outside. In other words, when you run ```console.log(isAutomobile)```, the response will be unsuccessful. 
@@ -531,7 +531,7 @@ There may be some instances where you want to *get* something like a local varia
   console.log(sedan.isAutomobile());     // undefined
 ```
 ------
-#### Define a method and return a private member to use it elsewhere in your code. 
+### Define a method and return a private member to use it elsewhere in your code. 
 ------
 However, if you do want a way to display a private member elsewhere in your code, there are a few ways to do this. The first is to define a method and return the private member.  
 ```JavaScript
@@ -553,7 +553,7 @@ However, if you do want a way to display a private member elsewhere in your code
 Note that the closure of the function of ```this.isAutomobile``` includes all the variables inside the code block (i.e. isAutomobile)as well as all the variables in the parent functions. However, this is a read-only way of doing this. A better way to do this is to use a *getter*.
 
 ------
-#### Use Object.defineProperty to define getters and/or setters.
+### Use Object.defineProperty to define getters and/or setters.
 ------
 This method takes three arguments:
 1. The object you want to add the new property to. In this case, its the current object, so ```this```.
@@ -561,7 +561,7 @@ This method takes three arguments:
 3. An object with a key/value pair. 
 
 ------
-#### Getters allow you to read a private property.
+### Getters allow you to read a private property.
 ------
 **A getter is a function that is used to read a private property inside an object.** So we first need to use the ```get``` key and set the value as a function. Since any variables are part of the closure of the function, you will be able to access it.
 
@@ -599,7 +599,7 @@ And if you were to see this in action with the running example of the Car object
 
 ```
 ------
-#### A setter will allow you to define a property from outside the object.
+### A setter will allow you to define a property from outside the object.
 ------
 **A setter allows you to set the value of the private member from OUTSIDE the object.** To do this, you simply need to add another key/value pair, this time with the key ```set``` and pass the parameter "value" to the function. Then, inside the function you 
 ```JavaScript
@@ -638,14 +638,14 @@ console.log(coupe.isAutomobile);                       // flase (updated boolean
 
 <br>
 
-## How do you assign property descriptors?
+# How do you assign property descriptors?
 <dd>
 <dl>
 
 In JavaScript, there are times when the properties in objects have attributes attached to them. Most of the attributes by default are true (i.e. writable, enumerable, and configurable). There are also sometimes the properties have attributes that previent a property from being enumerated. For example:
 
 ------
-#### Use Object.defineProperty to set attributes for your properties
+### Use Object.defineProperty to set attributes for your properties
 ------
 To set the attributes for your object properties, you use ```Object.defineProperty```, which is much like the method we used for getters and setters. As parameters, you first pass in the property (i.e. variable, etc.), then the name of the target property (i.e. what you want to set the property decriptor to), and then an object with any property descriptors in it which will be where the attributes of the property are.
 
