@@ -519,16 +519,20 @@ However, with prototypical inheritance, when you try to access a propety or meth
 ### Use .prototype to create a single instance of a property or method 
 ------
 To create a single instance of a property or method and coserver valuable memory, you use the ```.prototype``` method. To do this, you would of course need to have your constructor function and the property or method you want to convert into a single method. Then, you create a prototype method and add the the property or method to that! You can even reference other members.
+
+Also note that when you do this, you are modifying the prototype before you create the object 
 ```JavaScript
   function Car(make, model) {
     this.make = make;
     this.model = model;
-    }
   }
 
   Car.prototype.ignition = function() {
     console.log('vrooom');
   }
+
+  const germanCar = new Car('Porsche', '911 Carrera');
+  const italianCar = new Car('Ferrari', '458 italia');
 
   console.log(germanCar.ignition());       // vrooom
 ```
