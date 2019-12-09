@@ -543,7 +543,7 @@ Also note that when you do this, you are modifying the prototype before you crea
 
 <br>
 
-## How do you iterate over prototype and instance members?
+# How do you iterate over prototype and instance members?
 <dl>
 <dd>
 
