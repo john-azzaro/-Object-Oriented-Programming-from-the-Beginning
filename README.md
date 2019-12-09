@@ -533,10 +533,24 @@ To create a single instance of a property or method and coserver valuable memory
   console.log(germanCar.ignition());       // vrooom
 ```
 
+</dd>
+</dl>
+
+
+<br>
+
+## How do you iterate over prototype and instance members?
+<dl>
+<dd>
+
 
 
 </dd>
 </dl>
+
+
+
+
 
 <br>
 
