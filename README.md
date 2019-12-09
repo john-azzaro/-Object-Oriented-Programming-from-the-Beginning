@@ -547,6 +547,15 @@ Also note that when you do this, you are modifying the prototype before you crea
 <dl>
 <dd>
 
+If you want to iterate over prototype or instance members, you need to using the **for-in loop**. If you were to use ```Object.keys```, you would unfortunately only return instance members so it is not a viable solution.
+```JavaScript
+  for (let keys in germanCar) {
+    console.log(keys);             // make
+  }                                // model
+                                  // ignition   <= instance method returned!
+```
+
+
 
 
 </dd>
