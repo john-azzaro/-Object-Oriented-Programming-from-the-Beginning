@@ -12,6 +12,8 @@
 * [What is a constructor function?](#What-is-a-constructor-function)
 * [What are the four core concepts of Object Oriented Programming?](#What-are-the-four-core-concepts-of-Object-Oriented-Programming)
 * [What are prototypes and prototypical inheritance?](#What-are-prototypes-and-prototypical-inheritance)
+* [What are instance members and prototype members?](#What-are-instance-members-and-prototype-members)
+* [How do you iterate over prototype and instance members?](#How-do-you-iterate-over-prototype-and-instance-members)
 * [What are getters and setters?](#What-are-getters-and-setters)
 * [How do you assign property descriptors?](#How-do-you-assign-property-descriptors)
 * [](#)
