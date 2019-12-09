@@ -477,7 +477,10 @@ It is important to note that all objects in JavaScript have a parent that inheri
 ------
 ### To get the prototype of an object, use Object.getPrototypeOf()
 ------
-Since all objects have prototypes (or more specifically parents) until you get to the root element, if you would like to GET the prototype of an object you need to use ```Object.getPrototypeOf()``` and then pass in the name of the object.
+Since all objects have prototypes (or more specifically parents) until you get to the root element, if you would like to GET the prototype of an object you need to use ```Object.getPrototypeOf()``` and then pass in the name of the object. When you create an object (or array for that matter), it will have a prototype (i.e. parent) ```__proto__``` that is the root object and all its associated properites and methods.
+```JavaScript
+  Object.getPrototypeOf(mySportsCar);
+```
 
 
 
