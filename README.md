@@ -470,9 +470,16 @@ It is important to note that all objects in JavaScript have a parent that inheri
 **With prototypical inheritance, when you look for a property or a method in a method, the JavaScript engine will first try to look that property or method in the object first.** If it does not exist there, it will look up the scope chain to the prototype of that object. And if it is not there, it will continue looking up and up the chain until it gets to the root object.
 
 ------
-### Objects ceated by a given constructor will have the same prototype members.
+### Objects created by a given constructor will have the same prototype members.
 ------
 **Multi-level inheritance essentially means that there is a continued inheritance of members that goes on and on until you get to the root object.** So if you create an object using a custom constructor (i.e. ``` const sportsCar = Car('Ferrari', 'vrooom'); ```), if you inspect the object you will see the prototype of the parent and so on until you get to the root object.
+
+------
+### To get the prototype of an object, use Object.getPrototypeOf()
+------
+Since all objects have prototypes (or more specifically parents) until you get to the root element, if you would like to GET the prototype of an object you need to use ```Object.getPrototypeOf()``` and then pass in the name of the object.
+
+
 
 </dd>
 </dl>
