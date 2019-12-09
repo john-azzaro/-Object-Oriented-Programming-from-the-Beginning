@@ -493,7 +493,7 @@ Since all objects have prototypes (or more specifically parents) until you get t
 <dl>
 <dd>
 
-**An instance member is one a property or method inside the the object** whereas **a prototype member is one that is **
+**An instance member is one a property or method inside the the object** whereas **a prototype member is one that is a parent of that object**
 
 In some cases, you may be using your constructor function to create hundreds or even thousands of objects. For each of those object, you will have the same information copied over and over again. For example, in the Car constructor function below, you could have potentially thousands of copies of the ```ignition``` method. This will waste a LOT of memory.
 ```JavaScript
@@ -518,9 +518,7 @@ However, with prototypical inheritance, when you try to access a propety or meth
 ------
 ### Use .prototype to create a single instance of a property or method 
 ------
-To create a single instance of a property or method and coserver valuable memory, you use the ```.prototype``` method. To do this, you would of course need to have your constructor function and the property or method you want to convert into a single method. Then, you create a prototype method and add the the property or method to that! You can even reference other members.
-
-Also note that when you do this, you are modifying the prototype before you create the object 
+Using ```.prototype``` you can create a single instance to the prototype object. For example, to create a single instance of a property or method and conserve valuable memory, you use the ```.prototype``` method. To do this, you would of course need to have your constructor function and the property or method you want to convert into a single method. Then, you create a prototype method and add the the property or method to that! You can even reference other members.
 ```JavaScript
   function Car(make, model) {
     this.make = make;
@@ -537,6 +535,13 @@ Also note that when you do this, you are modifying the prototype before you crea
   console.log(germanCar.ignition());       // vrooom
 ```
 
+------
+### However, avoid modifying the prototype built-in objects
+------
+Although you can also modify the built-in objects of a prototypes, you should be avoid doing this because if you eventually use a library or something else that modifies that built-in object, it could cause conflicts in your code.
+
+
+
 </dd>
 </dl>
 
@@ -547,7 +552,7 @@ Also note that when you do this, you are modifying the prototype before you crea
 <dl>
 <dd>
 
-If you want to iterate over prototype or instance members, you need to using the **for-in loop**. If you were to use ```Object.keys```, you would unfortunately only return instance members so it is not a viable solution.
+If you want to iterate over prototype or instance members, you need to using the **for-in loop** to return all members. If you were to use ```Object.keys```, you would unfortunately only return instance members so it is not a viable solution.
 ```JavaScript
   for (let keys in germanCar) {
     console.log(keys);             // make
