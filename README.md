@@ -548,28 +548,28 @@ Although you can also modify the built-in objects of a prototypes, you should be
 <br>
 
 # How do you create a custom prototypical inheritance?
-When you create a custom prototypical inheritance, you 
+**To create a custom prototypical inheritance, you simply need to create a parent object and assign properties and methods to it.**
 
 Suppose you had an object with certain properties. Additionally, you have a method that is defined on its prototype (see previous question if you are not sure). Remember that we do this to keep object lighter in the event that tyhere are multiple instances of the Car object. Anyway, it would look something like this:
 ```JavaScript
-  function Car(make) {                         // object.
+  function Car(make) {                            // "Car "constructor object.
     this.make = make;
     this.wheels = 4;
   }
 
-  Car.prototype.ignitition = function() {      // method defined to "Car" prototype.
+  Car.prototype.ignitition = function() {         // method defined to "Car" prototype.
     console.log('vroooom');
   }
 
-  const sportsCar = new Car('Porsche');        // Create "sportsCar" object.
+  const sportsCar = new Car('Porsche');           // Create "sportsCar" object.
 
-  console.log(sportsCar.ignition);             // the ignition function is inherited via prototype
+  console.log(sportsCar.ignition);                // the ignition function is inherited via prototype
 ```
 
 Now suppose that later on you want to create a "Motorcycle" object and that object would also have an ```ignition``` method with the exact same implementation. Instead of duplicating the same method, you can use inheritance to create an "automobile" parent object and then have "Car" and "Motorcycle" inherit that from there.
 ```JavaScript
   
-  function Automobile() {                         // the new parent object        
+  function Automobile() {                         // automobile constructor        
   }
 
   Automobile.prototype.ignition = function() {    // ignititon attributed to the parent object
