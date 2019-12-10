@@ -562,8 +562,6 @@ Suppose you had an object with certain properties. Additionally, you have a meth
   }
 
   const sportsCar = new Car('Porsche');           // Create "sportsCar" object.
-
-  console.log(sportsCar.ignition);                // the ignition function is inherited via prototype
 ```
 
 Now suppose that later on you want to create a "Motorcycle" object and that object would also have an ```ignition``` method with the exact same implementation. Instead of duplicating the same method, you can use inheritance to create an "automobile" parent object and then have "Car" and "Motorcycle" inherit that parent constructor method.
@@ -574,21 +572,16 @@ Now suppose that later on you want to create a "Motorcycle" object and that obje
 
   Automobile.prototype.ignition = function() {    // ignititon attributed to the parent object
     console.log('vroooom');
-  }
-    
-  function Motorcycle(make) {
-    this.make = make;
-    this.wheels = 2;
-  }
-
-  function Car(make) {
-    this.make = make;
-    this.wheels = 4;
-  }
-
-
-
+  }  
 ```
+
+**To create a custom prototypical inheritance, you create a object with a given prototype by using a special method ```Object.create``` and pass in the parent object by setting the existing constructor object's prototype.** In essence, this is reformatting the prototype of an object like "Car" to also include the "Automobile" prototype as well.
+
+```JavaScript
+  Car.prototype = Object.create(Automobile.prototype);
+```
+
+When you do this, ```sportsCar``` will inherit from ```Automobile``` which will inherit from the root object!
 
 
 

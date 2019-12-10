@@ -17,9 +17,15 @@ function Car(make) {                               // "Car" constructor function
   this.wheels = 4;
 }
 
+Car.prototype = Object.create(Automobile.prototype);             // set the prototype of Car to the new parent prototype
+Motorcycle.prototype = Object.create(Automobile.prototype);      // set the prototype of Motorcycle to the new parent prototype
+
+
 const sportsCar = new Car('Porsche');              // new "Porsche" car object.
 const sportsBike = new Motorcycle('Ducati');       // new "Ducati" motorcycle object.
 
 console.log(sportsCar);                            // Car { make: 'Porsche', wheels: 4 }
 console.log(sportsBike);                           // Motorcycle { make: 'Ducati', wheels: 2 }
+
+
 
