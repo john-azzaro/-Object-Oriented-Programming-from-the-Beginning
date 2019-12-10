@@ -566,10 +566,10 @@ Suppose you had an object with certain properties. Additionally, you have a meth
   console.log(sportsCar.ignition);                // the ignition function is inherited via prototype
 ```
 
-Now suppose that later on you want to create a "Motorcycle" object and that object would also have an ```ignition``` method with the exact same implementation. Instead of duplicating the same method, you can use inheritance to create an "automobile" parent object and then have "Car" and "Motorcycle" inherit that from there.
+Now suppose that later on you want to create a "Motorcycle" object and that object would also have an ```ignition``` method with the exact same implementation. Instead of duplicating the same method, you can use inheritance to create an "automobile" parent object and then have "Car" and "Motorcycle" inherit that parent constructor method.
 ```JavaScript
   
-  function Automobile() {                         // automobile constructor        
+  function Automobile() {                         // automobile constructor (the new parent constructor)        
   }
 
   Automobile.prototype.ignition = function() {    // ignititon attributed to the parent object
