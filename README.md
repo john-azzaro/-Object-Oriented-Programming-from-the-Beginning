@@ -542,10 +542,26 @@ Using ```.prototype``` you can create a single instance to the prototype object.
 ------
 Although you can also modify the built-in objects of a prototypes, you should be avoid doing this because if you eventually use a library or something else that modifies that built-in object, it could cause conflicts in your code.
 
-
-
 </dd>
 </dl>
+
+<br>
+
+## How do you create a custom prototypical inheritance?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <br>
