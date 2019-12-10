@@ -554,10 +554,11 @@ Suppose you had an object with certain properties. Additionally, you have a meth
 ```JavaScript
   function Car(make) {                         // object.
     this.make = make;
+    this.wheels = 4;
   }
 
   Car.prototype.ignitition = function() {      // method defined to "Car" prototype.
-    console.log('vroooom')
+    console.log('vroooom');
   }
 
   const sportsCar = new Car('Porsche');        // Create "sportsCar" object.
@@ -565,7 +566,29 @@ Suppose you had an object with certain properties. Additionally, you have a meth
   console.log(sportsCar.ignition);             // the ignition function is inherited via prototype
 ```
 
-Now suppose that later on you want to create a "Motorcycle" object and that object would also have an ```ignition``` method with the exact same implementation. Instead of duplicating the same method, you can use inheritance to create a "automobile" parent object and then have "Car" and "Motorcycle" inherit that from there.
+Now suppose that later on you want to create a "Motorcycle" object and that object would also have an ```ignition``` method with the exact same implementation. Instead of duplicating the same method, you can use inheritance to create an "automobile" parent object and then have "Car" and "Motorcycle" inherit that from there.
+```JavaScript
+  
+  function Automobile() {                         // the new parent object        
+  }
+
+  Automobile.prototype.ignition = function() {    // ignititon attributed to the parent object
+    console.log('vroooom');
+  }
+    
+  function Motorcycle(make) {
+    this.make = make;
+    this.wheels = 2;
+  }
+
+  function Car(make) {
+    this.make = make;
+    this.wheels = 4;
+  }
+
+
+
+```
 
 
 

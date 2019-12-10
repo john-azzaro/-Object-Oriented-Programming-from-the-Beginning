@@ -1,9 +1,13 @@
 "use strict";
 
-//
+function Motorcycle(make) {
+  this.make = make;
+  this.wheels = 2;
+}
 
 function Car(make) {
   this.make = make;
+  this.wheels = 4;
 }
 
 Car.prototype.ignition = function() {
