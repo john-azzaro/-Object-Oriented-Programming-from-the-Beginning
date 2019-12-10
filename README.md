@@ -550,6 +550,17 @@ Although you can also modify the built-in objects of a prototypes, you should be
 ## How do you create a custom prototypical inheritance?
 
 
+Suppose you had an object with certain properties. Additionally, you have a method that is defined on its prototype (see previous question if you are not sure). It would look something like this:
+```JavaScript
+  function Car(make) {                         // object.
+    this.make = make;
+  }
+
+  Car.prototype.ignitition = function() {      // method defined to "Car" prototype.
+    console.log('vroooom')
+  }
+```
+
 
 
 
