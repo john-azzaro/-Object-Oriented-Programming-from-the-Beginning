@@ -548,7 +548,7 @@ Although you can also modify the built-in objects of a prototypes, you should be
 <br>
 
 # How do you create a custom prototypical inheritance?
-**To create a custom prototypical inheritance, you simply need to create a parent object and assign properties and methods to it.**
+**To create a custom prototypical inheritance, you need to create a parent object, assign properties and methods to it, use Object.create to inherit the new parent object and set the existing objects prototype to that.**
 
 Suppose you had an object with certain properties. Additionally, you have a method that is defined on its prototype (see previous question if you are not sure). Remember that we do this to keep object lighter in the event that tyhere are multiple instances of the Car object. Anyway, it would look something like this:
 ```JavaScript
