@@ -604,7 +604,7 @@ Suppose you had an object with certain properties. Additionally, you have a meth
 Now suppose that later on you want to create a "Motorcycle" object and that object would also have an ```ignition``` method with the exact same implementation. Instead of duplicating the same method, you can use inheritance to create an "automobile" parent object and then have "Car" and "Motorcycle" inherit that parent constructor method.
 ```JavaScript
   
-  function Automobile() {                         // automobile constructor (the new parent constructor)        
+  function Automobile() {                         // automobile constructor (the new parent constructor)
   }
 
   Automobile.prototype.ignition = function() {    // ignititon attributed to the parent object
@@ -630,9 +630,9 @@ However, when you do this you might run into the issue of accessing prototype pr
 ```
 
 ------
-### And refactor to clean up the code and reduce duplication with Intermediate function inheritance.
+### And refactor to reduce duplication with Intermediate function inheritance.
 ------
-Once you have your inheritance chain setup correctly, you can now create multiple objects that will have a working inheritance chain. However, when you reset the constructor for each object you create, this creates a bit of clutter than can be reduced with a "extend"-ing intermediate function. To do this, you simply need to create a new function and encapsulate the logic from the previous steps into this new function.
+Once you have your inheritance chain setup correctly, you can now create multiple objects that will have a working inheritance chain. However, when you reset the constructor for each object you create, this creates a bit of clutter than can be reduced with a "extend"-ing intermediate function. To do this, you simply need to create a new function and encapsulate the logic from the previous steps into this new function. This function is called *intermediate function inheritance*.
 ```JavaScript
   function extend(Child, Parent) {
     Child.prototype = Object.create(Parent.prototype);
@@ -656,6 +656,14 @@ And then following the object constructor, you call ```extend ``` and pass the C
   }
 
   extend(Car, Automobile);                               // exend Car with Automobile
+  
+  function Tricycle(make) {                              // Another Child constrcutor
+    this.make = make;
+    this.wheels = 3;
+  }
+
+  extend(Tricycle, Automobile);                          // exend Tricycle with Automobile
+  
 ```
 
 
