@@ -587,9 +587,14 @@ Now suppose that later on you want to create a "Motorcycle" object and that obje
 ```
 
 ------
-
+### But as a best practice, remember to RESET the constructor.
 ------
-However, when you do this you might run into the issue of accessing prototype properties. For example, if you try to access a property such as ```Car.prototype.ignition```, you will not get this but in fact the new parent constructor (i.e. "Automobile").
+However, when you do this you might run into the issue of accessing prototype properties. For example, if you try to access a property such as ```Car.prototype.ignition```, you will not get this but in fact the new parent constructor (i.e. "Automobile"). This is because we reset the prototype of ```Car``` to ```Automobile```.
+```JavaScript
+  Car.prototype = Object.create(Automobile.prototype);
+  Car.prototype.constructor = Car;                          // Reset the constructor.  
+```
+
 
 
 

@@ -18,7 +18,9 @@ function Car(make) {                               // "Car" constructor function
 }
 
 Car.prototype = Object.create(Automobile.prototype);             // set the prototype of Car to the new parent prototype
+Car.prototype.constructor = Car;                                 // Reset the constructor for Car
 Motorcycle.prototype = Object.create(Automobile.prototype);      // set the prototype of Motorcycle to the new parent prototype
+Motorcycle.prototype.constructor = Motorcycle;                   // Resey the prototype for Motorcycle
 
 
 const sportsCar = new Car('Porsche');              // new "Porsche" car object.
