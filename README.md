@@ -28,6 +28,9 @@
 
 
 <br>
+<br>
+<br>
+<br>
 
 # What is Object Oriented Programming?
 <dl>
@@ -55,6 +58,9 @@ When you are writing out many lines of code that procedurally follow one from th
 </dd>
 </dl>
 
+<br>
+<br>
+<br>
 <br>
 
 # What is an object?
@@ -111,7 +117,9 @@ First, lets take a look at a basic **object literal**, which is a comma-seperate
   car.seats;                                     // [ 'driver', 'passenger', 'rear' ]
 ```
 
-
+<br>
+<br>
+<br>
 <br>
 
 # How do you add or remove properties to an object?
@@ -154,6 +162,9 @@ console.log(superCar);              // { make: 'Lamborghini', model: 'Reventon',
 </dd>
 </dl>
 
+<br>
+<br>
+<br>
 <br>
 
 # How do you enumerate over the properties of an object?
@@ -225,6 +236,9 @@ You can also use **Object.keys** where the method "keys" will return all the key
 </dl>
 
 <br>
+<br>
+<br>
+<br>
 
 # How do you create an object?
 **One of the easiest wats it to create an empty object and then add members to them.** For example, you would simply need to declare a variable with empty object brackets and then assign memebrs to them.
@@ -252,7 +266,9 @@ You can also create objects using using *factory functions* and *constructor fun
 </dl>
 
 <br>
-
+<br>
+<br>
+<br>
 
 # What is a factory object?
 <dl>
@@ -292,9 +308,10 @@ Then you can call your factory function using the assigned variable:
 </dd>
 </dl>
 
-
 <br>
-
+<br>
+<br>
+<br>
 
 # What is a constructor function?
 <dl>
@@ -338,7 +355,9 @@ It is important to note that when you create an object using a given constructor
 </dd>
 </dl>
 
-
+<br>
+<br>
+<br>
 <br>
 
 # What are the four core concepts of OOP?
@@ -381,6 +400,9 @@ The OOP way to solve this problem would look something like this:
 
 Note that in the case of the ```getCarInfo``` procedural example requires parameters passed into the function whereas the OOP ```getCarInfo``` example does NOT need parameters because the parameters are modeled as properties of the object. So because the properties of the object are part of one unit, it is much more efficient.
 
+<br>
+<br>
+<br>
 <br>
 
 ------
@@ -434,8 +456,9 @@ However, the key part of abstraction is that *private members* such as the local
 ```JavaScript
   console.log (engine())             // error -- cannot acces because it is outside the scope of the object.
 ```
-
-
+<br>
+<br>
+<br>
 <br>
 
 ------
@@ -458,6 +481,9 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 </dd>
 </dl>
 
+<br>
+<br>
+<br>
 <br>
 
 # What are prototypes and prototypical inheritance?
@@ -493,6 +519,9 @@ Since all objects have prototypes (or more specifically parents) until you get t
 </dd>
 </dl>
 
+<br>
+<br>
+<br>
 <br>
 
 # What are instance members and prototype members?
@@ -550,8 +579,14 @@ Although you can also modify the built-in objects of a prototypes, you should be
 </dl>
 
 <br>
+<br>
+<br>
+<br>
 
 # How do you customize prototypical inheritance?
+<dl>
+<dd>
+
 Suppose you had an object with certain properties. Additionally, you have a method that is defined on its prototype (see previous question if you are not sure). Remember that we do this to keep object lighter in the event that tyhere are multiple instances of the Car object. Anyway, it would look something like this:
 ```JavaScript
   function Car(make) {                            // "Car "constructor object.
@@ -597,9 +632,18 @@ However, when you do this you might run into the issue of accessing prototype pr
   Car.prototype.constructor = Car;                          // Reset the constructor.  
 ```
 
+</dd>
+</dl>
+
+<br>
+<br>
+<br>
 <br>
 
 # What is a "Super Constructor" and how do you call it?
+<dl>
+<dd>
+
 What if you want to modify a prototype by adding a property or method which will be included with the object created (i.e. Car)? For example, in the example below you have the property ```isWorking``` in ```Automobile```. What if we want to have ```isWorking``` included in each ```Car``` object created. To do this, you simply need to call the prototype ```Automobile``` in the ```Car``` constructor with the ```call``` method. As parameters, you pass in "this" which references the Car object and then the property from Automobile.
 ```JavaScript
   function Automobile(isWorking) {        // Pass the parameter you want to pass.
@@ -614,22 +658,12 @@ What if you want to modify a prototype by adding a property or method which will
 ```
 Then when you call a new object (i.e. sportsCar), you will see the inherited property that became available via calling the super constructor.
 
+</dd>
+</dl>
+
 <br>
 <br>
 <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <br>
 
 # How do you iterate over prototype and instance members?
@@ -644,16 +678,13 @@ If you want to iterate over prototype or instance members, you need to using the
                                   // ignition   <= instance method returned!
 ```
 
-
-
-
 </dd>
 </dl>
 
 
-
-
-
+<br>
+<br>
+<br>
 <br>
 
 # What are getters and setters?
@@ -779,6 +810,9 @@ console.log(coupe.isAutomobile);                       // flase (updated boolean
 
 
 <br>
+<br>
+<br>
+<br>
 
 # How do you assign property descriptors?
 <dd>
@@ -809,11 +843,9 @@ console.log(car);                     // { make: 'Porsche' }
 </dl>
 
 
-
-
-
-
-
+<br>
+<br>
+<br>
 <br>
 
 
