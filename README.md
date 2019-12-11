@@ -456,8 +456,6 @@ However, the key part of abstraction is that *private members* such as the local
 ```
 <br>
 <br>
-<br>
-<br>
 
 ------
 ### Inheritance.
@@ -469,6 +467,7 @@ For example, if you have a variety of buttons (i.e. click-buttons, drop-downs, c
 So suppose you have two objects, car and motorcycle. However, both need a method called ```engineStart```. Since ```startEngine``` has the exact same implementation for both objects, you dont need to do it twice. Also, if there is a big in the application, you would have to fix or improve the exact same method twice (or as many times as you use it in as many different objects you make). 
 
 
+<br>
 <br>
 
 ------
