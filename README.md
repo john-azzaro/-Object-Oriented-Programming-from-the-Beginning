@@ -298,7 +298,9 @@ Then you can call your factory function using the assigned variable:
 <dl>
 <dd>
 
-**A constructor function operates much like a factory function and creates an individual instance of some model.** However, when using the contructor function method if you forget to use 'new', it will define the 'this' property on the GLOBAL object (i.e. the window object). By convention, *the first letter of a constructor function name should be upper case*. Additionally, *we use 'this' to reference the object executing a particular peice of code.*
+**A constructor function operates much like a factory function and creates an individual instance of some model.** Every object in JavaScript has a constrcutor property that returns the function that was used to construct or create that object.
+
+However, when using the contructor function method if you forget to use 'new', it will define the 'this' property on the GLOBAL object (i.e. the window object). By convention, *the first letter of a constructor function name should be upper case*. Additionally, *we use 'this' to reference the object executing a particular peice of code.*
 ```JavaScript
   function createCar(make, model, year) {
     this.make = make;
@@ -547,7 +549,7 @@ Although you can also modify the built-in objects of a prototypes, you should be
 
 <br>
 
-# How do you create a custom prototypical inheritance?
+# How do you customize prototypical inheritance?
 Suppose you had an object with certain properties. Additionally, you have a method that is defined on its prototype (see previous question if you are not sure). Remember that we do this to keep object lighter in the event that tyhere are multiple instances of the Car object. Anyway, it would look something like this:
 ```JavaScript
   function Car(make) {                            // "Car "constructor object.
@@ -562,6 +564,9 @@ Suppose you had an object with certain properties. Additionally, you have a meth
   const sportsCar = new Car('Porsche');           // Create "sportsCar" object.
 ```
 
+------
+### Create a new parent object for properties and methods used of multiple objects.
+------
 Now suppose that later on you want to create a "Motorcycle" object and that object would also have an ```ignition``` method with the exact same implementation. Instead of duplicating the same method, you can use inheritance to create an "automobile" parent object and then have "Car" and "Motorcycle" inherit that parent constructor method.
 ```JavaScript
   
@@ -573,13 +578,20 @@ Now suppose that later on you want to create a "Motorcycle" object and that obje
   }  
 ```
 
-**To create a custom prototypical inheritance, you create a object with a given prototype by using a special method ```Object.create``` and pass in the parent object by setting the existing constructor object's prototype.** In essence, this is reformatting the prototype of an object like "Car" to also include the "Automobile" prototype as well.
-
+------
+### Use Object.create() to essentially reset the parent prototype.
+------
+**To customize prototypical inheritance, you create a object with a given prototype by using a special method ```Object.create``` and pass in the parent object by setting the existing constructor object's prototype.** In essence, this is reformatting the prototype of an object like "Car" to also include the "Automobile" prototype as well. When you do this, ```sportsCar``` will inherit from ```Automobile``` which will inherit from the root object!
 ```JavaScript
   Car.prototype = Object.create(Automobile.prototype);
 ```
 
-When you do this, ```sportsCar``` will inherit from ```Automobile``` which will inherit from the root object!
+------
+
+------
+However, when you do this you might run into the issue of accessing prototype properties. For example, if you try to access a property such as ```Car.prototype.ignition```, you will not get this but in fact the new parent constructor (i.e. "Automobile").
+
+
 
 
 
