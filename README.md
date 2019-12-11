@@ -617,7 +617,7 @@ Now suppose that later on you want to create a "Motorcycle" object and that obje
 ------
 **To customize prototypical inheritance, you create a object with a given prototype by using a special method ```Object.create``` and pass in the parent object by setting the existing constructor object's prototype.** In essence, this is reformatting the prototype of an object like "Car" to also include the "Automobile" prototype as well. When you do this, ```sportsCar``` will inherit from ```Automobile``` which will inherit from the root object!
 ```JavaScript
-  Car.prototype = Object.create(Automobile.prototype);
+  Car.prototype = Object.create(Automobile.prototype);     // Car = child, Automobile = parent.
 ```
 
 ------
@@ -637,18 +637,30 @@ However, when you do this you might run into the issue of accessing prototype pr
 <br>
 <br>
 
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
 # What is a "Super Constructor" and how do you call it?
 <dl>
 <dd>
 
 What if you want to modify a prototype by adding a property or method which will be included with the object created (i.e. Car)? For example, in the example below you have the property ```isWorking``` in ```Automobile```. What if we want to have ```isWorking``` included in each ```Car``` object created. To do this, you simply need to call the prototype ```Automobile``` in the ```Car``` constructor with the ```call``` method. As parameters, you pass in "this" which references the Car object and then the property from Automobile.
 ```JavaScript
-  function Automobile(isWorking) {        // Pass the parameter you want to pass.
-    this.isWorking = true;                // new property
+  function Automobile(isWorking) { 
+    this.isWorking = true;                // Add a new property
   }
 
   function Car(make) {          
-    Automobile.call(this, isWorking)      // Call Automobile, and pass this (i.e. Car object) and the property.
+    Automobile.call(this, isWorking)      // and call Automobile, passing this (Car object) and property.
     this.make = make;
     this.wheels = 4;
   }
@@ -657,6 +669,9 @@ Then when you call a new object (i.e. sportsCar), you will see the inherited pro
 
 </dd>
 </dl>
+
+
+
 
 <br>
 <br>
