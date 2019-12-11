@@ -565,7 +565,7 @@ Suppose you had an object with certain properties. Additionally, you have a meth
 ```
 
 ------
-### Create a new parent object for properties and methods used of multiple objects.
+### Create a new parent object for properties and methods to be used for of multiple objects.
 ------
 Now suppose that later on you want to create a "Motorcycle" object and that object would also have an ```ignition``` method with the exact same implementation. Instead of duplicating the same method, you can use inheritance to create an "automobile" parent object and then have "Car" and "Motorcycle" inherit that parent constructor method.
 ```JavaScript
@@ -597,9 +597,19 @@ However, when you do this you might run into the issue of accessing prototype pr
 
 <br>
 
-# What is a Super Constructor and how do you call it?
+# What is a "Super Constructor" and how do you call it?
+What if you want to modify a prototype by adding a property or method which will be included with the object created (i.e. Car)? For example, in the example below you have the property ```isWorking``` in ```Automobile```. What if we want to have ```isWorking``` included in each ```Car``` object created. To do this, you simply need to call the prototype ```Automobile``` in the ```Car``` constructor with the ```call``` method. As parameters, you pass in "this"
+```JavaScript
+  function Automobile(isWorking) {                         // Pass the parameter you want to pass.
+    this.isWorking = true;                                 // new property
+  }
 
-
+  function Car(make) {          
+    Automobile.call(this, isWorking)
+    this.make = make;
+    this.wheels = 4;
+  }
+```
 
 
 
