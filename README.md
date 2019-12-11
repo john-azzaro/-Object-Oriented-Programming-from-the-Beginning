@@ -402,8 +402,6 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 
 <br>
 <br>
-<br>
-<br>
 
 ------
 ### Abstraction.
