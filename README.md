@@ -630,13 +630,33 @@ However, when you do this you might run into the issue of accessing prototype pr
 ```
 
 ------
-### And refactor resetting the constructor to clean up the code and reduce duplication.
+### And refactor to clean up the code and reduce duplication with Intermediate function inheritance.
 ------
-Once you have your inheritance chain setup correctly, you can now create multiple objects that will have a working inheritance chain. However, when you reset the constructor for each object you create, this creates a bit of clutter than can be reduced with a "extend"-ing intermediate function. To do this, you simply need to create a new function
+Once you have your inheritance chain setup correctly, you can now create multiple objects that will have a working inheritance chain. However, when you reset the constructor for each object you create, this creates a bit of clutter than can be reduced with a "extend"-ing intermediate function. To do this, you simply need to create a new function and encapsulate the logic from the previous steps into this new function.
 ```JavaScript
-  function 
+  function extend(Child, Parent) {
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+  }
 ```
+And then following the object constructor, you call ```extend ``` and pass the Child and Parent as arguments. In the case of our working example, this would be "Car" and "Automobile". For every additional object, you would simply need to call ```extend(Child, Parent)```
+```JavaScript
+  function extend(Child, Parent) {                        // extend function
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+  }
 
+  function Automobile() {                                // Parent Constructor        
+    this.isWorking: true;
+  }
+
+  function Car(make) {                                   // Child Constructor
+    this.make = make;
+    this.wheels = 4;
+  }
+
+  extend(Car, Automobile);                               // exend Car with Automobile
+```
 
 
 </dd>
