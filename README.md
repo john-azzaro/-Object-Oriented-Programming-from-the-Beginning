@@ -595,6 +595,9 @@ However, when you do this you might run into the issue of accessing prototype pr
   Car.prototype.constructor = Car;                          // Reset the constructor.  
 ```
 
+<br>
+
+# What is a Super Constructor and how do you call it?
 
 
 
