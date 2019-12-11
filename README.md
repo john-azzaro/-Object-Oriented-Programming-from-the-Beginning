@@ -584,7 +584,7 @@ Although you can also modify the built-in objects of a prototypes, you should be
 <dl>
 <dd>
 
-Suppose you had an object with certain properties. Additionally, you have a method that is defined on its prototype (see previous question if you are not sure). Remember that we do this to keep object lighter in the event that tyhere are multiple instances of the Car object. Anyway, it would look something like this:
+Suppose you had an object with certain properties. Additionally, you have a method that is defined on its prototype (see previous question if you are not sure). Remember that we do this to keep object lighter in the event that there are multiple instances of the Car object. Anyway, it would look something like this:
 ```JavaScript
   function Car(make) {                            // "Car "constructor object.
     this.make = make;
@@ -629,18 +629,19 @@ However, when you do this you might run into the issue of accessing prototype pr
   Car.prototype.constructor = Car;                          // Reset the constructor.  
 ```
 
+------
+### And refactor resetting the constructor to clean up the code and reduce duplication.
+------
+Once you have your inheritance chain setup correctly, you can now create multiple objects that will have a working inheritance chain. However, when you reset the constructor for each object you create, this creates a bit of clutter than can be reduced with a "extend"-ing intermediate function. To do this, you simply need to create a new function
+```JavaScript
+  function 
+```
+
+
+
 </dd>
 </dl>
 
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
 
 
 
@@ -648,6 +649,8 @@ However, when you do this you might run into the issue of accessing prototype pr
 <br>
 <br>
 <br>
+
+
 
 # What is a "Super Constructor" and how do you call it?
 <dl>
