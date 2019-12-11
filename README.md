@@ -13,6 +13,8 @@
 * [What are the four core concepts of Object Oriented Programming?](#What-are-the-four-core-concepts-of-Object-Oriented-Programming)
 * [What are prototypes and prototypical inheritance?](#What-are-prototypes-and-prototypical-inheritance)
 * [What are instance members and prototype members?](#What-are-instance-members-and-prototype-members)
+* [How do you customize prototypical inheritance?](#How-do-you-customize-prototypical-inheritance)
+* [What is a "Super Constructor" and how do you call it?](#What-is-a-Super-Constructor-and-how-do-you-call-it)
 * [How do you iterate over prototype and instance members?](#How-do-you-iterate-over-prototype-and-instance-members)
 * [What are getters and setters?](#What-are-getters-and-setters)
 * [How do you assign property descriptors?](#How-do-you-assign-property-descriptors)
@@ -610,7 +612,7 @@ What if you want to modify a prototype by adding a property or method which will
     this.wheels = 4;
   }
 ```
-
+Then when you call a new object (i.e. sportsCar), you will see the inherited property that became available via calling the super constructor.
 
 
 
