@@ -602,17 +602,21 @@ However, when you do this you might run into the issue of accessing prototype pr
 # What is a "Super Constructor" and how do you call it?
 What if you want to modify a prototype by adding a property or method which will be included with the object created (i.e. Car)? For example, in the example below you have the property ```isWorking``` in ```Automobile```. What if we want to have ```isWorking``` included in each ```Car``` object created. To do this, you simply need to call the prototype ```Automobile``` in the ```Car``` constructor with the ```call``` method. As parameters, you pass in "this" which references the Car object and then the property from Automobile.
 ```JavaScript
-  function Automobile(isWorking) {           // Pass the parameter you want to pass.
-    this.isWorking = true;                   // new property
+  function Automobile(isWorking) {        // Pass the parameter you want to pass.
+    this.isWorking = true;                // new property
   }
 
   function Car(make) {          
-    Automobile.call(this, isWorking)         // Call Automobile, and pass this (i.e. Car object) and the property.
+    Automobile.call(this, isWorking)      // Call Automobile, and pass this (i.e. Car object) and the property.
     this.make = make;
     this.wheels = 4;
   }
 ```
 Then when you call a new object (i.e. sportsCar), you will see the inherited property that became available via calling the super constructor.
+
+<br>
+<br>
+<br>
 
 
 
