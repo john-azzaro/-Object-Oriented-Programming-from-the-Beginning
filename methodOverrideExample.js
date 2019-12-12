@@ -17,8 +17,15 @@
 
 // extend(Car, Automobile);                                    // Car inherits from Automobile
 
+// function ElectricCar() {                                    // ElectricCar constructor
+// }
+
+// extend(ElectricCar, Automobile);                            // ElectricCar inherits from Automobile
+
 // const sportsCar = new Car();                                // Create a new object (i.e. "sportsCar").
+
 // sportsCar.ignition();
+
 
 
 function extend(Child, Parent) {                           // extend function
@@ -37,6 +44,11 @@ function Car() {                                            // Car constructor
 }
 
 extend(Car, Automobile);                                    // Car inherits from Automobile
+
+function ElectricCar() {                                    // ElectricCar constructor
+}
+
+extend(ElectricCar, Automobile);                            // ElectricCar inherits from Automobile
 
 const sportsCar = new Car();                                // Create a new object (i.e. "sportsCar").
 

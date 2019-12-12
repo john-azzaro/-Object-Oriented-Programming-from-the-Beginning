@@ -709,27 +709,60 @@ Then when you call a new object (i.e. sportsCar), you will see the inherited pro
 # How do you override a method?
 If you have a method on a prototype that might fit with general uses but you may not want to include them in something else, you can override the method which overrides a method defined in the root method. So take this for example:
 ```JavaScript
-  function extend(Child, Parent) {                           // extend function
+  function extend(Child, Parent) {                     // extend function
     Child.prototype = Object.create(Parent.prototype);
     Child.prototype.constructor = Child;
   }
 
-  function Automobile() {                                     // constructor
+  function Automobile() {                             // constructor
   }
 
-  Automobile.prototype.ignition = function() {                // method on Automobile prototype
+  Automobile.prototype.ignition = function() {        // method on Automobile prototype
     console.log('vrooom')
   }
 
-  function Car() {                                            // Car constructor
+  function Car() {                                    // Car constructor
   }
 
-  extend(Car, Automobile);                                    // Car inherits from Automobile
+  extend(Car, Automobile);                            // Car inherits from Automobile
 
-  const sportsCar = new Car();                                // Create a new object (i.e. "sportsCar").
+  function ElectricCar() {                            // ElectricCar constructor
+  }
+
+  extend(ElectricCar, Automobile);                    // ElectricCar inherits from Automobile
+
+  const sportsCar = new Car();                        // Create a new object (i.e. "sportsCar").
 ```
-To override a method, you need ot 
+So suppose you want the ignition method to work differently for a specific object. For example, we have an automobile that is electric and it does not have ignition. To override a method, you need to redefine the method (i.e. ignition) after the ```extend``` (i.e. extending the Car to the Automobile). This is important because we are restting the prototype and overriding it.
+```JavaScript
+  function extend(Child, Parent) {   
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+  }
 
+  function Automobile() {  
+  }
+
+  Automobile.prototype.ignition = function() { 
+    console.log('vrooom')
+  }
+
+  function Car() { 
+  }
+
+  extend(Car, Automobile); 
+
+  function ElectricCar() { 
+  }
+
+  extend(ElectricCar, Automobile);
+ 
+  ElectricCar.prototype.ignition = function() { 
+    console.log('vrooom')
+  }
+
+  const sportsCar = new Car();  
+```
 
 
 
