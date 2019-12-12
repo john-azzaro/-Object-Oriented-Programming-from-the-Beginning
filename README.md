@@ -733,7 +733,7 @@ Then when you call a new object (i.e. sportsCar), you will see the inherited pro
 
   const sportsCar = new Car();                        // Create a new object (i.e. "sportsCar").
 ```
-So suppose you want the ignition method to work differently for a specific object. For example, we have an automobile that is electric and it does not have ignition. To override a method, you need to redefine the method (i.e. ignition) after the ```extend``` (i.e. extending the Car to the Automobile). This is important because we are restting the prototype and overriding it.
+**So how do you override a method?** So suppose you want the ignition method to work differently for a specific object. For example, we have an automobile that is electric and it does not have ignition. To override a method, you need to redefine the method (i.e. ignition) after the ```extend``` (i.e. extending the Car to the Automobile). This is important because we are restting the prototype and overriding it.
 
 In the example below, we want to override a method on a CHILD:
 ```JavaScript
