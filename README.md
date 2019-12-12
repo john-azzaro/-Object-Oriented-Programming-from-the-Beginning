@@ -734,9 +734,47 @@ Then when you call a new object (i.e. sportsCar), you will see the inherited pro
 ------ 
 ### To override a CHILD, redefine the method after extending it.
 ------ 
-**So how do you override a method?** So suppose you want the ignition method to work differently for a specific object. For example, we have an automobile that is electric and it does not have ignition. To override a method, you need to redefine the method (i.e. ignition) after the ```extend``` (i.e. extending the Car to the Automobile). This is important because we are restting the prototype and overriding it.
+**So how do you override a method?** So suppose you want the ignition method to work differently for a specific object. In the example below, lets say we want to override the method for ignition such that for a Car, the ignition will go "vroom vroom". To override a method, you simply need to redefine the method (i.e. ignition) after the ```extend``` (i.e. extending the Car to the Automobile). This is important because we are restting the prototype and overriding it. As a result, when you call ```Car.ignition()```, you will get "vroom vroom" instead of "vroom" as it was in the parent "Automobile" prototype.
+```JavaScript
+  function extend(Child, Parent) {   
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+  }
 
-In the example below, we want to override a method on a CHILD:
+  function Automobile() {  
+  }
+
+  Automobile.prototype.ignition = function() { 
+    console.log('vroom')
+  }
+
+  function Car() { 
+  }
+
+  extend(Car, Automobile); 
+ 
+  Car.prototype.ignition = function() {          // method override on Car
+    console.log('vroom goes the car')
+  }
+
+  const sportsCar = new Car();                   // sportsCar.ignittion() => vroom goes the car
+```
+
+------
+### To override a PARENT, call the the method on the parent.
+------
+And if you want to call the implementation on the PARENT object, you need to call the ignititon method on the Parent (i.e. Automobile) object.
+```JavaScript
+  Car.prototype.ignition = function() { 
+   Automobile.prototype.ignition();                 // use if you are not using "this" 
+   Automobile.prototype.ignition.call(this);        // use this if you are using "this"
+  }                                                 // NOTE: Use one OR the other.
+```
+
+------
+### With polymorphism, you can
+------
+So what we've done so far is reimplement a method in a child object by resetting ignition to "vroom goes the car" in the Car object. This is an extremely powerful tool in OOP because when create another object that inherits from the parent (i.e. Automobile) and we want a method to perform differently, we have an easy way to modify it. This is the benefit of **polymorphism** in object oriented programming where we can have different objects providing different implementatons of the same method (i.e. ignition). In other words, there are MANY FORMS of the ignition method.
 ```JavaScript
   function extend(Child, Parent) {   
     Child.prototype = Object.create(Parent.prototype);
@@ -755,35 +793,22 @@ In the example below, we want to override a method on a CHILD:
 
   extend(Car, Automobile); 
 
-  function ElectricCar() {                            // electricCar constrcutor
+  Car.prototype.ignition = function() { 
+    console.log('vroom goes the car')
+  }
+
+  function ElectricCar() {                            // electricCar constructor
   }
 
   extend(ElectricCar, Automobile);                    // electricCar inherits from Automobile
  
-  ElectricCar.prototype.ignition = function() {       // method override on ElectricCar
+  ElectricCar.prototype.ignition = function() {       // but override ignition on ElectricCar
     console.log('beep boop beep')
   }
 
-  const sportsCar = new Car();  
-  const electricCar = new Car();
+  const sportsCar = new Car();                        // sportsCar.ignittion() => vroom goes the car
+  const electricCar = new Car();                      // electricCar.ignition() => beep boop beep
 ```
-
-------
-### To override a PARENT, call the the method on the parent.
-------
-And if you want to call the implementation on the PARENT object, you need to call the ignititon method on the Parent (i.e. Automobile) object.
-```JavaScript
-  ElectricCar.prototype.ignition = function() { 
-   Automobile.prototype.ignition();                 // use if you are not using "this" 
-   Automobile.prototype.ignition.call(this);        // use this if you are using "this"
-  }                                                 // NOTE: Use one OR the other.
-```
-
-------
-### 
-------
-
-
 
 
 
