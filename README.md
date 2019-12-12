@@ -706,7 +706,8 @@ Then when you call a new object (i.e. sportsCar), you will see the inherited pro
 <br>
 <br>
 
-# 
+# How do you override a method?
+If you have a method on a prototype that might fit with general uses but you may not want to include them in something else, you can override the method which overrides a method defined in the root method.
 
 
 
