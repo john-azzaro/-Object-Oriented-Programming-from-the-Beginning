@@ -367,7 +367,7 @@ The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inherita
 <dd>
 
 ------
-### Encapsulation.
+## Encapsulation.
 ------
 **Encapsulation groups variables and functions into objects.**
 
@@ -404,7 +404,7 @@ Note that in the case of the ```getCarInfo``` procedural example requires parame
 <br>
 
 ------
-### Abstraction.
+## Abstraction.
 ------
 **The goal of abstraction is to hide details (i.e. certain members such as local variables) from the outside.** Abstraction hides all but the relevant data about an object and makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
 
@@ -458,7 +458,7 @@ However, the key part of abstraction is that *private members* such as the local
 <br>
 
 ------
-### Inheritance.
+## Inheritance.
 ------
 **Inheritance enables an object to take on the properties and methods of another object.** This in turn makes it easier to reuse code in different parts of an application and thus eliminate redundant code. 
 
@@ -471,9 +471,12 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 <br>
 
 ------
-### Polymorphism.
+## Polymorphism.
 ------
-**Polymorphism** (meaning "many forms") is the ability of an object to perform a single action in different forms where you can call the same method of different JavaScript objects.
+**Polymorphism** (meaning "many forms") is the ability of an object to perform a single action in different forms. For example, 
+
+
+where you can call the same method of different JavaScript objects.
 
 </dd>
 </dl>
@@ -726,13 +729,11 @@ Then when you call a new object (i.e. sportsCar), you will see the inherited pro
 
   extend(Car, Automobile);                            // Car inherits from Automobile
 
-  function ElectricCar() {                            // ElectricCar constructor
-  }
-
-  extend(ElectricCar, Automobile);                    // ElectricCar inherits from Automobile
-
   const sportsCar = new Car();                        // Create a new object (i.e. "sportsCar").
 ```
+------ 
+### To override a CHILD, redefine the method after extending it.
+------ 
 **So how do you override a method?** So suppose you want the ignition method to work differently for a specific object. For example, we have an automobile that is electric and it does not have ignition. To override a method, you need to redefine the method (i.e. ignition) after the ```extend``` (i.e. extending the Car to the Automobile). This is important because we are restting the prototype and overriding it.
 
 In the example below, we want to override a method on a CHILD:
@@ -754,24 +755,34 @@ In the example below, we want to override a method on a CHILD:
 
   extend(Car, Automobile); 
 
-  function ElectricCar() { 
+  function ElectricCar() {                            // electricCar constrcutor
   }
 
-  extend(ElectricCar, Automobile);
+  extend(ElectricCar, Automobile);                    // electricCar inherits from Automobile
  
   ElectricCar.prototype.ignition = function() {       // method override on ElectricCar
     console.log('beep boop beep')
   }
 
   const sportsCar = new Car();  
+  const electricCar = new Car();
 ```
-And if you want to call the implementation on the PARENT object, you need to call the ignititon on the Parent (i.e. Automobile) objects.
+
+------
+### To override a PARENT, call the the method on the parent.
+------
+And if you want to call the implementation on the PARENT object, you need to call the ignititon method on the Parent (i.e. Automobile) object.
 ```JavaScript
   ElectricCar.prototype.ignition = function() { 
-   Car.prototype.ignition();                       // use if you are not using "this" 
-   Car.prototype.ignition.call(this);              // use this if you are using "this"
-  }                                                // NOTE: Use one OR the other.
+   Automobile.prototype.ignition();                 // use if you are not using "this" 
+   Automobile.prototype.ignition.call(this);        // use this if you are using "this"
+  }                                                 // NOTE: Use one OR the other.
 ```
+
+------
+### 
+------
+
 
 
 
