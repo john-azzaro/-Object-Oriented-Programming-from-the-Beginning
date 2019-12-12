@@ -707,7 +707,7 @@ Then when you call a new object (i.e. sportsCar), you will see the inherited pro
 <br>
 
 # How do you override a method?
-If you have a method on a prototype that might fit with general uses but you may not want to include them in something else, you can override the method which overrides a method defined in the root method. So take this for example:
+Method override is reimplementing a method in a child method.  For example, if you have a method on a prototype that might fit with general uses but you may not want to include them in something else, you can override the method which overrides a method defined in the root method. So take this for example:
 ```JavaScript
   function extend(Child, Parent) {                     // extend function
     Child.prototype = Object.create(Parent.prototype);
