@@ -704,12 +704,19 @@ Then when you call a new object (i.e. sportsCar), you will see the inherited pro
 </dd>
 </dl>
 
+
+
 <br>
 <br>
 <br>
 <br>
 
+
+
 # How do you override a method?
+<dl>
+<dd>
+
 **Method override is reimplementing a method in a child object.**  For example, if you have a method on a prototype that might fit with general uses but you may not want to include them in something else, you can override the method which overrides a method defined in the root method. So take this for example:
 ```JavaScript
   function extend(Child, Parent) {                     // extend function
@@ -809,7 +816,8 @@ So what we've done so far is reimplement a method in a child object by resetting
   const sportsCar = new Car();                        // sportsCar.ignittion() => vroom goes the car
   const electricCar = new Car();                      // electricCar.ignition() => beep boop beep
 ```
-
+</dd>
+</dl>
 
 
 <br>
