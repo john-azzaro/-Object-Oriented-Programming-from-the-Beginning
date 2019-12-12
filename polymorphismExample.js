@@ -17,29 +17,43 @@ function Car() {
 
 extend(Car, Automobile); 
 
-Automobile.prototype.ignition = function() { 
+Car.prototype.ignition = function() { 
   console.log('vrooom goes the car')
 }
 
+function ElectricCar() {
+}
+
+extend(ElectricCar, Automobile);
+
+ElectricCar.prototype.ignition = function() {
+  console.log('beep boop beep');
+}
+
+
 const sportsCar = new Car(); 
-
-console.log(sportsCar.ignition());
-
+const tesla = new ElectricCar();
 
 
 
 
+console.log(sportsCar.ignition());          // vrooom goes the car
+console.log(tesla.ignition());              // beep boop beep
 
-// function ElectricCar() {   
+
+
+
+
+
+
+
+// function ElectricCar() {
 // }
 
-// extend(ElectricCar, Automobile); 
+// extend(ElectricCar, Automobile);
 
-// ElectricCar.prototype.ignition = function() {  
-//   console.log('beep boop beep')
-// }
 
-// const electricCar = new Car(); 
+
 
  
 

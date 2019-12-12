@@ -719,25 +719,25 @@ Then when you call a new object (i.e. sportsCar), you will see the inherited pro
 
 **Method override is reimplementing a method in a child object.**  For example, if you have a method on a prototype that might fit with general uses but you may not want to include them in something else, you can override the method which overrides a method defined in the root method. So take this for example:
 ```JavaScript
-  function extend(Child, Parent) {                     // extend function
+  function extend(Child, Parent) {                          // extend function
     Child.prototype = Object.create(Parent.prototype);
     Child.prototype.constructor = Child;
   }
 
-  function Automobile() {                             // constructor
+  function Automobile() {                                   // constructor
   }
 
-  Automobile.prototype.ignition = function() {        // method on Automobile prototype
+  Automobile.prototype.ignition = function() {              // method on Automobile prototype
     console.log('vrooom')
   }
 
-  function Car() {                                    // Car constructor
+  function Car() {                                          // Car constructor
   }
 
-  extend(Car, Automobile);                            // Car inherits from Automobile
+  extend(Car, Automobile);                                  // Car inherits from Automobile
 
-  const sportsCar = new Car();                        // Create a new object (i.e. "sportsCar").
-```
+  const sportsCar = new Car();                              // Create a new object (i.e. "sportsCar").
+```  
 ------ 
 ### To override a CHILD, redefine the method after extending it.
 ------ 
@@ -760,11 +760,11 @@ Then when you call a new object (i.e. sportsCar), you will see the inherited pro
 
   extend(Car, Automobile); 
  
-  Car.prototype.ignition = function() {          // method override on Car
+  Car.prototype.ignition = function() {                // method override on Car
     console.log('vroom goes the car')
   }
 
-  const sportsCar = new Car();                   // sportsCar.ignittion() => vroom goes the car
+  const sportsCar = new Car();                        // sportsCar.ignittion() => vroom goes the car
 ```
 
 ------
@@ -773,13 +773,13 @@ Then when you call a new object (i.e. sportsCar), you will see the inherited pro
 And if you want to call the implementation on the PARENT object, you need to call the ignititon method on the Parent (i.e. Automobile) object.
 ```JavaScript
   Car.prototype.ignition = function() { 
-   Automobile.prototype.ignition();                 // use if you are not using "this" 
-   Automobile.prototype.ignition.call(this);        // use this if you are using "this"
-  }                                                 // NOTE: Use one OR the other.
+   Automobile.prototype.ignition();                   // use if you are not using "this" 
+   Automobile.prototype.ignition.call(this);          // use this if you are using "this"
+  }                                                   // NOTE: Use one OR the other.
 ```
 
 ------
-### With polymorphism, you can
+### and  polymorphism, you can
 ------
 So what we've done so far is reimplement a method in a child object by resetting ignition to "vroom goes the car" in the Car object. This is an extremely powerful tool in OOP because when create another object that inherits from the parent (i.e. Automobile) and we want a method to perform differently, we have an easy way to modify it. This is the benefit of **polymorphism** in object oriented programming where we can have different objects providing different implementatons of the same method (i.e. ignition). In other words, there are MANY FORMS of the ignition method.
 ```JavaScript
@@ -804,18 +804,18 @@ So what we've done so far is reimplement a method in a child object by resetting
     console.log('vroom goes the car')
   }
 
-  function ElectricCar() {                            // electricCar constructor
+  function ElectricCar() {                               // electricCar constructor
   }
 
-  extend(ElectricCar, Automobile);                    // electricCar inherits from Automobile
+  extend(ElectricCar, Automobile);                       // electricCar inherits from Automobile
  
-  ElectricCar.prototype.ignition = function() {       // but override ignition on ElectricCar
+  ElectricCar.prototype.ignition = function() {          // but override ignition on ElectricCar
     console.log('beep boop beep')
   }
 
-  const sportsCar = new Car();                        // sportsCar.ignittion() => vroom goes the car
-  const electricCar = new Car();                      // electricCar.ignition() => beep boop beep
-```
+  const sportsCar = new Car();                           // sportsCar.ignittion() => vroom goes the car
+  const electricCar = new Car();                         // electricCar.ignition() => beep boop beep
+```  
 </dd>
 </dl>
 
