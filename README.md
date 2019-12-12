@@ -734,6 +734,8 @@ If you have a method on a prototype that might fit with general uses but you may
   const sportsCar = new Car();                        // Create a new object (i.e. "sportsCar").
 ```
 So suppose you want the ignition method to work differently for a specific object. For example, we have an automobile that is electric and it does not have ignition. To override a method, you need to redefine the method (i.e. ignition) after the ```extend``` (i.e. extending the Car to the Automobile). This is important because we are restting the prototype and overriding it.
+
+In the example below, we want to override a method on a CHILD:
 ```JavaScript
   function extend(Child, Parent) {   
     Child.prototype = Object.create(Parent.prototype);
@@ -757,13 +759,19 @@ So suppose you want the ignition method to work differently for a specific objec
 
   extend(ElectricCar, Automobile);
  
-  ElectricCar.prototype.ignition = function() { 
-    console.log('vrooom')
+  ElectricCar.prototype.ignition = function() {       // method override on ElectricCar
+    console.log('beep boop beep')
   }
 
   const sportsCar = new Car();  
 ```
-
+And if you want to call the implementation on the PARENT object, you need to call the ignititon on the Parent (i.e. Automobile) objects.
+```JavaScript
+  ElectricCar.prototype.ignition = function() { 
+   Car.prototype.ignition();                       // use if you are not using "this" 
+   Car.prototype.ignition.call(this);              // use this if you are using "this"
+  }                                                // NOTE: Use one OR the other.
+```
 
 
 
