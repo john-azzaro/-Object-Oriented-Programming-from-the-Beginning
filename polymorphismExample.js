@@ -35,22 +35,21 @@ const sportsCar = new Car();
 const tesla = new ElectricCar();
 
 
-
-
-console.log(sportsCar.ignition());          // vrooom goes the car
-console.log(tesla.ignition());              // beep boop beep
-
+// console.log(sportsCar.ignition());          // vrooom goes the car
+// console.log(tesla.ignition());              // beep boop beep
 
 
 
+// To iterate over an array of new objects
 
+const carCollection = [
+  new Car(),
+  new ElectricCar()
+]
 
-
-
-// function ElectricCar() {
-// }
-
-// extend(ElectricCar, Automobile);
+for (let car of carCollection) {
+    car.ignition();
+}
 
 
 

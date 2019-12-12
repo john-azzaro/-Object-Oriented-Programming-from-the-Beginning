@@ -779,9 +779,11 @@ And if you want to call the implementation on the PARENT object, you need to cal
 ```
 
 ------
-### and  polymorphism, you can
+### You can also override multiple methods.
 ------
-So what we've done so far is reimplement a method in a child object by resetting ignition to "vroom goes the car" in the Car object. This is an extremely powerful tool in OOP because when create another object that inherits from the parent (i.e. Automobile) and we want a method to perform differently, we have an easy way to modify it. This is the benefit of **polymorphism** in object oriented programming where we can have different objects providing different implementatons of the same method (i.e. ignition). In other words, there are MANY FORMS of the ignition method.
+**You can also override multiple methods while inheriting from a common parent object.** So what we've done so far is reimplement a method in a child object by resetting ignition to "vroom goes the car" in the Car object. But what we want now is to be able to do this multiple times. This is where the concept of *polymorphism* comes into play. 
+
+When we create another object that inherits from the parent (i.e. Automobile) and we want a method to perform differently, we have an easy way to modify it. This is the benefit of polymorphism in object oriented programming where we can have different objects providing different implementatons of the same method (i.e. ignition). In other words, there are MANY FORMS of the ignition method. A key benefit of this is that we can access those methods more easily than in a more laborious procedural way.
 ```JavaScript
   function extend(Child, Parent) {   
     Child.prototype = Object.create(Parent.prototype);
@@ -813,8 +815,8 @@ So what we've done so far is reimplement a method in a child object by resetting
     console.log('beep boop beep')
   }
 
-  const sportsCar = new Car();                           // sportsCar.ignittion() => vroom goes the car
-  const electricCar = new Car();                         // electricCar.ignition() => beep boop beep
+  const sportsCar = new Car();                          // sportsCar.ignittion() => vroom goes the car
+  const tesla = new Car();                              // tesla.ignition() => beep boop beep
 ```  
 </dd>
 </dl>
