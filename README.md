@@ -474,13 +474,15 @@ However, the key part of abstraction is that *private members* such as the local
 ------
 Inheritance comes in handy when we consider that although some objects can be similar (think Automobile and Car), they may not be exactly the same (think of the property wheels which could be different depending on the type of automobile). 
 
-Inheritance means that you can create a "child" that derives from another "parent" object. The child object resuses all the fields and methods of the parent object *but can also implement its own unique properties and methods*. In other words, instead of redefining all the properties and methods for each new "Car" object, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
+**Inheritance means that you can create a "child" that derives from another "parent" object.** The child object resuses all the fields and methods of the parent object *but can also implement its own unique properties and methods*. In other words, instead of redefining all the properties and methods for each new "Car" object, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
 
 So suppose you have two objects, car and motorcycle. However, both need a method called ```engineStart```. Since ```startEngine``` has the exact same implementation for both objects, you dont need to do it twice. Also, if there is a big in the application, you would have to fix or improve the exact same method twice (or as many times as you use it in as many different objects you make). 
 
 ------
-### 
+### But avoid creating inheritance hierarchies
 ------
+Although inheritance is useful, you should only use it when necessary. Encapsulation should follow an organic approach and used when you predict or start to notice common features that need to be encapsulated. An issue that might arise is if you have have a heirarchy where one object may be one thing (a fish is an animal) but does NOT have a similar feature (a fish cannot walk). To solve this, you would need to add sub-classes to account. This can be easily achieved by using *mixins*.
+
 
 </dd>
 </dl>
