@@ -464,7 +464,7 @@ However, the key part of abstraction is that *private members* such as the local
 
 
 # Inheritance.
-**Inheritance enables an object to take on the properties and methods of another object.** This in turn makes it easier to reuse code in different parts of an application and thus eliminate redundant code. For example, if you have a variety of buttons (i.e. click-buttons, drop-downs, checkboxes, etc) that all have a few properties in common (i.e. click, focus, hidden, etc.). Instead of redefining all the properties and methods for each button, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
+**Inheritance enables an object to take on the properties and methods of another object,** making it easier to reuse code in different parts of an application and thus eliminate redundant code.
 
 <dl>
 <dd>
@@ -472,7 +472,15 @@ However, the key part of abstraction is that *private members* such as the local
 ------
 ### Inheritance allows an object to "inherit" the properties of a parent.
 ------
+Inheritance comes in handy when we consider that although some objects can be similar (think Automobile and Car), they may not be exactly the same (think of the property wheels which could be different depending on the type of automobile). 
+
+Inheritance means that you can create a "child" that derives from another "parent" object. The child object resuses all the fields and methods of the parent object *but can also implement its own unique properties and methods*. In other words, instead of redefining all the properties and methods for each new "Car" object, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
+
 So suppose you have two objects, car and motorcycle. However, both need a method called ```engineStart```. Since ```startEngine``` has the exact same implementation for both objects, you dont need to do it twice. Also, if there is a big in the application, you would have to fix or improve the exact same method twice (or as many times as you use it in as many different objects you make). 
+
+------
+### 
+------
 
 </dd>
 </dl>
