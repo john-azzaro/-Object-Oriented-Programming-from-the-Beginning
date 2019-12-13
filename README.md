@@ -496,9 +496,6 @@ But "ignition" is not the same for all the three objects. "Car" and "Motorcycle"
 
 OOP has a solution to this issue wherein you can override the "ignition" method (see How do I override a method question). Essentially, with the override method you can change the value of a certain method like "ignitiion" to fit the use of ElectricCar. In this way, there are *many forms* of the same method and the "ignition" method is **polymorphic**.
 
-<dl>
-<dd>
-
 
 </dd>
 </dl>
@@ -509,6 +506,7 @@ OOP has a solution to this issue wherein you can override the "ignition" method 
 <br>
 
 # What are prototypes and prototypical inheritance?
+
 <dl>
 <dd>
 
@@ -536,15 +534,15 @@ Since all objects have prototypes (or more specifically parents) until you get t
   Object.getPrototypeOf(mySportsCar);
 ```
 
-
-
 </dd>
 </dl>
 
+
 <br>
 <br>
 <br>
 <br>
+
 
 # What are instance members and prototype members?
 <dl>
