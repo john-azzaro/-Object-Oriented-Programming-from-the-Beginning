@@ -366,9 +366,8 @@ The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inherita
 <dl>
 <dd>
 
-------
-## Encapsulation.
-------
+
+# Encapsulation.
 **Encapsulation groups variables and functions into objects.** In a sense, the idea of encapsulation is to bundle the data and methods that work on the data within that object inside a single unit (i.e. object). This also provides an *abstraction* benefit where the details of that object are hidden from the rest of the outside as we'll see in the next concept.
 
 <dl>
@@ -409,9 +408,8 @@ Take a look at the following implementation of a *procedural* example and what e
 <br>
 <br>
 
-------
-## Abstraction.
-------
+
+# Abstraction.
 **The goal of abstraction is to hide details (i.e. certain members such as local variables) from the outside.** Abstraction hides all but the relevant data about an object and makes interfacing with objects simpler and reduces the impact of change (i.e. changing inner properties and methods will not leak outside the object and cause problems). 
 
 <dl>
@@ -437,10 +435,8 @@ In contrast to scope, **closure** determines what variables will be accessible t
 To see how abstraction (and encapsulation) work, take a look at the following practical example. 
 
 ```JavaScript
-  "use strict";
-
   const Car = function(carName, carSound) {
-    const engine = function() {                    // the "engine" the local variable is a private member.
+    const engine = function() {                // the "engine" the local variable is a private member.
       console.log(carSound);
     }
     return {
@@ -448,16 +444,16 @@ To see how abstraction (and encapsulation) work, take a look at the following pr
     };
   }
 
-  const sportsCar = Car('Ferrari', 'vrooom');      // { carName: 'Ferrari', engine: [Function: engine] }
+  const sportsCar = Car('Ferrari', 'vrooom');  // { carName: 'Ferrari', engine: [Function: engine] }
 
-  console.log(sportsCar.engine());                 // vrooom
+  console.log(sportsCar.engine());             // vrooom
 
 ```
 When we execute ```sportsCar.engine```, ```vrooom``` will print to the console. However, you do NOT have access to this ```engine``` variable outside the object. This is **closure** in JavaScript and it is how we implement encapsulation and abstraction. In effect, we are binding the ```engine ``` method and it's data (i.e. ```carSound```) and this is NOT available outside the constuctor function.
 
 However, the key part of abstraction is that *private members* such as the local variable ```engine``` are not accessible outside the object.
 ```JavaScript
-  console.log (engine())             // error -- cannot acces because it is outside the scope of the object.
+  console.log (engine())                      // error -- outside the scope of the object.
 ```
 
 </dd>
@@ -466,9 +462,8 @@ However, the key part of abstraction is that *private members* such as the local
 <br>
 <br>
 
-------
-## Inheritance.
-------
+
+# Inheritance.
 **Inheritance enables an object to take on the properties and methods of another object.** This in turn makes it easier to reuse code in different parts of an application and thus eliminate redundant code. For example, if you have a variety of buttons (i.e. click-buttons, drop-downs, checkboxes, etc) that all have a few properties in common (i.e. click, focus, hidden, etc.). Instead of redefining all the properties and methods for each button, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
 
 <dl>
@@ -485,15 +480,21 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 <br>
 <br>
 
-------
-## Polymorphism.
-------
-**Polymorphism** (meaning "many forms") is the ability of an object to perform a single action in different forms. For example,where you can call the same method of different JavaScript objects. 
+
+# Polymorphism.
+**Polymorphism** (meaning "many forms") is a powerful concept in OOP in that it allows an object to perform a single action in different forms and allows you to call the same method of different JavaScript objects. 
 
 <dl>
 <dd>
 
-This is content inside the dddl
+------
+###  Polymorphism allows you to have mutltiple uses of the same function.
+------
+For example, suppose you have a three objects, "Car", "Motorcycle", "ElectricCar". Now lets say that each of these vehicles have a common feature, which is they have an "ignition" method. Because OOP allows us the ability to configure our objects efficiently, instead of having seperate "ignition" methods, we can create a *parent* object called "Automobile" that contains the shared characteristics of the three vehicles, specifically the "ignition" method. 
+
+But "ignition" is not the same for all the three objects. "Car" and "Motorcycle" share the same "ignition" method but the ElectricCar doesnt have the same ignition as the others. 
+
+OOP has a solution to this issue wherein you can override the "ignition" method (see How do I override a method question). Essentially, with the override method you can change the value of a certain method like "ignitiion" to fit the use of ElectricCar. In this way, there are *many forms* of the same method and the "ignition" method is **polymorphic**.
 
 <dl>
 <dd>
