@@ -369,22 +369,28 @@ The four key concepts of OOP are: **Encapsulation**, **Abstraction**, **Inherita
 ------
 ## Encapsulation.
 ------
-**Encapsulation groups variables and functions into objects.**
+**Encapsulation groups variables and functions into objects.** In a sense, the idea of encapsulation is to bundle the data and methods that work on the data within that object inside a single unit (i.e. object). This also provides an *abstraction* benefit where the details of that object are hidden from the rest of the outside as we'll see in the next concept.
 
-For example, take a look at the following example as a *procedural* implementation. 
+<dl>
+<dd>
+
+Take a look at the following implementation of a *procedural* example and what encapsulation is NOT: 
 ```JavaScript
-  let carName = 'Honda';    
+  let carName = 'Honda';                                    // outside details accessible everywhere
   let carMake = 'Civic';
   let carMilage = 23000;
 
-  function getCarInfo(carName, carMake, carMilage) {
+  function getCarInfo(carName, carMake, carMilage) {        // parameters passed into function
     return `My ${car} ${carMake} has ${carMilage} miles.`;
   }
 
-  console.log(getCarInfo());                 // My Honda Civic has 23000 miles.
+  console.log(getCarInfo());                                // My Honda Civic has 23000 miles.
 ```
 
-The OOP way to solve this problem would look something like this:
+------
+### With encapsulation, properties are "encapsulated" in the object.
+------
+**The OOP way to solve this problem would be to take those outside details and "encapsulate" them inside the object.** And because these details are inside the object, there is no need to pass in any parameters. So in the case of the procedural, the ```getCarInfo``` example requires parameters passed into the function. However, the OOP ```getCarInfo``` example does NOT need parameters because the parameters are modeled as properties of the object. And because the properties of the object are part of one unit, it is much more efficient.:
 ```JavaScript
   const car = {
     carName: 'Honda',
@@ -395,10 +401,10 @@ The OOP way to solve this problem would look something like this:
     }
   }
 
-  console.log(car.getCarInfo());             // My Honda Civic has 23000 miles.
+  console.log(car.getCarInfo());                            // My Honda Civic has 23000 miles.
 ```
-
-Note that in the case of the ```getCarInfo``` procedural example requires parameters passed into the function whereas the OOP ```getCarInfo``` example does NOT need parameters because the parameters are modeled as properties of the object. So because the properties of the object are part of one unit, it is much more efficient.
+</dd>
+</dl>
 
 <br>
 <br>
@@ -426,8 +432,7 @@ The **scope** of those private members are limited to the containing function, o
 ------
 In contrast to scope, **closure** determines what variables will be accessible to an inner function AND the variables defined in its parent function. For example, in the example below you have the variable ```engine```. If there were other variables inside the parent function ```Car```, they will be sustained in memory because they are part of the *closure* of the ```Car``` function.
 
-</dd>
-</dl>
+
 
 To see how abstraction (and encapsulation) work, take a look at the following practical example. 
 
@@ -454,18 +459,28 @@ However, the key part of abstraction is that *private members* such as the local
 ```JavaScript
   console.log (engine())             // error -- cannot acces because it is outside the scope of the object.
 ```
+
+</dd>
+</dl>
+
 <br>
 <br>
 
 ------
 ## Inheritance.
 ------
-**Inheritance enables an object to take on the properties and methods of another object.** This in turn makes it easier to reuse code in different parts of an application and thus eliminate redundant code. 
+**Inheritance enables an object to take on the properties and methods of another object.** This in turn makes it easier to reuse code in different parts of an application and thus eliminate redundant code. For example, if you have a variety of buttons (i.e. click-buttons, drop-downs, checkboxes, etc) that all have a few properties in common (i.e. click, focus, hidden, etc.). Instead of redefining all the properties and methods for each button, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
 
-For example, if you have a variety of buttons (i.e. click-buttons, drop-downs, checkboxes, etc) that all have a few properties in common (i.e. click, focus, hidden, etc.). Instead of redefining all the properties and methods for each button, you just define them once in a generic element like an object and then have other object "inherit" those properties and methods.
+<dl>
+<dd>
 
+------
+### Inheritance allows an object to "inherit" the properties of a parent.
+------
 So suppose you have two objects, car and motorcycle. However, both need a method called ```engineStart```. Since ```startEngine``` has the exact same implementation for both objects, you dont need to do it twice. Also, if there is a big in the application, you would have to fix or improve the exact same method twice (or as many times as you use it in as many different objects you make). 
 
+</dd>
+</dl>
 
 <br>
 <br>
@@ -473,10 +488,16 @@ So suppose you have two objects, car and motorcycle. However, both need a method
 ------
 ## Polymorphism.
 ------
-**Polymorphism** (meaning "many forms") is the ability of an object to perform a single action in different forms. For example, 
+**Polymorphism** (meaning "many forms") is the ability of an object to perform a single action in different forms. For example,where you can call the same method of different JavaScript objects. 
 
+<dl>
+<dd>
 
-where you can call the same method of different JavaScript objects.
+This is content inside the dddl
+
+<dl>
+<dd>
+
 
 </dd>
 </dl>
