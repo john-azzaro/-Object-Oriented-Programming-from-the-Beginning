@@ -8,7 +8,7 @@
 * [How do you add or remove properties to an object?](#How-do-you-add-or-remove-properties-to-an-object)
 * [How do you enumerate over the properties of an object?](#How-do-you-enumerate-over-the-properties-of-an-object)
 * [How do you create an object?](#How-do-you-create-an-object)
-* [What is a factory object?](#What-is-a-factory-object)
+* [What is a factory function?](#What-is-a-factory-function)
 * [What is a constructor function?](#What-is-a-constructor-function)
 * [What are the four core concepts of Object Oriented Programming?](#What-are-the-four-core-concepts-of-Object-Oriented-Programming)
 * [What are prototypes and prototypical inheritance?](#What-are-prototypes-and-prototypical-inheritance)
@@ -241,7 +241,7 @@ You can also use **Object.keys** where the method "keys" will return all the key
 <br>
 
 # How do you create an object?
-**One of the easiest wats it to create an empty object and then add members to them.** For example, you would simply need to declare a variable with empty object brackets and then assign memebrs to them.
+**One of the easiest ways it to create an empty object and then add members to them.** For example, you would simply need to declare a variable with empty object brackets and then assign memebrs to them.
 ```JavaScript
   const car = {};                        // create an empty object.
 
@@ -265,12 +265,53 @@ You can also create objects using using *factory functions* and *constructor fun
 </dd>
 </dl>
 
+
 <br>
 <br>
 <br>
 <br>
 
-# What is a factory object?
+# How do you create an object from other existing objects?
+To create an object from other existing objects, you can use the Object.assign method. 
+```JavaScript
+  const isWorking = {
+    engineRuns: function() {
+      console.log('engine is running');
+    }
+  }
+
+  const isLegal = {
+    paperWork: function() {
+      console.log('paperwork checks out!')
+    }
+  }
+
+  const hondaAccord = Object.assign({}, isWorking, isLegal);
+
+  console.log(hondaAccord);           // { engineRuns: [Function: engineRuns],
+                                      //   paperWork: [Function: paperWork] }
+```
+
+
+
+
+Note that with this method, you need to 
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+# What is a factory function?
 <dl>
 <dd>
 
