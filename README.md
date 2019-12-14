@@ -271,8 +271,8 @@ You can also create objects using using *factory functions* and *constructor fun
 <br>
 <br>
 
-# How do you create an object from other existing objects?
-**To create an object from other existing objects, you can use the Object.assign method.** With Object.assign, you are essentially copying properties and methods from one object to another. In the call signature, you first pass in an empty object (i.e. {}) as the target and then as many source objects to copy (i.e. sourceObj1, sourceObj2, etc.).
+# How do you create objects with mixins?
+**When you create an object using mixins, you are essentially creating an object from other existing objects using a mixin function.** To create a mixin, you use the Object.assign method. With Object.assign, you are essentially copying properties and methods from one object to another. In the call signature, you first pass in an empty object (i.e. {}) as the target and then as many source objects to copy (i.e. sourceObj1, sourceObj2, etc.).
 
 <dl>
 <dd>
@@ -296,8 +296,8 @@ And to put it all into context, check out the example below where we have two ob
 
   const hondaAccord = Object.assign({}, isWorking, isRegistered);
 
-  console.log(hondaAccord);           // { engineRuns: [Function: engineRuns],
-                                      //   paperWork: [Function: paperWork] }
+  console.log(hondaAccord);                                    // { engineRuns: [Function: engineRuns],
+                                                               //   paperWork: [Function: paperWork] }
 ```
 
 Using a constructor function works just as well, where you can pass any properties or methods to the new constructor:
@@ -325,6 +325,37 @@ Using a constructor function works just as well, where you can pass any properti
                                                                //   paperWork: [Function: paperWork] }
 ```
 
+-------
+### To make the code cleaner, we use a mixin function for Object.assign.
+When you create a mixin, you create a function that passes the target object and one or more sources. However, you could have many sources which so you use the rest operator. What this does is takes all the arguments you provide and turn them into an array.  And for Object.assign, you pass in the target and ```...sources``` to spread the array passed in into multiple objects.
+-------
+```JavaScript
+  function mixin(target, ...sources) {                         // created new mixin function
+    Object.assign(target, ...sources);
+  }
+
+  const isWorking = {
+    engineRuns: function() {
+      console.log('engine is running');
+    }
+  }
+
+  const isRegistered = {
+    paperWork: function() {
+      console.log('paperwork checks out!')
+    }
+  }
+
+  function Vehicle() {   
+  }
+
+  mixin(Vehicle.prototype, isWorking, isRegistered);           // and call mixin with the same arguments.
+
+  const porsche = new Vehicle();    
+
+  console.log(porsche);     
+                         
+```
 
 
 
