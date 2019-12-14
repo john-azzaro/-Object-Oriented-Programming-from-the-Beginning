@@ -272,7 +272,13 @@ You can also create objects using using *factory functions* and *constructor fun
 <br>
 
 # How do you create an object from other existing objects?
-To create an object from other existing objects, you can use the Object.assign method. 
+**To create an object from other existing objects, you can use the Object.assign method.** With Object.assign, you are essentially copying properties and methods from one object to another. In the call signature, you first pass in an empty object as the target and then as many source objects to copy.
+
+
+
+
+
+
 ```JavaScript
   const isWorking = {
     engineRuns: function() {
@@ -280,13 +286,13 @@ To create an object from other existing objects, you can use the Object.assign m
     }
   }
 
-  const isLegal = {
+  const isRegistered = {
     paperWork: function() {
       console.log('paperwork checks out!')
     }
   }
 
-  const hondaAccord = Object.assign({}, isWorking, isLegal);
+  const hondaAccord = Object.assign({}, isWorking, isRegistered);
 
   console.log(hondaAccord);           // { engineRuns: [Function: engineRuns],
                                       //   paperWork: [Function: paperWork] }
