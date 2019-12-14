@@ -272,7 +272,7 @@ You can also create objects using using *factory functions* and *constructor fun
 <br>
 
 # How do you create objects with mixins?
-**When you create an object using mixins, you are essentially creating an object from other existing objects using a mixin function.** To create a mixin, you use the Object.assign method. With Object.assign, you are essentially copying properties and methods from one object to another. In the call signature, you first pass in an empty object (i.e. {}) as the target and then as many source objects to copy (i.e. sourceObj1, sourceObj2, etc.).
+**When you create an object, you are essentially creating an object from other existing objects using a mixin function.** To create a mixin, you use the Object.assign method. With Object.assign, you are essentially copying properties and methods from one object to another. In the call signature, you first pass in an empty object (i.e. {}) as the target and then as many source objects to copy (i.e. sourceObj1, sourceObj2, etc.).
 
 <dl>
 <dd>
@@ -327,8 +327,8 @@ Using a constructor function works just as well, where you can pass any properti
 
 -------
 ### To make the code cleaner, we use a mixin function for Object.assign.
-When you create a mixin, you create a function that passes the target object and one or more sources. However, you could have many sources which so you use the rest operator. What this does is takes all the arguments you provide and turn them into an array.  And for Object.assign, you pass in the target and ```...sources``` to spread the array passed in into multiple objects.
 -------
+When you create a mixin, you create a function that passes the target object and one or more sources. However, you could have many sources which so you use the rest operator. What this does is takes all the arguments you provide and turn them into an array.  And for Object.assign, you pass in the target and ```...sources``` to spread the array passed in into multiple objects.
 ```JavaScript
   function mixin(target, ...sources) {                         // created new mixin function
     Object.assign(target, ...sources);
