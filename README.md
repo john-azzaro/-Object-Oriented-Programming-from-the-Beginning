@@ -272,13 +272,15 @@ You can also create objects using using *factory functions* and *constructor fun
 <br>
 
 # How do you create an object from other existing objects?
-**To create an object from other existing objects, you can use the Object.assign method.** With Object.assign, you are essentially copying properties and methods from one object to another. In the call signature, you first pass in an empty object as the target and then as many source objects to copy.
+**To create an object from other existing objects, you can use the Object.assign method.** With Object.assign, you are essentially copying properties and methods from one object to another. In the call signature, you first pass in an empty object (i.e. {}) as the target and then as many source objects to copy (i.e. sourceObj1, sourceObj2, etc.).
 
+<dl>
+<dd>
 
-
-
-
-
+```JavaScript
+  const newObjName = Object.assign({}, sourceObj1, source);
+```
+And to put it all into context, check out the example below where we have two objects (isWorking and isRegistered). You will see that when you create a new object, the content of the source objects is also passed with them.
 ```JavaScript
   const isWorking = {
     engineRuns: function() {
@@ -298,19 +300,39 @@ You can also create objects using using *factory functions* and *constructor fun
                                       //   paperWork: [Function: paperWork] }
 ```
 
+Using a constructor function works just as well, where you can pass any properties or methods to the new constructor:
+```JavaScript
+  const isWorking = {
+    engineRuns: function() {
+      console.log('engine is running');
+    }
+  }
+
+  const isRegistered = {
+    paperWork: function() {
+      console.log('paperwork checks out!')
+    }
+  }
+
+  function Vehicle() {                                         // "Vehicle" constructor.
+  }
+
+  Object.assign(Vehicle.prototype, isWorking, isRegistered);   // Pass the prototype of Vehicle.
+
+  const porsche = new Vehicle();                               // create a new object using "Vehicle".
+
+  console.log(porsche);                                        // { engineRuns: [Function: engineRuns],
+                                                               //   paperWork: [Function: paperWork] }
+```
 
 
 
-Note that with this method, you need to 
 
 
 
 
-
-
-
-
-
+</dd>
+</dl>
 
 <br>
 <br>
