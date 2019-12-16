@@ -1141,6 +1141,31 @@ console.log(car);                     // { make: 'Porsche' }
 <br>
 
 # What are classes and how do you implement them?
-**Classes are **Classes are a recent addition to JavaScript in ES6. However, you should not confuse these classes with the way classes are in other languages. 
+**Classes are a cleaner way of using prototypical inheritance in JavaScript.** Note that classes are a recent addition to JavaScript in ES6. However, you should not confuse these classes with the way classes are in other languages. 
+
+So take a look at a basic object called "Car" with two members, a "make" property and an "ignition" method.
+```JavaScript
+  function Car(make) {
+    this.make = make;
+    this.ignition = function() {
+      console.log('vrooom');
+    }
+  }
+```
+
+## Create a class object
+To rewrite the function above as a class, you do the following.
+1. Add the ```class``` keyword.
+2. Name of the class (i.e. "Car").
+3. Add the body of the class (i.e. curly braces {} ).
+
+```JavaScript
+  class Car {   
+  }
+```
+
+## 
+
+
 
 
