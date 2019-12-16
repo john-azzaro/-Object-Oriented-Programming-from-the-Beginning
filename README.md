@@ -1142,7 +1142,7 @@ console.log(car);                     // { make: 'Porsche' }
 <dl>
 <dd>
 
-**Classes are a cleaner way of using prototypical inheritance in JavaScript.** Note that classes are a recent addition to JavaScript in ES6. However, you should not confuse these classes with the way classes are in other languages. 
+**Classes are a cleaner way of using prototypical inheritance in JavaScript.**  Classes are a recent addition to JavaScript in ES6. However, you should not confuse these classes with the way classes are in other languages. 
 
 So take a look at a basic object called "Car" with two members, a "make" property and an "ignition" method.
 ```JavaScript
@@ -1166,6 +1166,8 @@ To rewrite the function above as a class, you would first add the ```class``` ke
   }
 ```
 
+<br>
+
 ## Add a constructor to initialize objects.
 A **constructor** essentially initializes an object in the same way that ```function Car(make)...``` does. So think fo the constructor as a new constructor function.
 
@@ -1183,7 +1185,7 @@ Now there are different ways to define properties and methods when using classes
 
 <br>
 
-## To add a method that is assigned to the prototype, add it to the body of the class.
+## To add a method to the prototype, add it to the body of the class.
 For methods, where you put the method determines whether or not they are assigned to the prototype of the object. **If you want the method to be assigned to the prototype, you need to add it in the body of the class.**
 ```JavaScript
   class Car {    
@@ -1202,7 +1204,7 @@ For methods, where you put the method determines whether or not they are assigne
 
 <br>
 
-## To add a method that is NOT assigned to the prototype, add it to the constructor.
+## To add a method NOT assigned to the prototype, add it to the constructor.
 To so this, you would simply add the method normally in the constructor.
 ```JavaScript
   class Car {    
