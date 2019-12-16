@@ -1130,10 +1130,8 @@ car.make = 'Ferrari';
 console.log(car);                     // { make: 'Porsche' }
 ```
 
-
 </dd>
 </dl>
-
 
 <br>
 <br>
@@ -1141,7 +1139,6 @@ console.log(car);                     // { make: 'Porsche' }
 <br>
 
 # What are classes and how do you implement them?
-
 <dl>
 <dd>
 
@@ -1160,6 +1157,8 @@ So take a look at a basic object called "Car" with two members, a "make" propert
   sportsCar.ignition();                        // vrooom
 ```
 
+<br>
+
 ## Create a class object.
 To rewrite the function above as a class, you do the following.
 1. Add the ```class``` keyword.
@@ -1174,6 +1173,7 @@ To rewrite the function above as a class, you do the following.
 ## Add a constructor to initialize objects.
 A **constructor** essentially initializes an object in the same way that ```function Car(make)...``` does. 
 
+<br>
 
 ### To add a property, add it to the constructor.
 Now there are different ways to define properties and methods when using classes. For properties, they would go inside the constructor. 
@@ -1184,6 +1184,8 @@ Now there are different ways to define properties and methods when using classes
     }
   }
 ```
+
+<br>
 
 ### To add a method that is assigned to the prototype, add it to the body of the class.
 For methods, where you put the method determines whether or not they are assigned to the prototype of the object. **If you want the method to be assigned to the prototype, you need to add it in the body of the class.**
@@ -1201,6 +1203,8 @@ For methods, where you put the method determines whether or not they are assigne
   const sportsCar = new Car('Porsche');
   sportsCar.ignition();                    // vrooom
 ```
+
+<br>
 
 ### To add a method that is NOT assigned to the prototype, add it to the constructor.
 To so this, you would simply add the method normally in the constructor.
