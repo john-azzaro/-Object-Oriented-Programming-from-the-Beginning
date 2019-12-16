@@ -1140,6 +1140,7 @@ console.log(car);                     // { make: 'Porsche' }
 <br>
 <br>
 
-
+# What are classes and how do you implement them?
+**Classes are **Classes are a recent addition to JavaScript in ES6. However, you should not confuse these classes with the way classes are in other languages. 
 
 
