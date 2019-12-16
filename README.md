@@ -1155,6 +1155,9 @@ So take a look at a basic object called "Car" with two members, a "make" propert
       console.log('vrooom');
     }
   }
+
+  const sportsCar = new Car('Porsche');
+  sportsCar.ignition();                        // vrooom
 ```
 
 ## Create a class object.
@@ -1172,10 +1175,9 @@ To rewrite the function above as a class, you do the following.
 A **constructor** essentially initializes an object in the same way that ```function Car(make)...``` does. 
 
 ------
+### To add a property, add it to the constructor.
 ------
-
-
-Now there are different ways to define properties and methods when using classes. For properties, they would go inside the constructor. However, methods would go in the body of the class.
+Now there are different ways to define properties and methods when using classes. For properties, they would go inside the constructor. 
 ```JavaScript
   class Car {    
     constructor(make) {                 // constructor with "make" parameter.
@@ -1183,6 +1185,26 @@ Now there are different ways to define properties and methods when using classes
     }
   }
 ```
+
+------
+### To add a method, add it to the body of the class.
+------
+Unlike a standard object where the methods would share the same body as the properties, a class object requires you to add the method to the body of the class. To create a method, all you need to do is add the name of the method and parentheses followed by curly braces.
+```JavaScript
+  class Car {    
+    constructor(make) {
+      this.make = make; 
+    }
+
+    ignition() {
+      console.log('vrooom');
+    }
+  }
+
+  const sportsCar = new Car('Porsche');
+  sportsCar.ignition();                     // vrooom
+```
+
 </dd>
 </dl>
 
