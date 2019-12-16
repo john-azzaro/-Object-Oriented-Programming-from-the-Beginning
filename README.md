@@ -1160,22 +1160,18 @@ So take a look at a basic object called "Car" with two members, a "make" propert
 <br>
 
 ## Create a class object.
-To rewrite the function above as a class, you do the following.
-1. Add the ```class``` keyword.
-2. Name of the class (i.e. "Car").
-3. Add the body of the class (i.e. curly braces { } ).
-
+To rewrite the function above as a class, you would first add the ```class``` keyword, then the name of the class (i.e. "Car"),
 ```JavaScript
   class Car {   
   }
 ```
 
 ## Add a constructor to initialize objects.
-A **constructor** essentially initializes an object in the same way that ```function Car(make)...``` does. 
+A **constructor** essentially initializes an object in the same way that ```function Car(make)...``` does. So think fo the constructor as a new constructor function.
 
 <br>
 
-### To add a property, add it to the constructor.
+## To add a property, add it to the constructor.
 Now there are different ways to define properties and methods when using classes. For properties, they would go inside the constructor. 
 ```JavaScript
   class Car {    
@@ -1187,7 +1183,7 @@ Now there are different ways to define properties and methods when using classes
 
 <br>
 
-### To add a method that is assigned to the prototype, add it to the body of the class.
+## To add a method that is assigned to the prototype, add it to the body of the class.
 For methods, where you put the method determines whether or not they are assigned to the prototype of the object. **If you want the method to be assigned to the prototype, you need to add it in the body of the class.**
 ```JavaScript
   class Car {    
@@ -1206,7 +1202,7 @@ For methods, where you put the method determines whether or not they are assigne
 
 <br>
 
-### To add a method that is NOT assigned to the prototype, add it to the constructor.
+## To add a method that is NOT assigned to the prototype, add it to the constructor.
 To so this, you would simply add the method normally in the constructor.
 ```JavaScript
   class Car {    
