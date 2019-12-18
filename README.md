@@ -1194,15 +1194,15 @@ Now there are different ways to define properties and methods when using classes
 
 <br>
 
-## To add a method to the prototype, add it to the body of the class.
-For methods, where you put the method determines whether or not they are assigned to the prototype of the object. **If you want the method to be assigned to the prototype, you need to add it in the body of the class.**
+## To add an INSTANCE METHOD to the prototype, add it to the body of the class.
+For methods, where you put the method determines whether or not they are assigned to the prototype of the object. **If you want the method to be assigned to the prototype, you need to add it in the body of the class.** What this means is that this method is available on an instance of a class (i.e. object). In the example below, the ```ignition``` method is specifically available to the ```Car``` object.
 ```JavaScript
   class Car {    
     constructor(make) {
       this.make = make; 
     }
 
-    ignition() {                           // method added to the body of the class.
+    ignition() {                           // instance method added to the body of the class.
       console.log('vrooom');
     }
   }
@@ -1227,6 +1227,8 @@ To so this, you would simply add the method normally in the constructor.
   const sportsCar = new Car('Porsche');
   sportsCar.ignition();                     // vrooom
 ```
+
+## 
 
 </dd>
 </dl>
