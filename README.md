@@ -1167,8 +1167,11 @@ To rewrite the function above as a class, you would first add the ```class``` ke
 ```
 
 However, classes can also be written as a ***Class Expression*** in which we define a constant called something and then set the value to the class object.
-
-
+```JavaScript
+  const Car = class {   
+  };
+```
+Remember that when you use a class expression, the same limitations apply to this type of expression as they do to function expressions in that the 
 
 
 
