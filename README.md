@@ -1160,11 +1160,17 @@ So take a look at a basic object called "Car" with two members, a "make" propert
 <br>
 
 ## Create a class object.
-To rewrite the function above as a class, you would first add the ```class``` keyword, then the name of the class (i.e. "Car"),
+To rewrite the function above as a class, you would first add the ```class``` keyword, then the name of the class (i.e. "Car") and the brackets. The most common way to write a class is in the form of a ***Class Declaration***:
 ```JavaScript
   class Car {   
   }
 ```
+
+However, classes can also be written as a ***Class Expression*** in which we define a constant called something and then set the value to the class object.
+
+
+
+
 
 <br>
 
