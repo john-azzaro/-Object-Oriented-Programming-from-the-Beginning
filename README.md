@@ -1171,7 +1171,7 @@ However, classes can also be written as a ***Class Expression*** in which we def
   const Car = class {   
   };
 ```
-Remember that when you use a class expression, the same limitations apply to this type of expression as they do to function expressions in that the 
+Remember that when you use a class expressions, the same hoisting limitations apply as they do to function expressions, specifically that a class expression will NOT be hoisted to the top of the document when run.
 
 
 
