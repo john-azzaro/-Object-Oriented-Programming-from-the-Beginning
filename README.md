@@ -1228,6 +1228,8 @@ To so this, you would simply add the method normally in the constructor.
   sportsCar.ignition();                     // vrooom
 ```
 
+<br>
+
 ## To create a STATIC METHOD, add it to the body with the "static" keyword.
 A static method is used to create utility functions that are not tied to a particular object and returns something. So in the example of the "Car" class, we are not ascribing this static method to instances of the car object (i.e. sportsCar, etc.) but instead we are instead ascribing it to the class itself (i.e. Car).
 ```JavaScript
