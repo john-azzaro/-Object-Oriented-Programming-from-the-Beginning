@@ -1213,7 +1213,7 @@ For methods, where you put the method determines whether or not they are assigne
 
 <br>
 
-## To add a method NOT assigned to the prototype, add it to the constructor.
+## To add a method (NOT assigned to prototype), add to the constructor.
 To so this, you would simply add the method normally in the constructor.
 ```JavaScript
   class Car {    
@@ -1229,7 +1229,24 @@ To so this, you would simply add the method normally in the constructor.
 ```
 
 ## To create a STATIC METHOD, add it to the body with the "static" keyword.
-A static method is used to create utility functions that are not tied to a particular object. So in the example of the "Car" class, we are not ascribing this static method to instances of the car object (i.e. sportsCar, etc.), we are instead ascribing it to the class itself (i.e. Car).
+A static method is used to create utility functions that are not tied to a particular object. So in the example of the "Car" class, we are not ascribing this static method to instances of the car object (i.e. sportsCar, etc.) but instead we are instead ascribing it to the class itself (i.e. Car).
+```JavaScript
+  class Car {    
+    constructor(make) {
+      this.make = make; 
+    }
+
+    ignition() {  
+      console.log('vrooom');
+    }
+
+    static hasWheels() {                  // ststic method.
+    }  
+
+  }
+
+  const wheels = Car.hasWheels();         // invoking static method.
+```
 
 
 
