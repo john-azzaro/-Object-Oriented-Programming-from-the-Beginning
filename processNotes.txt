@@ -17,3 +17,5 @@ https://codeburst.io/javascript-inheritance-25fe61ab9f85   -- inheritance
 https://www.tutorialsteacher.com/javascript/inheritance-in-javascript  -- inheritance
 https://www.geeksforgeeks.org/differences-between-procedural-and-object-oriented-programming/  -- procedural vs object programming
 https://javascript.info/mixins   -- mixins
+
+http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/  -- good OOP outline -- should crossref
