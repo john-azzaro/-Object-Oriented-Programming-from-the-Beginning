@@ -19,8 +19,7 @@
 * [How do you iterate over prototype and instance members?](#How-do-you-iterate-over-prototype-and-instance-members)
 * [What are getters and setters?](#What-are-getters-and-setters)
 * [How do you assign property descriptors?](#How-do-you-assign-property-descriptors)
-* [](#)
-* [](#)
+* [What are classes and how do you implement them?](#What-are-classes-and-how-do-you-implement-them)
 
 
 <br>
